@@ -1,0 +1,11 @@
+update params set value='1041' where name='plugin_version';
+
+CREATE TABLE esata_auto_backup (enable INTEGER, backup_day INTEGER, backup_time TEXT default '00:00:00', stream_type INTEGER, file_type INTEGER, recycle INTEGER, tri_channels TEXT default '0000000000000000000000000000000000000000000000000000000000000000');
+insert into esata_auto_backup values(0, 0, '00:00:00', 0, 0, 1, '0000000000000000000000000000000000000000000000000000000000000000');
+
+CREATE TABLE "main"."mosaic_custom" ("name" text NOT NULL,"screen" integer NOT NULL,"type" integer,"row" integer,"column" integer,"positions" blob,"channels" blob,PRIMARY KEY ("name", "screen"));
+CREATE TABLE "main"."layout_custom" ("screen" integer NOT NULL, "name" TEXT NOT NULL, "type" integer NOT NULL, "page" integer NOT NULL, PRIMARY KEY ("screen"));
+
+alter table network add column default_route INTEGER default 0;
+
+update push_msg_event set push_type=push_type+28672;

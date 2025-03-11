@@ -1,0 +1,2 @@
+# 后录像默认启用
+update record set post_record_on=1;

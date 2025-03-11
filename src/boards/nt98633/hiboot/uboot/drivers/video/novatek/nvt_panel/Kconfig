@@ -1,0 +1,55 @@
+#
+# Panel drivers configuration
+#
+#
+
+config DISP_VIDEO_HDMITX_IDE
+	bool "HDMI support for IDE"
+	depends on VIDEO_LOGO && (TARGET_NA51102 || TARGET_NA51102_A64)
+	help
+		Novatek HDMITX IF support for IDE
+
+choice
+	prompt "Novatek Panel Selection menu"
+	default DISP_IF8B_LCD1_PW35P00_HX8238D
+	depends on VIDEO_LOGO
+	help
+	  select panel for device object.
+
+config DISP_IF8B_LCD1_PW35P00_HX8238D
+	bool "To support PW35P00 serial panel"
+	depends on VIDEO_LOGO
+	help
+	  Novatek Serial IF 8bit Panel PW35P00 support.
+
+config DISP_IF8B_LCD1_AUCN01
+	bool "To support AUCN01 serial panel"
+	depends on VIDEO_LOGO
+	help
+	  Novatek Serial IF 8bit Panel AUCN01 support.
+
+config DISP_IF8B_LCD1_TP2803
+        bool "To support TP2803 serial panel"
+        depends on VIDEO_LOGO
+        help
+          Novatek Serial IF 8bit Panel TP2803 support.
+
+config DISP_IF8B_LCD1_PSD300
+        bool "To support PSD300 serial panel"
+        depends on VIDEO_LOGO
+        help
+          Novatek Serial IF 8bit Panel PSD300 support.
+
+config DISP_IFDSI_LCD1_UT35067A0
+        bool "To support UT35067A0  panel"
+        depends on VIDEO_LOGO
+        help
+          Novatek Serial IF DSI Panel UT35067A0 support.
+
+config DISP_IFNONE
+        bool "To support NULL panel"
+        depends on VIDEO_LOGO
+        help
+          Novatek NULL panel support.
+
+endchoice

@@ -1,0 +1,4 @@
+#!/bin/sh
+export TERM=ansi
+export TERMINFO_DIRS=/share/terminfo
+/usr/bin/top.t "$@"

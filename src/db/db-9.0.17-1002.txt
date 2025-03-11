@@ -1,0 +1,3 @@
+# 新增web_param表
+CREATE TABLE web_param("event_region" INTEGER NOT NULL DEFAULT 0);
+insert into web_param(event_region) values(0);

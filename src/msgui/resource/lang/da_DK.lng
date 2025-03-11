@@ -1,0 +1,594 @@
+[LANGUAGE]
+Language=Dansk
+LangID=7
+
+[COMMON]
+1000=Tilføj
+1002=Tilbage
+1003=Bekræft
+1004=Annuller
+1005=Kopier
+1006=Alle
+1007=Brugernavn
+1008=Adgangskode
+1009=Aktiver
+1010=Kanal: %1     Navn: %2
+1011=Utilstrækkelige Bruger Rettigheder
+1012=Til
+1013=Fra
+1014=Automatisk
+1018=Deaktiver
+1019=Rediger
+1021=Ryd Alt
+1023=Ingen
+1024=Søndag
+1025=Mandag
+1026=Tirsdag
+1027=Onsdag
+1028=Torsdag
+1029=Fredag
+1030=Lørdag
+1031=Ferie
+1032=Vent Venligst...
+1033=IP Adresse
+1035=Opdater
+1036=Gem
+1037=Forlad
+
+[MENU]
+10002=Afspilning
+10003=Kamera
+10004=Optag
+10005=Hændelse
+10007=Indstillinger
+10008=Luk Ned
+10011=System
+
+[WIZARD]
+11000=Næste
+11001=Afslut
+11002=Ønsker Du at afslutte guiden?
+11003=Guide
+11005=Start guide når enheden starter?
+11008=Ny Admin Adgangskode
+11009=Ny Adgangskode
+11010=Bekræft
+11011=Sprog
+11012=Admin Adgangskode Fejl
+11014=Tids Zone
+11015=Dato Format
+11016=Sommertid
+11017=Synkroniser automatisk med en internet tids server
+11019=Indstil tid og dato manuelt
+11020=Indstil Dato og Tid
+11021=Automatisk
+11022=Deaktiver
+11023=Arbejds Tilstand
+11024=Vælg Netkort
+11025=Aktiver DHCP
+11026=Subnet Maske
+11027=Foretrukken DNS
+11028=Alternativ DNS
+11029=Primær
+11032=Login failed! %1 attempts left!
+11033=Bruger Log Ind
+11037=LOG IND
+11080=Unlock Pattern
+11081=Set unlock pattern unsuccessfully, it will be disabled if you skip to next, continue?
+11082=Set unlock pattern unsuccessfully, it will be disabled if you exit the Wizard, continue?
+11083=This user has been locked, please retry after %1 minutes.
+11084=This user has been locked, please retry after %1 minutes %2 seconds.
+
+[LIVEVIEW]
+20000=Enkel Skærm
+20001=Kanal %1
+20002=4 Split
+20003=8 Split
+20004=1+7 Skærm
+20005=9 Split
+20006=12 Split
+20007=1+11 Skærm
+20008=14 Split
+20009=16 Split
+20010=32 Split
+20011=Forrige Skærm
+20012=Næste Skærm
+20013=Sekvens
+20014=Sek.Sekvens
+20015=Sek.Skærm Ctrl
+20017=Log Ud(%1)
+20018=Start Nød Optagelse
+20019=Stop Nød Optagelse
+20020=Billede Konfiguration
+20022=Lyd Til
+20023=Lyd Fra
+20024=Elektronisk Forstærkning
+20025=Tag Billede
+20026=Luk Værktøjs linje
+20029=32 Split {25 ?}
+20030=1+11 Split {1+?} {31 ?}
+20031=Ingen Resourcer
+20033=Ønsker Du at logge Af
+20035=Ønsker Du at genstarte?
+20036=Ønsker Du at Lukke Ned?
+20037=HDD FULD. Optagelse Mislykkedes
+20038=Vis altid pop op
+20039=INGEN DISK. Optagelse Mislykkedes
+20041=Optagelse Mislykkedes
+20042=Netværk Frakoblet
+20043=HDD Fuld
+20048=Kunne ikke sende email, kontroller indstillingerne eller netværks forbindelsen
+20049=Email afsendt
+20050=Du kan trykke på tænd/sluk knap igen, for at lukke ned. Ønsker Du at lukke ned?
+20051=Systemet lukker ned...
+
+[PTZDIALOG]
+21001=Fokus
+21002=Fokus+
+21003=Iris
+21005=Luk
+21006=Venstre Op
+21007=Venstre
+21008=Venstre Ned
+21009=Højre Op
+21010=Højre
+21011=Højre Ned
+21012=Op
+21013=Ned
+21014=Auto Skan
+21019=zoom+
+21020=Hastighed
+
+[CHANNELMANAGE]
+30000=Kamera Indstillinger
+30001=Kanal Håndtering
+30002=Kamera Søgning
+30003=OSD Konfiguration
+30004=PTZ Konfiguration
+30005=Private Områder
+30006=Live Visning
+30008=Kanal
+30009=Kanal Navn
+30014=Protokol
+30015=Transport Protokol
+30018=Tids Indstilling
+30019=Synk. Tid med NVR
+30023=Slet
+30028=Producent
+30031=Kanalen er brugt. Vælg en anden kanal.
+30032=Dette kamera eksisterer allerede, ønsker Du at tilføje det igen?
+30033=Ønsker Du at slette kanal %1 ?
+30034=Der er ikke valgt et kamera
+30035=Ønsker Du at slette disse kanaler ?
+30036=Båndbredde grænse nået : Kanal %1.
+30037=Ledig modtage båndbredde: %1Mbps
+30038=Tilsluttet
+30039=Frakoblet
+30040=Netværks Fejl
+30041=Forkert Brugernavn eller adgangskode
+30042=Ukendt Fejl
+30043=Protokol ikke supporteret
+30044=Ugyldig IP Adresse
+30045=Venligst indtast port(1~65535).
+30053=Forbindelse Etableret
+30057=Sek.Strem
+30058=Opløsning
+30059=Billede Mængde
+30061=Lyd
+
+[CAMERAEDIT]
+31000=Rediger Kamera
+31001=Parametre
+31007=Aktiver Lyd
+31009=Kunne ikke hente parametre
+31010=Gemt
+31011=Kunne ikke gemme primær stream
+31012=Kunne ikke gemme sekundær stream
+31013=Kunne ikke gemmes
+31014=Sek.Strem
+
+[CAMERASEARCH]
+32001=Søg
+32002=Nr.
+32009=Ugyldig Subnet Maske
+32010=Ugyldig Gateway
+32011=Ugyldig Foretrukken DNS
+32014=Ændre IP Adresse Udført.
+32015=Kunne ikke ændre IP Adresse
+32016=IP Konflikt, Fortsæt?
+32018=Kanal %1 er brugt. Vælg en anden kanal.
+32026=%1 Kameraer Tilføjet.
+32028=Ingen ledige kanaler
+32030=Kanal %1 Tilføjet.
+
+[PTZCONFIG]
+36000=Nøgle Punkt:%1
+36001=PTZ adresse: 1~%1
+36003=Tur%1
+36004=Track%1
+36009=Ønsker Du at slette?
+36010=Kunne ikke tilføje preset punkt
+36011=Antallet af preset punkter overstiger maks. antal af skanninger.
+36012=Fejl. Venligst tilføj et presset først
+36015=Konfiguration
+36016=Advanceret
+36022=Afspil
+36023=Nøgle Punkt
+36025=Skannings Tid
+36026=Skannings Hastighed
+36037=Kør
+36039=Ryd
+36041=Forbindelses Type
+36042=Baud Mængde
+36047=Adresse
+
+[LAYOUT]
+40000=Layout Konfiguration
+40001=Live Visnings Parameter
+40003=Side: 1~%1
+40005=Denne Side: %1
+40006=Ønsker Du at nulstille Layout konfiguration?
+40007=Side: 1~%1 {17~?}
+
+[LIVEPARAMETER]
+41000=Grænseflade
+41002=Kanal Navn Farve
+41003=Primær Sekvens Interval
+41004=Sekundær Sekvens Interval
+41005=Sekvens Interval
+41006=Konfigurer Layout Seperat
+41007=Skip Blank Side
+41008=INGEN SEKVENS
+
+[VIDEOLOSS]
+50000=Hændelses Indstillinger
+50001=Video Tab
+50002=Opgave
+50006=Udløser Interval
+50007=Aktiver Optagelse på Kanal
+50008=Aktiver Alarm Udgang
+50009=Lyd Advarsel
+50010=Email Afsendelse
+50012=Tid kan ikke overlappe
+50013=Fejl i Tid!
+
+[MOTION]
+51000=Bevægelses Detektering
+51003=Følsomhed
+51008=Ignore Short-Lived Motion
+
+[ALARMIN]
+52001=Alarm Indgang
+52002=Alarm Indgang Nr.
+52003=Alarm Navn
+52005=Nej
+52007=Kopier Alarm Indgang
+52008=Kopier Alarm Udgang
+
+[ALARMOUT]
+53000=Alarm Udgang
+53001=Alarm Udgang Nr.
+53002=Holdetid
+53003=Effektiv Tid
+53008=Alarm Udg.
+
+[EXCEPTION]
+54000=Undtagelse
+54001=Undtagelses Type
+54002=Normal Forbindelse
+54009=Pop op Alarm
+54011=INGEN DISK
+
+[DEVICEINFO]
+60000=Enheds Information
+60001=Enheds ID
+60005=Oppe Tid
+
+[NETWORKSTATUS]
+61000=Netværks Status
+61001=Båndbredde Status
+61004=Forbindelse
+61005=Tilstand
+61007=MTU(B)
+61014=Binding0
+61015=Der er Link
+61016=Ingen Link
+61017=%1Mbps Halv
+61018=%1Mbps Fuld
+61019=Modtage Båndbredde
+61020=Ledig
+61021=Modtage Mængde
+61022=Afsende Mængde
+
+[CAMERASTATUS]
+62000=Kamera Status
+62002=Navn
+
+[EVENTSTATUS]
+63000=Hændelses Status
+63002=Kamera Hændelse
+63003=Alarm Ingang Liste
+63005=NVR Event
+63011=Deaktiver Manuelt
+63013=Bevægelse
+
+[LOG]
+64000=Log
+64001=Start Tid
+64002=Slut Tid
+64003=Primær Type
+64004=Sekundær Type
+64005=Tid
+64008=Bruger
+64009=Fjern Vært IP
+64010=Ingen lignende logs
+64012=Mere end 2000 log resultater, de nyeste 2000 vil blive vist
+64013=Eksport
+64014=Eksport fejl
+64015=Eksport Udført
+64020=Kamera I/O
+64021=Lydstyrke Detektering
+64081=Optagelses Tistand
+64083=Optagelses Skema
+64096=Ferie Konfiguration
+64097=Tilføj Bruger
+64190=System Audio Configuration
+
+[SYSTEMGENERAL]
+70000=System Indstillinger
+70001=Generelt
+70002=Netværk
+70003=Disk Håndtering
+70006=Opdatering
+70007=Import/Export Configuration
+70008=Auto Vedligehold
+70009=Enheds Navn
+70012=HDMI/VGA Opløsning
+70015=HDMI1 Lyd
+70016=Lyd Ud
+70017=Boot Guide
+70018=Lokal Godkendelse
+70019=Menu Godkendelse
+70020=Menu Timeout
+70022=Server Tid
+70032=Enheds ID skal være mellem 1~255
+70034=Ændring af sprog vil træde i kraft efter en genstart. Ønsker Du at genstarte nu?
+70035=Gendan automatisk efter %1 sekunder
+70036=Ændring af Visnings indstillinger vil træde i kraft efter en genstart. Ønsker Du at genstarte nu?
+70037=Ændre Opløsning
+70038=Er Du sikker på Du vil ændre opløsning?
+70039=HDMI Lyd
+70040=HDMI Opløsning
+70062=Configuration File
+70063=Export Directory
+70064=Import Configuration File
+70065=Export Configuration File
+
+[SYSTEMNETWORK]
+71000=Basis
+71001=Push Event Type
+71005=Mere
+71007=Multi Adresse
+71008=Belastnings Balance
+71009=Net Fejls-Tolerance
+71016=Push Message Settings
+71032=Afsender Navn
+71034=Vælg Modtager
+71035=Modtager Navn
+71038=Værts Navn
+71039=Vedhæft Billede
+71041=Send Email
+71043=Modtager1
+71044=Modtager2
+71045=Modtager3
+71055=Aktiver SSH
+71063=Ændringerne vil træde i kraf efter en genstart. Ønsker Du at genstarte nu?
+71065=MTU(Byte) range 1200-1500.
+71071=Ugyldig Foretrukken DNS
+71072=Ugyldig Alternativ DNS
+71080=Opdaterings Frekvens er ikke korrekt
+71097=Kunne ikke sende email, kontroller indstillingerne eller netværks forbindelsen
+71107=Porte skal være forskellige
+71108=%1 Port: %2 eller %3-%4.
+71109=Ændringerne vil træde i kraft efter en genstart. Ønsker Du at genstarte nu?
+71119=Bindestreg
+
+[DISKMANAGE]
+72003=Ledig(GB)
+72005=I Brug
+72006=Overskriv Tilstand
+72010=Total Kapacitet(GB)
+72011=Ledig Kapacitet(GB)
+72012=Formaterer disk...
+72013=Disken %1 kører
+72014=Formatering af disk %1 mislykkedes.
+72015=Formaterer disk %1 (%2/%3)...
+72016=Formatering ikke færdig.
+72017=Formatering udført.
+72020=Vælg en port.
+72021=Ønsker Du at formaterer disken?
+72024=Værdi
+72025=Værst
+72026=Holdetid
+72027=Rå Værdi
+72030=Test Protokol
+72033=Oppe Tid(T)
+72034=Selv-evaluering
+72035=Alt-evaluering
+72039=I god stand
+72040=Ustabil eller beskadiget sektorer
+72041=Harddisk fejl
+72042=Ukendt fejl
+72043=S.M.A.R.T Test Start mislykkedes
+72051=Formater
+72052=Hurtig
+72053=Grundig
+
+[HOLIDAY]
+73001=Ferie Navn
+73003=Start Dato
+73004=Slut Dato
+73006=Aktiver Ferie
+73007=Rediger Ferie
+73008=Stil
+73009=Dag
+73010=Måned
+73011=Uge
+73012=Ferie prioteres højere end andre tids skemaer
+73016=Kopier Uge
+73017=Optagelses Opsætning
+
+[USER]
+74001=Bruger Niveau
+74002=Bruger Begrænsninger
+74005=admin
+74006=Operatør
+74008=Ønsker Du at slette?
+74009=Mak. antal brugere nået
+74010=Gl.Adg.Kode er ikke korrekt
+74016=Brugeren eksisterer allerede
+74017=Rediger Bruger
+74019=Rettigheder
+74020=Gammel Adg.Kode
+74026=Remote Rettigheder
+74028=PTZ Håndtering
+74029=Optagelses Indstillinger
+74031=Video/Billede Eksport
+74034=Generelle Indstillinger
+74035=Netværk Indstillinger
+74037=Ferie Konfiguration
+74038=System Opdatering
+74039=Gem/Hent Konfiguration
+74040=Luk Ned/Genstart
+74041=Nød Optagelse
+74044=Live Visnings Indstillinger
+74045=Genstart
+74046=Remote Optagelse
+74047=Remote Tag Billede
+74048=Remote Vedligehold
+74053=Video Eksport
+74056=Connect at least 4 dots, please try again.
+74057=Please draw again to confirm.
+74058=Set unlock pattern successfully.
+74059=Unmatched pattern, please try again.
+74060=Release mouse when finished.
+74061=Unlock pattern is not set, it will be disabled if you exit, continue?
+74062=Set Unlock Pattern
+74063=Please connect at least 4 dots.
+74064=Forgot unlock pattern?
+74065=Forgot password?
+74066=Login with Unlock Pattern?
+74067=Login with password?
+74068=Reset Unlock Pattern
+74069=Wrong Password.
+74070=Wrong Pattern.
+
+[UPGRADE]
+75005=Vælg en .bin fil
+75006=Venligst vælg en bin fil
+75007=Er ikke en .bin fil
+75008=Er en ugyldig .bin fil
+75010=Opgradering mislykkedes
+75011=Local Upgrade
+75012=Online Upgrade
+75013=Check
+75014=Upgrade successfully! The system will reboot.
+75015=The device will reboot automatically after upgrading, continue?
+75016=Already Latest.
+75017=Software Version
+75018=Latest Version
+75019=Network error.
+75020=Check All
+75021=Downloading
+75022=Upgrading
+75023=Successfully
+75024=Failed
+75025=Firmware Mismatch
+75026=Unknow
+75027=Waiting
+75028=Download Failed
+75029=Already Latest
+
+[PROFILE]
+76000=Gendan
+76002=Vælg en konfig fil
+76003=Venligst vælg en cfg fil
+76004=Er ikke en config fil
+76005=Hvis gendannelse gennemføres, vil systemet genstarte, ønsker Du at fortsætte?
+76006=Gendannelse gennemført, Genstarter...
+76007=Gendannelse mislykkedes
+76008=Vælg Sti
+76009=Sti for lang
+76010=Backup Gennemført
+76011=Backup Mislykkedes
+76013=Advarsel: Gendan til fabriksindstillinger vil slette alla data, lav en backup af dine data før Du fortsætter. Er Dusikker på Du vil gendanne til fabriksindstillinger
+76014=Backup/Gendan
+76016=Ja
+
+[MAINTENANCE]
+77000=Periode for Log
+77001=Behold Billeder I
+
+[AUTOREBOOT]
+78010=Tid
+
+[PLAYBACK]
+80000=forøg Hastighed
+80001=Forminsk Hastighed
+80005=Gå Frem
+80006=Gå Tilbage
+80009=Gem
+80012=Tilbage
+80013=Backup Annulleret
+80014=Backup Gennemført
+80015=Backup Fejl Parameter fejl
+80017=Backup fejl. Ugyldig Backup Sti
+80018=Backup fejl. Slut tid skal ligge senere end start tid
+80019=Backup fejl. Kunne ikke genererer fil
+80020=Backup fejl. Ingen optagelser. Initialiserings fejl
+80021=Backup fejl. Skrive fejl
+80022=Backup fejl. Ikke nok ledig plads
+80023=Backup fejl. Ukendt fejl
+80027=Ingen Billeder fundet
+80030=Video Afspilning
+80031=Billede Afspilning
+80032=Forlad
+80038=Klip
+80043=Zoom Ind
+80044=Zoom Ud
+80046=Backup Start Dato/Tid
+80047=Backup Slut Dato/Tid
+80048=Backup Medie
+80049=Vælg Enhed
+80051=Gem Billede
+
+[ACCESSFILTER]
+81000=Access Filter
+81001=Filter Type
+81002=Allow
+81003=Deny
+81004=Add Address
+81005=Edit Address
+81006=Single
+81007=Range
+81008=Wrong address format.
+81009=The same address has already existed, cannot add it twice.
+81010=Address Type
+81011=IP Address Rule
+
+[RECORDMODE]
+90000=Optagelses Indstillinger
+90010=Rediger Tid
+90011=Tids indstilling
+90012=Slet
+90016=Bevægelse og Alarm
+90022=Dag
+90026=Bevægelse Eller Alarm
+
+[RECORDADVANCE]
+91000=Kamaera Valg
+91001=Før Optagelse
+91002=Varighed Tid
+91003=Efter Optagelse
+91004=Lyd Optagelse
+91005=Optagelses Stream Type

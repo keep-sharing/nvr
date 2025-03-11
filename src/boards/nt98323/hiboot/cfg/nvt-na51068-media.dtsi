@@ -1,0 +1,110 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+
+#include <dt-bindings/gpio/nvt-gpio.h>
+#include "nvt-na51068-basic.dtsi"
+
+/ {
+	nvtmpp {
+			compatible = "nvt,nvtmpp";
+	};
+
+	isf_stream {
+			compatible = "nvt,isf_stream";
+	};
+
+	isf_flow {
+			compatible = "nvt,isf_flow";
+	};
+
+	isf_vdocap {
+			compatible = "nvt,isf_vdocap";
+	};
+
+	isf_vdoprc {
+			compatible = "nvt,isf_vdoprc";
+	};
+
+	isf_dummy {
+			compatible = "nvt,isf_dummy";
+	};
+
+	isf_vdoenc {
+			compatible = "nvt,isf_vdoenc";
+	};
+
+	isf_vdodec {
+			compatible = "nvt,isf_vdodec";
+	};
+
+	isf_vdoout {
+		compatible = "nvt,isf_vdoout";
+	};
+
+	dispobj {
+			compatible = "nvt,nvt_dispobj";
+	};
+
+	dispdev {
+			compatible = "nvt,nvt_dispdev";
+	};
+
+	audio {
+			compatible = "nvt,nvt_audio";
+	};
+
+	msdcnvt {
+		compatible = "nvt,msdcnvt";
+	};
+
+	msdcnvt_adj {
+		compatible = "nvt,msdcnvt_adj";
+	};
+
+	msdcnvt_custom_si {
+		compatible = "nvt,msdcnvt_custom_si";
+	};
+
+	wavstudio {
+		compatible = "nvt,wavstudio";
+	};
+
+	isf_audenc {
+		compatible = "nvt,isf_audenc";
+	};
+
+	isf_auddec {
+		compatible = "nvt,isf_auddec";
+	};
+
+	isf_audcap {
+		compatible = "nvt,isf_audcap";
+	};
+
+	isf_audout {
+		compatible = "nvt,isf_audout";
+	};
+
+	nvt_ipc {
+		compatible = "nvt,nvt_ipc";
+	};
+
+	h26xdec: h26xd@fcb00000 {
+		compatible = "nvt,h26xdec";
+		reg = <0xfcb00000 0x4000>;
+		interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
+		device-id = <0>;
+	};
+    
+	h26xenc: h26xenc@fc600000 {
+		compatible = "nvt,h26xenc";
+		reg = <0xfc600000 0x10000>;
+		interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
+		device-id = <0>;
+	};
+};

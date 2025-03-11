@@ -1,0 +1,28 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+&nor {
+	/** 
+	 * partition_name is $1 as in partition_$1 is referred 
+	 * to nvt-na51068-storage-partition. dtsi
+	 */
+	nvtpack {
+		ver = "NVTPACK_FW_INI_16072017"; /* Fixed */
+		method = <1>; /* Fixed */
+		index {
+			id0 { partition_name = "loader";      source_file = ""; }; /* Fixed */
+			id1 { partition_name = "fdt";         source_file = "nvt-na51068-evb.bin"; }; /* Fixed */
+			id2 { partition_name = "fdt.restore"; source_file = "";	}; /* Fixed */
+			id3 { partition_name = "uboot";	      source_file = "u-boot.bin"; };
+			id4 { partition_name = "uenv";	      source_file = ""; };
+			id5 { partition_name = "kernel";      source_file = "uImage.bin"; };
+			id6 { partition_name = "rootfs";      source_file = "rootfs.ramdisk.bin"; };
+			id7 { partition_name = "rootfs1";     source_file = "rootfs_1.rw.ubifs.bin"; };
+			id8 { partition_name = "app";         source_file = "DVR_8CH.nand.ubifs.bin"; };
+		};
+	};
+};

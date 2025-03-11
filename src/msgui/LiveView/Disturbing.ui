@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Disturbing</class>
+ <widget class="QWidget" name="Disturbing">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>317</width>
+    <height>294</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget_background" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_alarm">
+        <property name="text">
+         <string>Alarm Output</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_ptz">
+        <property name="text">
+         <string>PTZ Action</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="ComboBox" name="comboBox_alarm"/>
+      </item>
+      <item row="3" column="1">
+       <widget class="ComboBox" name="comboBox_ptz"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_audible">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Audible Warning</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="ComboBox" name="comboBox_email"/>
+      </item>
+      <item row="2" column="1">
+       <widget class="ComboBox" name="comboBox_event"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="ComboBox" name="comboBox_audible">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_email">
+        <property name="text">
+         <string>Email Linkage</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_event">
+        <property name="text">
+         <string>Event Popup</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_white">
+        <property name="text">
+         <string>White LED</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="ComboBox" name="comboBox_white"/>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="labelHTTP">
+        <property name="text">
+         <string>HTTP Notifcation</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="ComboBox" name="comboBoxHTTP"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

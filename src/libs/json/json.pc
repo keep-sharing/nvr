@@ -1,0 +1,11 @@
+prefix=/home/nfsroot/HISI/svn_beta/mshn_1023/mshn/branches/hi3798/branches-hi3798c/branches-x.7.0.5/temp/hi3798/libs/json
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: json
+Description: JSON implementation in C
+Version: 0.9
+Requires: 
+Libs:  -L${libdir} -ljson
+Cflags: -I${includedir}/json

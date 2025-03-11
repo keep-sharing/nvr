@@ -1,0 +1,4 @@
+# 9.0.14-r1 pos单项，增加nvr_port字段
+alter table pos_setting add column nvr_port INTEGER not null default 0;
+# 9.0.14-r1 pos单项，兼容升级后NVR POS端口默认为0
+update pos_setting set enable = 0;

@@ -1,0 +1,9 @@
+CREATE TABLE https ("country" TEXT,"common_name" TEXT,"email" TEXT,"dates" TEXT,"country_req" TEXT,"common_name_req" TEXT,"email_req" TEXT);
+
+insert into https(country,common_name,email,dates,country_req,common_name_req,email_req) values(' ',' ',' ',' ',' ',' ',' ');
+insert into params values('httpsenable', '0');
+
+update params set value='1024' where name='plugin_version';
+update params set value='1024' where name='mplugin_version';
+
+alter table network_more add column https_port INTEGER not null default 443;

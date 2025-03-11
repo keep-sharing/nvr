@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KeyboardWidget</class>
+ <widget class="QWidget" name="KeyboardWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>528</width>
+    <height>190</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QToolButton
+{
+	outline: 0px;
+	border: none;
+	color: #ffffff;
+	background-color: #505050;
+}
+QToolButton:hover
+{
+	background-color: #66b6db;
+	color: #ffffff;
+}
+QToolButton:pressed
+{
+	background-color: #66b6db;
+	color: #000000;
+}
+
+QFrame#frame_background
+{
+	background-color: #FFFFFF;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame_background">
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <item>
+         <widget class="Key" name="btnTilt">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x60</string>
+          </property>
+          <property name="text">
+           <string>`</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x31</string>
+          </property>
+          <property name="text">
+           <string>1</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x32</string>
+          </property>
+          <property name="text">
+           <string>2</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x33</string>
+          </property>
+          <property name="text">
+           <string>3</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x34</string>
+          </property>
+          <property name="text">
+           <string>4</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x35</string>
+          </property>
+          <property name="text">
+           <string>5</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x36</string>
+          </property>
+          <property name="text">
+           <string>6</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x37</string>
+          </property>
+          <property name="text">
+           <string>7</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x38</string>
+          </property>
+          <property name="text">
+           <string>8</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn9">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x39</string>
+          </property>
+          <property name="text">
+           <string>9</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btn0">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x30</string>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnHiphen">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x2d</string>
+          </property>
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnAssign">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>13</string>
+          </property>
+          <property name="text">
+           <string>=</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnBackSpace">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>20</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000003</string>
+          </property>
+          <property name="text">
+           <string>Backspace</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <item>
+         <widget class="Key" name="btnTab">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>15</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000001</string>
+          </property>
+          <property name="text">
+           <string>Tab</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>false</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnQ">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x51</string>
+          </property>
+          <property name="text">
+           <string>Q</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnW">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x57</string>
+          </property>
+          <property name="text">
+           <string>W</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnE">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x45</string>
+          </property>
+          <property name="text">
+           <string>E</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnR">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x52</string>
+          </property>
+          <property name="text">
+           <string>R</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnT">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x54</string>
+          </property>
+          <property name="text">
+           <string>T</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnY">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x59</string>
+          </property>
+          <property name="text">
+           <string>Y</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnU">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x55</string>
+          </property>
+          <property name="text">
+           <string>U</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnI">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x49</string>
+          </property>
+          <property name="text">
+           <string>I</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnO">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x4f</string>
+          </property>
+          <property name="text">
+           <string>O</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnP">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x50</string>
+          </property>
+          <property name="text">
+           <string>P</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnStartSquare">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x5b</string>
+          </property>
+          <property name="text">
+           <string>[</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnCloseSquare">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x5d</string>
+          </property>
+          <property name="text">
+           <string>]</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnFwdSlash">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>15</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x5c</string>
+          </property>
+          <property name="text">
+           <string>\</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <item>
+         <widget class="Key" name="btnCaps">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>20</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000024</string>
+          </property>
+          <property name="text">
+           <string>Caps</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnA">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x41</string>
+          </property>
+          <property name="text">
+           <string>A</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnS">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x53</string>
+          </property>
+          <property name="text">
+           <string>S</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnD">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x44</string>
+          </property>
+          <property name="text">
+           <string>D</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnF">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x46</string>
+          </property>
+          <property name="text">
+           <string>F</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnG">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x47</string>
+          </property>
+          <property name="text">
+           <string>G</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnH">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x48</string>
+          </property>
+          <property name="text">
+           <string>H</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnJ">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x4a</string>
+          </property>
+          <property name="text">
+           <string>J</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnK">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x4b</string>
+          </property>
+          <property name="text">
+           <string>K</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnL">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x4c</string>
+          </property>
+          <property name="text">
+           <string>L</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnSemiColon">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x3b</string>
+          </property>
+          <property name="text">
+           <string>;</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnSp">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x27</string>
+          </property>
+          <property name="text">
+           <string>'</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnReturn">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>20</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000004</string>
+          </property>
+          <property name="text">
+           <string>Return</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <item>
+         <widget class="Key" name="btnShiftLeft">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>25</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000020</string>
+          </property>
+          <property name="text">
+           <string>Shift</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnZ">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x5a</string>
+          </property>
+          <property name="text">
+           <string>Z</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnX">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x58</string>
+          </property>
+          <property name="text">
+           <string>X</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnC">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x43</string>
+          </property>
+          <property name="text">
+           <string>C</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnV">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x56</string>
+          </property>
+          <property name="text">
+           <string>V</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnB">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x42</string>
+          </property>
+          <property name="text">
+           <string>B</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnN">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x4e</string>
+          </property>
+          <property name="text">
+           <string>N</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnM">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x4d</string>
+          </property>
+          <property name="text">
+           <string>M</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnComma">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x2c</string>
+          </property>
+          <property name="text">
+           <string>,</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnPeriod">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x2e</string>
+          </property>
+          <property name="text">
+           <string>.</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnBcwdSlash">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>10</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x2f</string>
+          </property>
+          <property name="text">
+           <string>/</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnDel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>25</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000007</string>
+          </property>
+          <property name="text">
+           <string>Delete</string>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <item>
+         <widget class="Key" name="btnCtrlLeft">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>15</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000021</string>
+          </property>
+          <property name="text">
+           <string>Ctrl</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnAltLeft">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>15</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x01000023</string>
+          </property>
+          <property name="text">
+           <string>Alt</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="btnSpace">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>100</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="accessibleName">
+           <string>0x20</string>
+          </property>
+          <property name="autoRepeat">
+           <bool>true</bool>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Key" name="closetoolButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>20</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Close</string>
+          </property>
+          <property name="autoRepeatDelay">
+           <number>500</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Key</class>
+   <extends>QToolButton</extends>
+   <header>key.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

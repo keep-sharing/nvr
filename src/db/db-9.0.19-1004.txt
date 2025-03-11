@@ -1,0 +1,2 @@
+# token增加user_id
+alter table token add column user_id INTEGER not null default 0;

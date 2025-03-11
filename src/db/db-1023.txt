@@ -1,0 +1,1 @@
+alter table alarm_in add column tri_channels_snapshot TEXT default "0000000000000000000000000000000000000000000000000000000000000000";

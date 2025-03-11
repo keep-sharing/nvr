@@ -1,0 +1,2 @@
+alter table token add column last_time INTEGER;
+alter table token add column push_sum INTEGER;

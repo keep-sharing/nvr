@@ -1,0 +1,108 @@
+/*
+ * Novatek Ltd. NA51068 SDK of dts
+ * 8CH_DTS file
+ *
+ */
+/dts-v1/;
+/{
+	model = "NOVATEK NA51068 series";
+	compatible = "NOVATEK,NA51068";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	hdal-spec {
+	#address-cells = <2>;
+	#size-cells = <1>;
+		lcd_cfg {
+			videoout0 {/*lcd300*/
+				mode = "HD_COMMON_VIDEO_OUT_HDMI", "HD_VIDEOOUT_IN_1920x1080", "HD_VIDEOOUT_HDMI_1920X1080P60";/*"output_type","input_dim","output_mode"*/
+				homology = "HD_COMMON_VIDEO_OUT_VGA";/*extra device with output_type same source*/
+				chip_state = <1>;/*0:disable/1:enable controller*/
+				gui_rld_enable = <1>;
+				fb0_dim = <3840 2160>;
+				fb0_state = <1>;/*0:disable/1:enable */
+				fb0_fmt = "HD_VIDEO_PXLFMT_YUV420";
+				fb0_bpp = <12>;
+				fb1_dim = <3840 2160>;
+				fb1_state = <1>;/*0:disable/1:enable */
+				fb1_fmt = "HD_VIDEO_PXLFMT_ARGB8888";
+				fb1_bpp = <32>;
+				fb2_dim = <3840 2160>;
+				fb2_state = <0>;/*0:disable/1:enable */
+				fb2_fmt = "HD_VIDEO_PXLFMT_I2";
+				fb2_bpp = <2>;
+			};
+			videoout1 {/*lcd200*/
+				mode = "HD_COMMON_VIDEO_OUT_CVBS", "HD_VIDEOOUT_IN_720x576", "HD_VIDEOOUT_CVBS_PAL";/*"output_type","input_dim","output_mode"*/
+				homology = "";/*extra device with output_type same source*/
+				chip_state = <0>;/*0:disable/1:enable controller*/
+				fb0_dim = <720 576>;
+				fb0_state = <1>;/*0:disable/1:enable */  
+				fb0_fmt = "HD_VIDEO_PXLFMT_YUV422_ONE";
+				fb0_bpp = <16>;
+				fb1_dim = <720 576>;
+				fb1_state = <1>;/*0:disable/1:enable */  
+				fb1_fmt = "HD_VIDEO_PXLFMT_ARGB1555";
+				fb1_bpp = <16>;
+				fb2_dim = <720 576>;
+				fb2_state = <0>;/*0:disable/1:enable */  
+				fb2_fmt = "HD_VIDEO_PXLFMT_I2";
+				fb2_bpp = <2>;
+			};		
+		};
+		mem_pool {
+			/*  <ddr_id>,"pool_type                          ", <blk_size>,<cnt>,"shared_pool" */
+			pool =
+				<0>, "HD_COMMON_MEM_COMMON_POOL               ",<6120  >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP_DEC_IN_POOL          ",<12248 >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP_DEC_OUT_POOL         ",<38256 >,<1 >, "HD_COMMON_MEM_DISP0_CAP_OUT_POOL",
+				<0>, "HD_COMMON_MEM_DISP_DEC_OUT_RATIO_POOL   ",<9180 >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DEC_TILE_POOL             ",<1836  >,<1 >, "",
+				<0>, "HD_COMMON_MEM_ENC_CAP_OUT_POOL          ",<0 	   >,<1 >, "",
+				<0>, "HD_COMMON_MEM_ENC_OUT_POOL              ",<1584  >,<1 >, "",
+				<0>, "HD_COMMON_MEM_ENC_REF_POOL              ",<3244  >,<2>, "",
+				<0>, "HD_COMMON_MEM_ENC_REF_POOL              ",<0     >,<2 >, "",
+				<0>, "HD_COMMON_MEM_ENC_REF_POOL              ",<0     >,<0 >, "",
+				<0>, "HD_COMMON_MEM_ENC_REF_POOL              ",<0     >,<0 >, "",
+				<0>, "HD_COMMON_MEM_ENC_REF_POOL              ",<0   >,<1>, "",
+				<0>, "HD_COMMON_MEM_ENC_REF_POOL              ",<0     >,<0 >, "",
+				<0>, "HD_COMMON_MEM_ENC_SCL_OUT_POOL          ",<1216 >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP0_CAP_OUT_POOL        ",<0     >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP0_IN_POOL             ",<18228 >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP0_FB_POOL             ",<64800 >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP1_CAP_OUT_POOL        ",<0     >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP1_IN_POOL             ",<0     >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP1_FB_POOL             ",<0     >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP2_CAP_OUT_POOL        ",<0     >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP2_IN_POOL             ",<0     >,<1 >, "",
+				<0>, "HD_COMMON_MEM_DISP2_FB_POOL             ",<0     >,<1 >, "",
+				<0>, "HD_COMMON_MEM_AU_ENC_AU_GRAB_OUT_POOL   ",<428   >,<1 >, "",
+				<0>, "HD_COMMON_MEM_AU_DEC_AU_RENDER_IN_POOL  ",<320   >,<1 >, "",
+				<0>, "HD_COMMON_MEM_GLOBAL_MD_POOL            ",<288   >,<4 >, "",
+				<0>, "HD_COMMON_MEM_TMNR_MOTION_POOL          ",<140   >,<4 >, "",
+				<0>, "HD_COMMON_MEM_CNN_POOL                  ",<40960 >,<0 >, "",
+				<0>, "HD_COMMON_MEM_OSG_POOL                  ",<4096  >,<0 >, "",
+				<0>, "HD_COMMON_MEM_USER_BLK                  ",<32768 >,<1 >, "";
+		};
+		audio_in {
+			  /*<ssp_num>,<enable>,<ssp_chan>,<sample_size>,<sample_rate>,<ssp_clock>,<bit_clock>,<ssp_master>,<live_sound_ch> */
+			ssp =
+				<0    >,  <1     >,<1       >,<16         >,<8000       >,<12288000 >,<512000 >, <1         >,< (-1)        >,
+				<6    >,  <0     >,<1       >,<16         >,<8000       >,<12288000 >,<3072000 >, <1         >,< (-1)        >,
+				<(-1) >,  <0     >,<1       >,<16         >,<8000       >,<12288000 >,<512000  >, <1         >,< (-1)        >,
+				<(-1) >,  <0     >,<1       >,<16         >,<8000       >,<12288000 >,<512000  >, <1         >,< (-1)        >;
+		};
+		audio_out {
+			/*<enable>,<resample_ratio>,<playback_chmap> */
+			ssp =
+				<1     >, <1          >,< (-1)         >,
+				<1     >, <6          >,< (-1)         >,
+				<0     >, <1          >,< (-1)         >,
+				<0     >, <1          >,< (-1)         >;
+		};
+		capture {
+			md =
+				<1>, <128>, <64>, <1>; /*<enable>,<mb_x_num_max>,<mb_y_num_max>,<buf_src>*/
+
+		};
+	};
+};

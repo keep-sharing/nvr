@@ -1,0 +1,186 @@
+/*
+ * Copyright (c) 2021, NovaTek Inc. All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#ifndef __DRIVERS_NVT_TZASC_REG_H
+#define __DRIVERS_NVT_TZASC_REG_H
+
+#ifndef ENUM_DUMMY4WORD
+#define ENUM_DUMMY4WORD(name)   E_##name = 0x10000000
+#endif
+
+#define REGVALUE        uint32_t
+#define UBITFIELD		unsigned int 	/* Unsigned bit field */
+
+// Macros for Register Cache Word (RCW) type definition
+//
+// Each RCW type should be exactly the same size with REGVALUE type
+// For example, to declare a Register Cache Word type:
+//
+//     #define rcwname_OFS   0x00   /* the name of RCW corresponding register address offset
+//                                     should be in specific format with "_OFS" appended */
+//     REGDEF_BEGIN(rcwname)
+//         REGDEF_BIT(field1, 8)    /* declare field1 as 8 bits width */
+//         REGDEF_BIT(field2, 8)    /* declare field1 as 8 bits width */
+//         REGDEF_BIT(, 16)         /* pad reserved (not-used) bits to fill RCW type same as REGVALUE size */
+//     REGDEF_END(rcwname)
+//
+// Register Cache Word type defintion header
+#define REGDEF_BEGIN(name)      \
+typedef union                   \
+{                               \
+    REGVALUE    reg;            \
+    struct                      \
+    {
+
+// Register Cache Word bit defintion
+#define REGDEF_BIT(field, bits) \
+    UBITFIELD   field : bits;
+
+// Register Cache Word type defintion trailer
+#define REGDEF_END(name)        \
+    } bit;                      \
+} T_##name;                     \
+
+#if defined(_BSP_NA51102_)
+// protect reg
+#define DMA_DETECT_CH0_W_REG_OFS   0x00
+#define DMA_DETECT_CH1_W_REG_OFS   0x04
+#define DMA_DETECT_CH2_W_REG_OFS   0x08
+#define DMA_DETECT_CH3_W_REG_OFS   0x0C
+#define DMA_DETECT_CH4_W_REG_OFS   0x10
+#define DMA_DETECT_CH5_W_REG_OFS   0x14
+#define DMA_DETECT_CH6_W_REG_OFS   0x18
+#define DMA_DETECT_CH7_W_REG_OFS   0x1C
+
+#define DMA_DETECT_CH0_R_REG_OFS   0x20
+#define DMA_DETECT_CH1_R_REG_OFS   0x24
+#define DMA_DETECT_CH2_R_REG_OFS   0x28
+#define DMA_DETECT_CH3_R_REG_OFS   0x2C
+#define DMA_DETECT_CH4_R_REG_OFS   0x30
+#define DMA_DETECT_CH5_R_REG_OFS   0x34
+#define DMA_DETECT_CH6_R_REG_OFS   0x38
+#define DMA_DETECT_CH7_R_REG_OFS   0x3C
+
+#define DMA_PROTECT_CH0_W_REG_OFS   0x40
+#define DMA_PROTECT_CH1_W_REG_OFS   0x44
+#define DMA_PROTECT_CH2_W_REG_OFS   0x48
+#define DMA_PROTECT_CH3_W_REG_OFS   0x4C
+#define DMA_PROTECT_CH4_W_REG_OFS   0x50
+#define DMA_PROTECT_CH5_W_REG_OFS   0x54
+#define DMA_PROTECT_CH6_W_REG_OFS   0x58
+#define DMA_PROTECT_CH7_W_REG_OFS   0x5C
+
+#define DMA_PROTECT_CH0_R_REG_OFS   0x60
+#define DMA_PROTECT_CH1_R_REG_OFS   0x64
+#define DMA_PROTECT_CH2_R_REG_OFS   0x68
+#define DMA_PROTECT_CH3_R_REG_OFS   0x6C
+#define DMA_PROTECT_CH4_R_REG_OFS   0x70
+#define DMA_PROTECT_CH5_R_REG_OFS   0x74
+#define DMA_PROTECT_CH6_R_REG_OFS   0x78
+#define DMA_PROTECT_CH7_R_REG_OFS   0x7C
+#define DMA_RANGE_SEL_REG_OFS       0x80
+REGDEF_BEGIN(DMA_RANGE_SEL_REG)
+REGDEF_BIT(range_sel_w, 8)
+REGDEF_BIT(, 8)
+REGDEF_BIT(range_sel_r, 8)
+REGDEF_BIT(, 8)
+REGDEF_END(DMA_RANGE_SEL_REG)
+
+#define DMA_PROTECT_START_ADDR_REG_OFS      0x88
+#define DMA_PROTECT_END_ADDR_REG_OFS        0x8C
+#else
+#define MAU_INT_ENABLE_OFS 0x190
+REGDEF_BEGIN(MAU_INT_ENABLE_REG)
+REGDEF_BIT(ERR_MEM_INT_EN0, 1)
+REGDEF_BIT(ERR_MEM_INT_EN1, 1)
+REGDEF_BIT(ERR_MEM_INT_EN2, 1)
+REGDEF_BIT(ERR_MEM_INT_EN3, 1)
+REGDEF_BIT(ERR_MEM_INT_EN4, 1)
+REGDEF_BIT(ERR_MEM_INT_EN5, 1)
+REGDEF_BIT(ERR_MEM_INT_EN6, 1)
+REGDEF_BIT(ERR_MEM_INT_EN7, 1)
+REGDEF_BIT(ERR_WT_INT_EN0, 1)
+REGDEF_BIT(ERR_WT_INT_EN1, 1)
+REGDEF_BIT(ERR_WT_INT_EN2, 1)
+REGDEF_BIT(ERR_WT_INT_EN3, 1)
+REGDEF_BIT(ERR_WT_INT_EN4, 1)
+REGDEF_BIT(ERR_WT_INT_EN5, 1)
+REGDEF_BIT(ERR_WT_INT_EN6, 1)
+REGDEF_BIT(ERR_WT_INT_EN7, 1)
+REGDEF_BIT(READ_TIMEOUT_INT_EN, 1)
+REGDEF_BIT(MON_UPDATE_INT_EN, 1)
+REGDEF_BIT(, 14)
+REGDEF_END(MAU_INT_ENABLE_REG)
+
+#define MAU_INT_STATUS_OFS 0x194
+REGDEF_BEGIN(MAU_INT_STATUS_REG)
+REGDEF_BIT(ERR_MEM_INT0, 1)
+REGDEF_BIT(ERR_MEM_INT1, 1)
+REGDEF_BIT(ERR_MEM_INT2, 1)
+REGDEF_BIT(ERR_MEM_INT3, 1)
+REGDEF_BIT(ERR_MEM_INT4, 1)
+REGDEF_BIT(ERR_MEM_INT5, 1)
+REGDEF_BIT(ERR_MEM_INT6, 1)
+REGDEF_BIT(ERR_MEM_INT7, 1)
+REGDEF_BIT(ERR_WT_INT0, 1)
+REGDEF_BIT(ERR_WT_INT1, 1)
+REGDEF_BIT(ERR_WT_INT2, 1)
+REGDEF_BIT(ERR_WT_INT3, 1)
+REGDEF_BIT(ERR_WT_INT4, 1)
+REGDEF_BIT(ERR_WT_INT5, 1)
+REGDEF_BIT(ERR_WT_INT6, 1)
+REGDEF_BIT(ERR_WT_INT7, 1)
+REGDEF_BIT(READ_TIMEOUT_INT, 1)
+REGDEF_BIT(MON_UPDATE_INT, 1)
+REGDEF_BIT(, 14)
+REGDEF_END(MAU_INT_STATUS_REG)
+
+#define MAU_PROTECT_MODE_OFS 0x48C
+REGDEF_BEGIN(MAU_PROTECT_MODE_REG)
+REGDEF_BIT(WP0_MODE, 2)
+REGDEF_BIT(, 2)
+REGDEF_BIT(WP1_MODE, 2)
+REGDEF_BIT(, 2)
+REGDEF_BIT(WP2_MODE, 2)
+REGDEF_BIT(, 2)
+REGDEF_BIT(WP3_MODE, 2)
+REGDEF_BIT(, 2)
+REGDEF_BIT(WP4_MODE, 2)
+REGDEF_BIT(, 2)
+REGDEF_BIT(OUT_WP_MODE, 2)
+REGDEF_BIT(, 10)
+REGDEF_END(MAU_PROTECT_MODE_REG)
+
+// Protect
+#define MAU_IN_RANGE_PROTECT0_ENABLE_OFS0 0x440
+#define MAU_IN_RANGE_PROTECT1_ENABLE_OFS0 0x448
+#define MAU_IN_RANGE_PROTECT2_ENABLE_OFS0 0x450
+#define MAU_IN_RANGE_PROTECT3_ENABLE_OFS0 0x458
+#define MAU_IN_RANGE_PROTECT4_ENABLE_OFS0 0x460
+#define MAU_OUT_RANGE_PROTECT_ENABLE_OFS0 0x468
+
+#define MAU_IN_RANGE_PROTECT0_ENABLE_OFS1 0x444
+#define MAU_IN_RANGE_PROTECT1_ENABLE_OFS1 0x44C
+#define MAU_IN_RANGE_PROTECT2_ENABLE_OFS1 0x454
+#define MAU_IN_RANGE_PROTECT3_ENABLE_OFS1 0x45C
+#define MAU_IN_RANGE_PROTECT4_ENABLE_OFS1 0x464
+#define MAU_OUT_RANGE_PROTECT_ENABLE_OFS1 0x46C
+
+#define MAU_PROTECT0_START_ADDR 	0x490
+#define MAU_PROTECT0_END_ADDR 		0x494
+#define MAU_PROTECT1_START_ADDR 	0x498
+#define MAU_PROTECT1_END_ADDR 		0x49C
+#define MAU_PROTECT2_START_ADDR 	0x4A0
+#define MAU_PROTECT2_END_ADDR 		0x4A4
+#define MAU_PROTECT3_START_ADDR 	0x4A8
+#define MAU_PROTECT3_END_ADDR 		0x4AC
+#define MAU_PROTECT4_START_ADDR 	0x4B0
+#define MAU_PROTECT4_END_ADDR 		0x4B4
+#define MAU_OUT_PROTECT_START_ADDR 	0x4B8
+#define MAU_OUT_PROTECT_END_ADDR 	0x4BC
+#endif
+
+#endif

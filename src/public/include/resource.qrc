@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>msg.h</file>
+    </qresource>
+</RCC>

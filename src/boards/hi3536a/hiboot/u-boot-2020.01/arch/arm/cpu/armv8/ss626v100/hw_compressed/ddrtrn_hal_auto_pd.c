@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/hal/ddrc/common/ddrtrn_hal_auto_pd.c

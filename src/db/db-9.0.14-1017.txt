@@ -1,0 +1,3 @@
+# 9.0.14-nas单项，disk增加user、password字段
+alter table disk add column user TEXT;
+alter table disk add column password TEXT;

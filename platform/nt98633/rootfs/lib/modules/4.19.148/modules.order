@@ -1,0 +1,13 @@
+kernel/drivers/usb/core/usbcore.ko
+kernel/drivers/usb/host/ehci-hcd.ko
+kernel/drivers/usb/host/xhci-hcd.ko
+kernel/drivers/usb/host/xhci-plat-hcd.ko
+kernel/drivers/usb/storage/uas.ko
+kernel/drivers/usb/storage/usb-storage.ko
+kernel/drivers/usb/common/usb-common.ko
+kernel/drivers/input/input-polldev.ko
+kernel/drivers/hid/hid.ko
+kernel/drivers/hid/hid-generic.ko
+kernel/drivers/hid/usbhid/usbhid.ko
+kernel/net/unix/unix_diag.ko
+kernel/net/packet/af_packet_diag.ko

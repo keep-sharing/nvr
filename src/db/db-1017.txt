@@ -1,0 +1,3 @@
+CREATE TABLE snmp ("v1_enable" INTEGER, "v2c_enable" INTEGER, "read_community" TEXT NOT NULL, "write_community" TEXT NOT NULL, "v3_enable" INTEGER, "read_name" TEXT NOT NULL, "read_level" INTEGER, "read_auth_type" INTEGER, "read_auth_psw" TEXT NOT NULL, "read_pri_type" INTEGER, "read_pri_psw" TEXT NOT NULL, "write_name" TEXT NOT NULL, "write_level" INTEGER, "write_auth_type" INTEGER, "write_auth_psw" TEXT NOT NULL, "write_pri_type" INTEGER, "write_pri_psw" TEXT NOT NULL, "port" INTEGER);
+
+insert into snmp values('0', '0', 'public', 'private', '0', '', '2', '0', '', '0', '', '', '2', '0', '', '0', '', '161');

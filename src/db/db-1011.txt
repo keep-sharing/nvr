@@ -1,0 +1,6 @@
+update params set value='1020' where name='mplugin_version';
+alter table alarm_in add column acto_ptz_channel INTEGER not null default 0;
+alter table alarm_in add column acto_ptz_preset_enable INTEGER not null default 0;
+alter table alarm_in add column acto_ptz_preset INTEGER not null default 0;
+alter table alarm_in add column acto_ptz_patrol_enable INTEGER not null default 0;
+alter table alarm_in add column acto_ptz_patrol INTEGER not null default 0;

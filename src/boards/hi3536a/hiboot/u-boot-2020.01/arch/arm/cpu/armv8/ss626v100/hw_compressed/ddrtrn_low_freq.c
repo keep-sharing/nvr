@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/training/ddrtrn_low_freq.c

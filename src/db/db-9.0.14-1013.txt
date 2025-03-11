@@ -1,0 +1,3 @@
+#ms ddns协议名称修正为Milesight DDNS
+update model set mod_name='Milesight DDNS' where pro_id='7';
+update protocol set pro_name='Milesight DDNS' where pro_id='7';

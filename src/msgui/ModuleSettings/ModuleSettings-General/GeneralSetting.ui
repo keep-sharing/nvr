@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GeneralSetting</class>
+ <widget class="QWidget" name="GeneralSetting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1091</width>
+    <height>791</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="TabBar" name="widget_tab" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_dateTime">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>9</number>
+       </property>
+       <property name="bottomMargin">
+        <number>9</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="widget_3" native="true">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <property name="topMargin">
+           <number>9</number>
+          </property>
+          <property name="rightMargin">
+           <number>9</number>
+          </property>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_ntpSync">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>NTP Sync</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="ComboBox" name="comboBox_ntpSync">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_interval">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Interval</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="MyDateTimeEdit" name="dateTimeEdit_serverTime">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="displayFormat">
+             <string>yyyy-MM-dd HH:mm:ss</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="MyLineEdit" name="lineEdit_ntpServer">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="ComboBox" name="comboBox_timezone">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_setTime">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Time</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_dsTime">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Daylight Saving Time</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="MyDateTimeEdit" name="dateTimeEdit_setTime">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>yyyy-MM-dd HH:mm:ss</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_ntpServer">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>NTP Server</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="ComboBox" name="comboBox_timeSetting">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_timeSetting">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Time Setting</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_serverTime">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Current System Time</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_timezone">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Time Zone</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="ComboBox" name="comboBox_dsTime">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QWidget" name="widgetInterval" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>0</height>
+             </size>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="MyLineEdit" name="lineEdit_interval">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maxLength">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="BlueLabel" name="labelInterval">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>1~43200min</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_apply_2">
+           <property name="text">
+            <string>Apply</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_back_2">
+           <property name="text">
+            <string>Back</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_device">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>9</number>
+       </property>
+       <property name="bottomMargin">
+        <number>9</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="widget_4" native="true">
+         <layout class="QGridLayout" name="gridLayout_4">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item row="6" column="1">
+           <widget class="ComboBox" name="comboBox_hdmiAudio"/>
+          </item>
+          <item row="21" column="0">
+           <widget class="MyLabel" name="label_language">
+            <property name="text">
+             <string>Language</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="MyLabel" name="label_screenSwitch">
+            <property name="text">
+             <string>Quick Screen Switch</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="1">
+           <widget class="ComboBox" name="comboBox_language"/>
+          </item>
+          <item row="5" column="1">
+           <widget class="ComboBox" name="comboBox_screenSwitch">
+            <item>
+             <property name="text">
+              <string>Disable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Enable</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="MyLabel" name="label_screen1">
+            <property name="text">
+             <string>HDMI1/VGA1 Resolution</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="ComboBox" name="comboBox_eventPopTime"/>
+          </item>
+          <item row="7" column="1">
+           <widget class="ComboBox" name="comboBox_audioEnable"/>
+          </item>
+          <item row="19" column="0">
+           <widget class="MyLabel" name="labelAutoLogout">
+            <property name="text">
+             <string>Auto Logout</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="MyLabel" name="label_hdmiAudio">
+            <property name="text">
+             <string>HDMI1 Audio</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="MyLineEdit" name="lineEdit_deviceName">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>4</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maxLength">
+             <number>32</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="MyLabel" name="label_audioVolume">
+            <property name="text">
+             <string>Audio Out Volume</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0">
+           <widget class="MyLabel" name="label_screen2_enable">
+            <property name="text">
+             <string>HDMI2/VGA2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="MyLabel" name="label_audioEnable">
+            <property name="text">
+             <string>Audio Out</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="0">
+           <widget class="MyLabel" name="label_wizard_2">
+            <property name="text">
+             <string>Wizard</string>
+            </property>
+           </widget>
+          </item>
+          <item row="20" column="0">
+           <widget class="MyLabel" name="labelLogoutChannel">
+            <property name="text">
+             <string>Channel Display When Logout</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="0">
+           <widget class="MyLabel" name="label_localAuth">
+            <property name="text">
+             <string>Boot Authentication</string>
+            </property>
+           </widget>
+          </item>
+          <item row="17" column="1">
+           <widget class="ComboBox" name="comboBox_menuAuth"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="MyLabel" name="label_hdmi_vga_output">
+            <property name="text">
+             <string>HDMI/VGA Output</string>
+            </property>
+           </widget>
+          </item>
+          <item row="18" column="1">
+           <widget class="ComboBox" name="comboBox_menuTimeout"/>
+          </item>
+          <item row="9" column="1">
+           <widget class="ComboBox" name="comboBox_eventPop"/>
+          </item>
+          <item row="9" column="0">
+           <widget class="MyLabel" name="label_eventPop">
+            <property name="text">
+             <string>Event Popup</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="MyLabel" name="label_screen2">
+            <property name="text">
+             <string>HDMI2/VGA2 Resolution</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="0">
+           <widget class="MyLabel" name="label_wizard">
+            <property name="text">
+             <string>Boot Wizard</string>
+            </property>
+           </widget>
+          </item>
+          <item row="19" column="1">
+           <widget class="ComboBox" name="comboBoxAutoLogout"/>
+          </item>
+          <item row="15" column="1">
+           <widget class="ComboBox" name="comboBox_wizard"/>
+          </item>
+          <item row="4" column="1">
+           <widget class="ComboBox" name="comboBox_screen2"/>
+          </item>
+          <item row="3" column="1">
+           <widget class="ComboBox" name="comboBox_screen2_enable"/>
+          </item>
+          <item row="17" column="0">
+           <widget class="MyLabel" name="label_menuAuth">
+            <property name="text">
+             <string>Menu Authentication</string>
+            </property>
+           </widget>
+          </item>
+          <item row="18" column="0">
+           <widget class="MyLabel" name="label_menuTimeout">
+            <property name="text">
+             <string>Settings Page Timeout</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="ComboBox" name="comboBox_hdmi_vga_output">
+            <item>
+             <property name="text">
+              <string>Independent</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Synchronous</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="13" column="1">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="12" column="0">
+           <widget class="MyLabel" name="label_mouseAccel">
+            <property name="text">
+             <string>Mouse Pointer Speed Level</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <widget class="MyLabel" name="label_eventPopTime">
+            <property name="text">
+             <string>Event Popup Duration Time</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="MyLabel" name="label_deviceName">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Device Name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="ComboBox" name="comboBox_screen1"/>
+          </item>
+          <item row="12" column="1">
+           <widget class="ComboBox" name="comboBox_mouseAccel">
+            <property name="currentIndex">
+             <number>4</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>7</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="16" column="1">
+           <widget class="ComboBox" name="comboBox_localAuth"/>
+          </item>
+          <item row="8" column="1">
+           <widget class="ComboBox" name="comboBox_audioVolume"/>
+          </item>
+          <item row="11" column="0">
+           <widget class="MyLabel" name="labelOccupancyLiveView">
+            <property name="text">
+             <string>Occupancy Live View</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="1">
+           <widget class="ComboBox" name="comboBoxOccupancyLiveView"/>
+          </item>
+          <item row="14" column="1">
+           <widget class="QWidget" name="widget" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="MyPushButton" name="pushButton_wizard">
+               <property name="text">
+                <string>Start</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="20" column="1">
+           <widget class="QWidget" name="widget" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="MyPushButton" name="pushButtonLogoutChannel">
+               <property name="text">
+                <string>Edit</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="MyPushButton" name="pushButton_apply">
+           <property name="text">
+            <string>Apply</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="MyPushButton" name="pushButton_back">
+           <property name="text">
+            <string>Back</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>mylineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyPushButton</class>
+   <extends>QPushButton</extends>
+   <header>mypushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>TabBar</class>
+   <extends>QWidget</extends>
+   <header>tabbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>mylabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>mydatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>BlueLabel</class>
+   <extends>QLabel</extends>
+   <header>bluelabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

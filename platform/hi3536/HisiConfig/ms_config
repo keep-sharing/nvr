@@ -1,0 +1,27 @@
+#
+# Automatically generated make config: don't edit
+# MS Hisilicon Projects Settings
+# Tue May 17 14:33:16 2022
+#
+CONFIG_CPU_HI3536=y
+# CONFIG_CPU_HI3535 is not set
+# CONFIG_DDR3_MEM_4096M is not set
+CONFIG_DDR3_MEM_2048M=y
+# CONFIG_DDR2_MEM_1024M is not set
+Flash_Type_NAND=y
+# Flash_Type_SPI is not set
+# CONFIG_NAND_SIZE_128MB is not set
+CONFIG_NAND_SIZE_256MB=y
+# CONFIG_NAND_SIZE_512MB is not set
+# CONFIG_SPI_SIZE_128MB is not set
+# CONFIG_SPI_SIZE_256MB is not set
+# CONFIG_SPI_SIZE_512MB is not set
+
+#
+# Update firmware configure
+#
+BUILD_UPDATE_FIRMWARE=y
+CONFIG_UPFW_HIBOOT=y
+CONFIG_UPFW_KERNEL=y
+CONFIG_UPFW_FS=y
+CONFIG_UPFW_CMD=y

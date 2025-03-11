@@ -1,0 +1,4 @@
+# 新增lpr自动备份表，更新插件版本号
+CREATE TABLE anpr_auto_backup (enable INTEGER, backup_day INTEGER, backup_time TEXT default '00:00:00', stream_type INTEGER, file_type INTEGER, recycle INTEGER, tri_channels TEXT default '0000000000000000000000000000000000000000000000000000000000000000', device INTEGER default -1, port INTEGER default 0);
+insert into anpr_auto_backup values(0, 0, '00:00:00', 0, 0, 1, '0000000000000000000000000000000000000000000000000000000000000000', -1, 0);
+update params set value='1051' where name='plugin_version';

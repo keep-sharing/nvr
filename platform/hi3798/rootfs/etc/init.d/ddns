@@ -1,0 +1,40 @@
+#!/bin/sh
+# Start up file for ddns
+
+ISRUN=`ps | grep inadyn | grep -v grep | wc -l`;
+case $1 in
+	start)	if [ $ISRUN -le 0 ];
+		then
+			rm -f /etc/inadyn.conf
+			ln -s /mnt/nand/etc/inadyn.conf /etc/inadyn.conf
+			/bin/inadyn > /dev/null &
+		else
+			echo "inadyn is running";
+		fi
+		;;
+	stop) killall -q -9 inadyn;
+		sleep 1;;
+	restart) 
+		if [ $ISRUN -gt 0 ];
+		then
+			killall -q -9 inadyn;
+			sleep 1;
+		fi
+		rm -f /etc/inadyn.conf
+		ln -s /mnt/nand/etc/inadyn.conf /etc/inadyn.conf
+		/bin/inadyn > /dev/null &;;
+	enable) rm -f /etc/init.d/S51ddns; 
+	        ln -s /etc/init.d/ddns /etc/init.d/S51ddns;;
+	disable) rm -f /etc/init.d/S51ddns;;
+        *) cat <<EOF;;
+Syntax: /etc/init.d/ddns [command]
+
+
+Available commands:
+        start   Start the service
+        stop    Stop the service
+        restart Restart the service
+        enable  Enable service autostart
+        disable Disable service autostart
+EOF
+esac

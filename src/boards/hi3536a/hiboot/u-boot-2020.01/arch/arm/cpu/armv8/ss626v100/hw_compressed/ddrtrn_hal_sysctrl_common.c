@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/hal/sysctrl/ddrtrn_hal_sysctrl_common.c

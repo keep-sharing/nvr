@@ -1,0 +1,10 @@
+prefix=/home/user1/hong/smdd/pro/libnl/hi3536/
+exec_prefix=/home/user1/hong/smdd/pro/libnl/hi3536/
+libdir=${exec_prefix}/lib
+includedir=/home/user1/hong/smdd/pro/libnl/hi3536//include
+
+Name: libnl
+Description: Convenience library for netlink sockets
+Version: 1.1
+Libs: -L${libdir} -lnl
+Cflags:

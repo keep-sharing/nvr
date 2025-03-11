@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NetworkStatus</class>
+ <widget class="QWidget" name="NetworkStatus">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>814</width>
+    <height>554</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="TabBar" name="widget_tab" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="TabNetwork" name="page_network"/>
+     <widget class="TabBandWidth" name="page_bandwidth"/>
+     <widget class="TabNetworkTest" name="page_networkTest"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TabBar</class>
+   <extends>QWidget</extends>
+   <header>tabbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TabNetwork</class>
+   <extends>QWidget</extends>
+   <header>TabNetwork.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TabBandWidth</class>
+   <extends>QWidget</extends>
+   <header>TabBandWidth.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TabNetworkTest</class>
+   <extends>QWidget</extends>
+   <header>TabNetworkTest.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

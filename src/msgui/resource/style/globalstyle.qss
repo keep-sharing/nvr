@@ -1,0 +1,211 @@
+/*black combobox*/
+.ComboBoxBlack
+{
+    height: 30px;
+    border: 1px solid #5F5F5F;
+    color: #FFFFFF;
+    background-color: #5F5F5F;
+}
+.ComboBoxBlack:hover
+{
+    border: 1px solid #00A2E8;
+}
+.ComboBoxBlack:drop-down
+{
+    border: 0px;
+}
+.ComboBoxBlack::down-arrow
+{
+    image: url(:/common/common/drop-down-white.png);
+}
+.ComboBoxBlack QAbstractItemView
+{
+    outline: none;
+    border: 1px solid #FFFFFF;
+    background-color: #000000;
+}
+.ComboBoxBlack QAbstractItemView::item
+{
+    height: 30px;
+    color: #FFFFFF;
+}
+.ComboBoxBlack QAbstractItemView::item:hover
+{
+    background-color: #00A2E8;
+}
+.ComboBoxBlack QAbstractItemView::item:selected
+{
+    background-color: #00A2E8;
+}
+QScrollBar:vertical
+{
+    border: 0px;
+    background: #5F5F5F;
+    width: 20px;
+    margin: 20px 0 20px 0;
+}
+QScrollBar::handle:vertical
+{
+    background: #7F7F7F;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical
+{
+    border: 0px;
+    background: #696A6F;
+    height: 20px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:pressed
+{
+    background: #2E2E2E;
+}
+QScrollBar::sub-line:vertical
+{
+    border: 0px;
+    background: #696A6F;
+    height: 20px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:pressed
+{
+    background: #2E2E2E;
+}
+QScrollBar::up-arrow:vertical
+{
+    image: url(:/common/common/up-arrow.png);
+}
+QScrollBar::down-arrow:vertical
+{
+    image: url(:/common/common/down-arrow.png);
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+    background: none;
+}
+
+/*while combobox*/
+.ComboBoxWhite
+{
+    height: 30px;
+    border: 1px solid #CACACA;
+    color: #000000;
+    background-color: #E1E1E1;
+}
+.ComboBoxWhite:hover
+{
+    border: 1px solid #00A2E8;
+}
+.ComboBoxWhite:drop-down
+{
+    border: 0px;
+}
+.ComboBoxWhite::down-arrow
+{
+    image: url(:/common/common/drop-down-black.png);
+}
+.ComboBoxWhite QAbstractItemView
+{
+    outline: none;
+    border: 1px solid #BEBEBE;
+    background-color: #E1E1E1;
+}
+.ComboBoxWhite QAbstractItemView::item
+{
+    height: 30px;
+    color: #000000;
+}
+.ComboBoxWhite QAbstractItemView::item:hover
+{
+    background-color: #00A2E8;
+}
+.ComboBoxWhite QAbstractItemView::item:selected
+{
+    background-color: #00A2E8;
+}
+
+/*TableView*/
+.TableView
+{
+    outline: none;
+    border: 1px solid #3E3E3E;
+    color: #FFFFFF;
+    background: #2E2E2E;
+}
+.TableView::item
+{
+    border: 0px;
+    background: #2E2E2E;
+}
+.TableView::item:alternate
+{
+    background: #3D3D3D;
+}
+.TableView::item:selected
+{
+    background: rgb(104,134,158);
+}
+.TableView[style="black"] HeaderView
+{
+    border:none;
+    background: #5F5F5F;
+    color: white;
+}
+.TableView[style="black"] HeaderView::section
+{
+    border-right: 1px solid #2E2E2E;
+    background: #5F5F5F;
+    color:white;
+}
+
+TableView::indicator
+{
+    width: 18px;
+    height: 18px;
+}
+TableView::indicator:unchecked
+{
+    border-image: url(:/common/common/checkbox-unchecked.png);
+}
+TableView::indicator:unchecked:hover
+{
+    border-image: url(:/common/common/checkbox-unchecked-hover.png);
+}
+TableView::indicator:unchecked:disabled
+{
+    border-image: url(:/common/common/checkbox-unchecked-disable.png);
+}
+TableView::indicator:checked
+{
+    border-image: url(:/common/common/checkbox-checked.png);
+}
+TableView::indicator:checked:disabled
+{
+    border-image: url(:/common/common/checkbox-checked-disable.png);
+}
+TableView::indicator:indeterminate
+{
+    border-image: url(:/common/common/checkbox-partiallychecked.png);
+}
+TableView::indicator:indeterminate:hover
+{
+    border-image: url(:/common/common/checkbox-partiallychecked-hover.png);
+}
+
+/*Horizontal Slider*/
+QSlider::groove:horizontal
+{
+        border: 1px solid #999999;
+        height: 5px;
+        background: #A8A8A8;
+}
+QSlider::handle:horizontal
+{
+        background: #0AA8E3;
+        border: 1px solid #5c5c5c;
+        width: 16px;
+        margin: -6px -2;
+        border-radius: 8px;
+}

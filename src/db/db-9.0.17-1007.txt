@@ -1,0 +1,2 @@
+# p2p增加region选项
+alter table p2p add column region INTEGER default 0;

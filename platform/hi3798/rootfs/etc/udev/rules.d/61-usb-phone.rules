@@ -1,0 +1,1 @@
+SUBSYSTEMS=="usb",SYMLINK+="usb/by-devid/%s{busnum}_%s{devnum}/%k"

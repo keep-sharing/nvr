@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlaybackMode</class>
+ <widget class="QWidget" name="PlaybackMode">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>352</width>
+    <height>547</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget_background" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="ComboBox" name="comboBox_playType">
+        <item>
+         <property name="text">
+          <string>General Playback</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Event Playback</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Tag Playback</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Picture Playback</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="ComboBox" name="comboBox_stream">
+        <item>
+         <property name="text">
+          <string>Primary Stream</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Secondary Stream</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <property name="currentIndex">
+         <number>4</number>
+        </property>
+        <widget class="PlaybackGeneral" name="page_general"/>
+        <widget class="PlaybackEvent" name="page_event"/>
+        <widget class="PlaybackTag" name="page_tag"/>
+        <widget class="PlaybackSplit" name="page_split"/>
+        <widget class="PlaybackPicture" name="page_picture"/>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="ToolButton" name="toolButton_close">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton
+{
+	border: 0px;
+	color: #FFFFFF;
+	font: 20pt;
+	padding-left: 50px;
+}
+QToolButton:hover
+{
+	color: #6CD7FF;
+}
+QToolButton:pressed
+{
+	color: #FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string>LiveView</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../resource/resource.qrc">
+          <normaloff>:/mainmenu/mainmenu/preview.png</normaloff>:/mainmenu/mainmenu/preview.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>64</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PlaybackGeneral</class>
+   <extends>QWidget</extends>
+   <header>PlaybackGeneral.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlaybackEvent</class>
+   <extends>QWidget</extends>
+   <header>PlaybackEvent.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlaybackTag</class>
+   <extends>QWidget</extends>
+   <header>PlaybackTag.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlaybackPicture</class>
+   <extends>QWidget</extends>
+   <header>PlaybackPicture.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ToolButton</class>
+   <extends>QToolButton</extends>
+   <header>toolbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PlaybackSplit</class>
+   <extends>QWidget</extends>
+   <header>PlaybackSplit.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resource/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

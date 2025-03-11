@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/hal/chip/ss626v100/ddrtrn_training_custom.c

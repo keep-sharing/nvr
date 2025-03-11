@@ -1,0 +1,2 @@
+# params 新增 demotion_limit
+insert into params (name,value) values ("demotion_limit",1);

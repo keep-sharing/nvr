@@ -1,0 +1,2 @@
+# 报警推送设置默认开启people count + region people cnt
+update push_msg_event set push_type=push_type+524288+1048576;

@@ -1,0 +1,22 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+/dts-v1/;
+#include "skeleton.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		gpio = &gpio;
+	};
+
+	gpio: gpio@fe400000 {
+		compatible = "nvt,nvt_gpio";
+		reg = <0xFE400000 0x1000>;
+		#gpio-cells = <2>;
+	};
+};

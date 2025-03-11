@@ -1,0 +1,2 @@
+insert into params values('max_poe_num', '0');
+insert into params_oem values('max_poe_num', '0');

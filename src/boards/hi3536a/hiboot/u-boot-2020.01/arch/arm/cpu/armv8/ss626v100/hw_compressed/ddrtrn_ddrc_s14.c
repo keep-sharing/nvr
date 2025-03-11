@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/hal/ddrc/v0/ddrtrn_ddrc_s14.c

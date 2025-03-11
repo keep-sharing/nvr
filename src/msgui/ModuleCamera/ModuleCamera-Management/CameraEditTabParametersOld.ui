@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CameraEditTabParametersOld</class>
+ <widget class="QWidget" name="CameraEditTabParametersOld">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>684</width>
+    <height>608</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <property name="horizontalSpacing">
+      <number>20</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="10" column="1">
+      <widget class="BaseSlider" name="slider_level_main">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_codec_main">
+       <property name="text">
+        <string>Video Codec</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="ComboBoxBitRate" name="comboBox_bitRate_main"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="ComboBox" name="comboBox_recordStreamType">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="ComboBox" name="comboBox_frameInterval_main"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="ComboBox" name="comboBox_bitRateControl_main"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_frame_main">
+       <property name="text">
+        <string>Frame Size</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="ComboBox" name="comboBox_frameSize_main"/>
+     </item>
+     <item row="9" column="1">
+      <widget class="ComboBox" name="comboBox_smartStream_main"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="MyCheckBox" name="checkBox_eventStream">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Enable</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_smartStream_main">
+       <property name="text">
+        <string>Smart Stream</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_eventStream">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Event Stream</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_bitRateControl_main">
+       <property name="text">
+        <string>Bitrate Control</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_recordStreamType">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Record Stream Type</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="ComboBox" name="comboBox_codec_main"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_frameRate_main">
+       <property name="text">
+        <string>Max Frame Rate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_frameInterval_main">
+       <property name="text">
+        <string>I-frame Interval</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_level_main">
+       <property name="text">
+        <string>Level</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="ComboBox" name="comboBox_frameRate_main"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_bitRate_main">
+       <property name="text">
+        <string>Bit Rate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="BlueLabel" name="label_primaryStream">
+       <property name="text">
+        <string>Primary Stream</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="1">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <property name="horizontalSpacing">
+      <number>20</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_level_sub">
+       <property name="text">
+        <string>Level</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_bitRate_sub">
+       <property name="text">
+        <string>Bit Rate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="ComboBox" name="comboBox_frameSize_sub"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_codec_sub">
+       <property name="text">
+        <string>Video Codec</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_frameRate_sub">
+       <property name="text">
+        <string>Max Frame Rate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="ComboBoxBitRate" name="comboBox_bitRate_sub"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="ComboBox" name="comboBox_frameInterval_sub"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="ComboBox" name="comboBox_codec_sub"/>
+     </item>
+     <item row="10" column="0">
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="8" column="1">
+      <widget class="ComboBox" name="comboBox_smartStream_sub"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="ComboBox" name="comboBox_frameRate_sub"/>
+     </item>
+     <item row="9" column="1">
+      <widget class="BaseSlider" name="slider_level_sub">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_subStream">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Sub Stream</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_bitRateControl_sub">
+       <property name="text">
+        <string>Bitrate Control</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_frame_sub">
+       <property name="text">
+        <string>Frame Size</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_frameInterval_sub">
+       <property name="text">
+        <string>I-frame Interval</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_smartStream_sub">
+       <property name="text">
+        <string>Smart Stream</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="ComboBox" name="comboBox_bitRateControl_sub"/>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="BlueLabel" name="label_secondaryStream">
+       <property name="text">
+        <string>Secondary Stream</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="ComboBox" name="comboBox_secondaryStream">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_ok">
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_cancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_applly">
+       <property name="text">
+        <string>Apply</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>BaseSlider</class>
+   <extends>QSlider</extends>
+   <header>baseslider.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ComboBoxBitRate</class>
+   <extends>QComboBox</extends>
+   <header>comboboxbitrate.h</header>
+  </customwidget>
+  <customwidget>
+   <class>BlueLabel</class>
+   <extends>QLabel</extends>
+   <header>bluelabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>MyCheckBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

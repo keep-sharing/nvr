@@ -1,0 +1,2 @@
+#Occupancy Live View界面显示配置
+ALTER TABLE people_cnt_setting ADD COLUMN liveview_display INTEGER DEFAULT -1;

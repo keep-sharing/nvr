@@ -1,0 +1,92 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+ 
+/ {
+	nvt_info {						/* Get from ModelConfig.txt */
+		BIN_NAME = "FW98323A";
+		BIN_NAME_T = "FW98323T";
+		RTOS_APP_MAIN = "test"; /* Optional, if OS type is Linux, dont care it. */
+		/* EMBMEM_BLK_SIZE, Normally, 2KPageNand=0x20000, 512PageNand=0x4000, SPI=0x10000 */
+		EMBMEM_BLK_SIZE = "0x10000";
+
+		/*
+		 * [EMBMEM]
+		 * EMBMEM_NONE
+		 * EMBMEM_NAND
+		 * EMBMEM_SPI_NOR
+		 * EMBMEM_SPI_NAND
+		 * EMBMEM_EMMC
+		 */
+		EMBMEM = "EMBMEM_SPI_NOR";
+		/*
+		 * ======= Linux common =========
+		 * application/external
+		 */
+		NVT_CFG_APP_EXTERNAL = "iperf-3 e2fsprogs";
+		/* application include list */
+		NVT_CFG_APP = "arm_neon_perf mem sw_dbg i2c_access memcpy drystone-2.0";
+		/* rootfs etc folder */
+		NVT_ROOTFS_ETC = "COMMON";
+		/* strip executable binary and library files: yes/no */
+		NVT_BINARY_FILE_STRIP = "yes";
+		/* Using customized kernel config */
+		NVT_CFG_KERNEL_CFG = "";
+		/* Using customized kernel config */
+		NVT_CFG_UBOOT_CFG = "";
+
+		/*
+		 * ======= Linux for different code setting =========
+		 * [NVT_LINUX_SMP]
+		 * NVT_LINUX_SMP_ON
+		 * NVT_LINUX_SMP_OFF
+		 */
+		NVT_LINUX_SMP = "NVT_LINUX_SMP_ON";
+
+		/*
+		 * [NVT_DEFAULT_NETWORK_BOOT_PROTOCOL]
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_SERVER
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_CLIENT
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP
+		 */
+		NVT_DEFAULT_NETWORK_BOOT_PROTOCOL = "NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP";
+
+		/*
+		 * [NVT_ROOTFS_TYPE]
+		 * NVT_ROOTFS_TYPE_NAND_UBI
+		 * NVT_ROOTFS_TYPE_NAND_SQUASH
+		 * NVT_ROOTFS_TYPE_NAND_JFFS2
+		 * NVT_ROOTFS_TYPE_NOR_SQUASH
+		 * NVT_ROOTFS_TYPE_NOR_JFFS2
+		 * NVT_ROOTFS_TYPE_RAMDISK
+		 * NVT_ROOTFS_TYPE_EMMC
+		 */
+		NVT_ROOTFS_TYPE = "NVT_ROOTFS_TYPE_NAND_UBI";
+
+		/*
+		 * [NVT_ETHERNET]
+		 * NVT_ETHERNET_NONE
+		 * NVT_ETHERNET_EQOS
+		 */
+		NVT_ETHERNET = "NVT_ETHERNET_EQOS";
+
+		/*
+		 * [NVT_CURL_SSL]
+		 * NVT_CURL_SSL_OPENSSL
+		 * NVT_CURL_SSL_WOLFSSL
+		 */
+		NVT_CURL_SSL = "NVT_CURL_SSL_OPENSSL";
+
+		/*
+		 * [NVT_UBOOT_ENV_IN_STORG_SUPPORT]
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NAND
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NOR
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_MMC
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF
+		 */
+		NVT_UBOOT_ENV_IN_STORG_SUPPORT = "NVT_UBOOT_ENV_IN_STORG_SUPPORT_NOR";
+	};
+};

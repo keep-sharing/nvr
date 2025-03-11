@@ -1,0 +1,41 @@
+/*
+ * Novatek Ltd. BSP part of dts
+ */
+
+/ {
+	lcd200: lcd200@f0820000 {
+        compatible = "nvt,lcd200";
+        reg = <0x2 0xf0820000 0x0 0x10000>;
+        interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
+        device-id = <0>;
+    };
+
+    lcd300: lcd300@f0800000 {
+		compatible = "nvt,lcd300";
+		reg = <0x2 0xf0800000 0x0 0x10000>;
+		interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
+		device-id = <0>;
+	};
+
+    lcd300_1: lcd300@f0810000 {
+		compatible = "nvt,lcd300_1";
+		reg = <0x2 0xf0810000 0x0 0x10000>;
+		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+		device-id = <0>;
+	};
+
+	hdmi@0 {
+        compatible = "nvt,hdmi_top";
+        reg = <0x2 0xf0880000 0x0 0x1000>;
+        interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>;
+        device-id = <0>;
+    };
+    
+    tve@0 {
+        compatible = "nvt,tve100";
+        reg = <0x2 0xf0840000 0x0 0x1000>;
+        interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
+        device-id = <0>;
+    };
+};
+

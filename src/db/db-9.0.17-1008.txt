@@ -1,0 +1,2 @@
+# 9.0.17-r，插件版本
+update params set value='1048' where name='plugin_version';

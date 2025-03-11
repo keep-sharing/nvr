@@ -1,0 +1,165 @@
+#include "sys/sock.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <string.h>
+#include <signal.h>
+#include <math.h>
+#include <pthread.h>
+#include "vapi/vapi.h"
+
+extern "C" void rtsp_client_test(const char* host, const char* file, int uid, int transport);
+extern "C" void http_server_test(const char* ip, int port);
+void rtp_payload_test();
+
+#if defined(_HI3536C_)
+  #define MAX_VDEC_NUM  (4)
+#elif defined(_HI3798_)
+  #define MAX_VDEC_NUM  (8)
+#elif defined(_HI3536_)
+  #define MAX_VDEC_NUM  (16)
+#else
+     #error YOU MUST DEFINE  CHIP_TYPE!
+#endif
+
+
+struct rtsp_test{
+  char ip[64];
+  char path[64];
+  int uid;
+  int transport; // 1:udp 2:tcp
+};
+
+struct rtsp_test g_rtsp_test[128]=
+{0};
+
+static int g_total_vdec = MAX_VDEC_NUM;
+
+static int test_video_init()
+{    
+    VAPI_ATTR_S stVapiAttr;
+    int res;
+
+    memset(&stVapiAttr, 0, sizeof(VAPI_ATTR_S));    
+  	stVapiAttr.enRes[SCREEN_MAIN] = SCREEN_1920X1080_60;//display_info.main_resolution;
+  	stVapiAttr.enRes[SCREEN_SUB] = SCREEN_1920X1080_60;
+  	stVapiAttr.stCallback.start_stream_cb   = NULL;
+  	stVapiAttr.stCallback.stop_stream_cb    = NULL;
+  	stVapiAttr.stCallback.venc_stream_cb    = NULL;
+  	stVapiAttr.stCallback.update_chn_cb     = NULL;
+  	stVapiAttr.stCallback.update_screen_res_cb = NULL;
+  	stVapiAttr.isHotplug = 0;
+  	res = vapi_init(&stVapiAttr);	
+
+    return res;
+}
+
+static void test_vedio_start(int id)
+{   
+    ACTION_S stAction;
+    int square = 0;
+    FORMAT_S    stFormat;    
+    ZONE_S      stZone;
+
+    if (g_total_vdec < id +1)
+       return;
+    
+    stFormat.enType = ENC_TYPE_H265;
+    stFormat.width  = 1920;
+    stFormat.height = 1080;
+    stZone.enMode   = ZONE_MODE_USER;
+    for (square = 1; square*square < g_total_vdec; square++) {
+        /* void */
+    }
+    stAction.stWind.stDevinfo.id               = id;
+    stAction.stWind.stDevinfo.stBind.voutChn   = id;
+    stAction.stWind.stDevinfo.stBind.vdecChn   = id;
+    stAction.stWind.stDevinfo.stFormat         = stFormat;
+    stAction.stWind.enRatio                    = RATIO_VO_FULL;
+    stAction.enAction   = ACTION_ADD_ONE_WIN;
+    stAction.enMode     = DSP_MODE_LIVE;
+    stAction.enScreen   = SCREEN_MAIN;//(i == 0? SCREEN_MAIN : SCREEN_SUB);
+    
+    vapi_get_screen_res(stAction.enScreen, &stZone.w, &stZone.h);         
+    stZone.x = (stZone.w/square) * (id%square);
+    stZone.y = (stZone.h/square) * (id/square);
+    stZone.w /= square; 
+    stZone.h /= square;
+    stAction.stWind.stZone = stZone;
+    vapi_set_action(&stAction);
+    
+//    g_rtsp_info.veChn = vapi_transfer_create(IPC_NUM, &stIf, &stOf, NULL);
+}
+
+
+static void test_video_uninit()
+{
+  vapi_clear_screen(SCREEN_MAIN, REFRESH_CLEAR_VDEC);
+  vapi_clear_screen(SCREEN_SUB, REFRESH_CLEAR_VDEC);
+  vapi_uninit();
+}
+
+extern "C" int rtp_usr_cb(int VdChn, unsigned char *pAddr, int Len, uint64_t pts)
+{
+  if (g_total_vdec < VdChn +1)
+      return 0;
+  
+    return vapi_send_frame(VdChn, pAddr, Len, pts);    
+}
+
+static void * test_worker(void* param)
+{
+  struct rtsp_test *p = (struct rtsp_test *)param;
+
+  test_vedio_start(p->uid);
+	rtsp_client_test(p->ip, p->path, p->uid, p->transport);
+
+  return 0 ;
+}
+
+int main(int argc, char* argv[])
+{
+  if (argc < 2)
+  {
+    printf("error: eg: rtsp 16 tcp\n");
+    return -1;
+  }
+
+  signal(SIGPIPE,SIG_IGN);
+	socket_init();
+  test_video_init();
+
+  int i= 0;
+  int n = 0;
+  pthread_t thread;
+
+  n = atoi(argv[1]);
+  g_total_vdec = MAX_VDEC_NUM > n ? n : MAX_VDEC_NUM;
+  
+  printf("=========cnt[%d]=====\n", n);
+  for (i=0; i<n; i++)
+  {
+    sprintf(g_rtsp_test[i].ip, "192.168.31.%d", 11+i%22);
+    sprintf(g_rtsp_test[i].path, "%s", "main");
+    g_rtsp_test[i].uid = i;
+    if (argc > 2)
+      g_rtsp_test[i].transport = strcmp(argv[2], "tcp") == 0 ? 2 : 1;
+    else
+      g_rtsp_test[i].transport = i%2+1;
+        
+    pthread_create(&thread, NULL, test_worker, &g_rtsp_test[i]);
+    usleep(100000);
+  }
+
+  while(1)
+  {
+    usleep(100000);
+  }
+  
+
+	socket_cleanup();
+  test_video_uninit();
+  
+	return 0;
+}
+

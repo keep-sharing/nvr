@@ -1,0 +1,271 @@
+#!/bin/sh
+# Usage: ./load626v100_master [ -r|-i|-a ]
+#         -r : rmmod all modules
+#         -i : insmod all modules
+#    default : rmmod all moules and then insmod them
+# e.g: ./load626v100_master -i
+
+
+####################Variables Definition##########################
+#DDR start:0x40000000;ipcm(0x40000000, 2M); LiteOS(0x40200000, 62M); Linux OS(0x44000000, 512M); MMZ start:0x64000000
+mem_total=2048                # 2048M, total mem
+mem_start=0x40000000          # phy mem start
+ipcm_mem_size=2               # 2M, ipcm size
+liteos_mem_size=62            # 62M, liteos size
+os_mem_size=512               # 512M, os mem
+
+mmz_start=0x64000000;         # mmz start addr
+mmz_size=1472M;                # 1472M, mmz size
+
+##################################################################
+
+report_error()
+{
+    echo "******* Error: There's something wrong, please check! *****"
+    exit 1
+}
+
+insert_pci()
+{
+    insmod pcie/vendor_dev_host.ko
+    insmod pcie/irq_map_host.ko
+    insmod pcie/pcit_dma_host.ko
+    insmod pcie/mcc_drv_host.ko
+    insmod pcie/mcc_usrdev_host.ko
+
+    insmod ot_pciv_fmw.ko
+    insmod ot_pciv.ko
+}
+
+remove_pci()
+{
+    rmmod ot_pciv
+    rmmod ot_pciv_fmw
+
+    rmmod mcc_usrdev_host
+    rmmod mcc_drv_host
+    rmmod pcit_dma_host
+    rmmod irq_map_host
+    rmmod vendor_dev_host
+}
+
+insert_audio()
+{
+    insmod ot_aio.ko
+    insmod ot_ai.ko
+    insmod ot_ao.ko
+    insmod ot_aenc.ko
+    insmod ot_adec.ko
+    insmod ot_acodec.ko
+}
+
+remove_audio()
+{
+    rmmod ot_acodec
+    rmmod ot_adec
+    rmmod ot_aenc
+    rmmod ot_ao
+    rmmod ot_ai
+    rmmod ot_aio
+}
+
+insert_ko()
+{
+    # hdmi_intf="hdmi_dual", "hdmi0", "hdmi1" 
+    # vo_intf="none", "bt.1120", "bt.656" 
+    # cas_type="none", "cas_mm", "bt.656"
+    insmod sys_config.ko hdmi_intf="hdmi_dual" vo_intf="none" cas_type="none"
+
+    # driver load
+    insmod ot_osal.ko anony=1 mmz_allocator=ot mmz=anonymous,0,$mmz_start,$mmz_size || report_error
+    insmod ot_base.ko
+    insmod ot_sys.ko
+    insmod ot_tde.ko
+    insmod ot_rgn.ko
+    insmod ot_vgs.ko
+    insmod ot_gdc.ko
+    insmod ot_vpp.ko
+    insmod ot_vi.ko
+    insmod ot_vpss.ko
+    insmod ot_vo.ko
+    insmod gfbg.ko video="gfbg:vram0_size:32400,vram1_size:16200,vram2_size:256,vram3_size:4052,vram4_size:4052"     # default fb0:4k*2*2/1024,fb1:1080p*4*2/1024,fb2:256x256*4/1024,fb3,fb4:4k/2/1024
+
+    insmod ot_chnl.ko
+    insmod ot_vedu.ko
+    insmod ot_rc.ko
+    insmod ot_venc.ko
+    insmod ot_h264e.ko
+    insmod ot_h265e.ko
+    insmod ot_jpege.ko
+    insmod ot_dcc.ko
+    insmod ot_jpegd.ko
+    insmod ot_vfmw.ko
+    insmod ot_vdec_adapt.ko
+    insmod ot_vdec.ko
+    insmod ot_vda.ko
+    insmod ot_ive.ko save_power=1
+    insmod svp_npu/ot_svp_npu.ko
+    insmod ot_mau.ko mau_save_power=1 mau_max_mem_info_num=32
+    insert_audio
+    insmod ot_hdmi.ko
+    insmod ot_user.ko
+    insert_pci
+}
+
+remove_ko()
+{
+    remove_pci
+    rmmod ot_user
+    rmmod ot_hdmi.ko
+    remove_audio
+    rmmod ot_mau
+    rmmod ot_svp_npu
+    rmmod ot_ive
+    rmmod ot_vda
+    rmmod ot_vdec
+    rmmod ot_vdec_adapt
+    rmmod ot_vfmw
+    rmmod ot_jpegd
+    rmmod ot_dcc
+    rmmod ot_rc
+    rmmod ot_jpege
+    rmmod ot_h264e
+    rmmod ot_h265e
+    rmmod ot_venc
+    rmmod ot_vedu
+    rmmod ot_chnl
+    rmmod gfbg
+    rmmod ot_vo
+    rmmod ot_vpss
+    rmmod ot_vi
+    rmmod ot_vpp
+    rmmod ot_gdc
+    rmmod ot_vgs
+    rmmod ot_rgn
+    rmmod ot_tde
+    rmmod ot_sys
+    rmmod ot_base
+    rmmod ot_osal
+    rmmod sys_config
+}
+
+load_usage()
+{
+    echo "Usage:  ./load626v100_master [option]"
+    echo "options:"
+    echo "    -i                       insert modules"
+    echo "    -r                       remove modules"
+    echo "    -a                       remove modules first, then insert modules"
+    echo "    -total mem_size          config total mem size [unit: M, default: 2048]"
+    echo "    -osmem os_mem_size       config os mem size [unit: M, default: 512]"
+    echo "    -h                       help information"
+    echo -e "for example: ./load626v100_master -a\n"
+}
+
+calc_mmz_info()
+{
+        mmz_start=`echo "$mem_start  $ipcm_mem_size $liteos_mem_size $os_mem_size" |
+        awk 'BEGIN { temp = 0; }
+        {
+                temp = $1/1024/1024 + $2 + $3 + $4;
+        }
+        END { printf("0x%x00000\n", temp); }'`
+
+        mmz_size=`echo "$mem_total $os_mem_size $ipcm_mem_size $liteos_mem_size" |
+        awk 'BEGIN { temp = 0; }
+        {
+                temp = $1 - $2 - $3 - $4;
+        }
+        END { printf("%dM\n", temp); }'`
+        echo "mmz_start: $mmz_start, mmz_size: $mmz_size"
+}
+
+######################parse arg###################################
+b_arg_insmod=0
+b_arg_remove=0
+b_arg_restore=0
+b_arg_total_mem=0
+b_arg_os_mem=0
+b_mem_out_config=0
+
+for arg in $@
+do
+
+	if [ $b_arg_total_mem -eq 1 ]; then
+		b_arg_total_mem=0;
+		mem_total=$arg;
+
+		if [ -z $mem_total ]; then
+			echo "[error] mem_total is null"
+			exit;
+		fi
+	fi
+
+	if [ $b_arg_os_mem -eq 1 ] ; then
+		b_arg_os_mem=0;
+		os_mem_size=$arg;
+
+		if [ -z $os_mem_size ]; then
+			echo "[error] os_mem_size is null"
+			exit;
+		fi
+	fi
+
+    case $arg in
+        "-i")
+            b_arg_insmod=1;
+            ;;
+        "-r")
+            b_arg_remove=1;
+            ;;
+        "-a")
+            b_arg_insmod=1;
+            b_arg_remove=1;
+            ;;
+        "-h")
+            load_usage;
+            ;;
+		"-osmem")
+			b_arg_os_mem=1;
+			b_mem_out_config=1;
+			;;
+		"-total")
+			b_arg_total_mem=1;
+			b_mem_out_config=1;
+			;;
+        "-restore")
+            b_arg_restore=1;
+            ;;
+    esac
+done
+#######################parse arg end########################
+if [ $os_mem_size -ge $(($mem_total - $ipcm_mem_size - $liteos_mem_size)) ] ; then
+	echo "[err] os_mem[$os_mem_size], over total_mem[$mem_total] - ipcm_mem[$ipcm_mem_size] - liteos_mem[$liteos_mem_size]"
+	exit;
+fi
+
+if [ $b_mem_out_config -eq 1 ]; then
+    calc_mmz_info;
+fi
+
+
+#######################Action###############################
+
+if [ $# -lt 1 ]; then
+    load_usage;
+    exit 0;
+fi
+
+
+if [ $b_arg_remove -eq 1 ]; then
+    remove_ko;
+fi
+
+if [ $b_arg_insmod -eq 1 ]; then
+    insert_ko;
+fi
+
+if [ $b_arg_restore -eq 1 ]; then
+    sys_restore;
+fi
+

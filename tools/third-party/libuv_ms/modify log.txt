@@ -1,0 +1,6 @@
+date:2019-01-29
+auth:hrz.milesight
+modify:
+1.uv_run 新增ANR回传模式，回传时缩短队列处理间隔
+2.延长uv_write失败尝试时间
+3.修复客户端异常导致写失败挂掉的问题

@@ -1,0 +1,57 @@
+#!/bin/sh
+wait_dev_or_exit()
+{
+	x=0
+	timeout=5
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .1
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[app overlay] $1 not found"
+		exit -1
+	fi
+}
+
+# if /proc/mtd not exist, exit
+if [ ! -f /proc/mtd ]; then
+	echo "[app overlay] /proc/mtd not ready"
+	exit -1
+fi
+
+# if the partition not found, exit
+num=`cat /proc/mtd | grep \"app\" | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'`;
+if [ -z "$num" ]; then
+	echo "[app overlay] no app partition"
+	exit 0
+fi
+
+# mount app partition by type
+if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_UBI" ]; then
+	echo "[app overlay] ubi mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi2_0
+	mount -t ubifs /dev/ubi2_0 /mnt/mtd;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_SQUASH" ]; then
+	echo "[app overlay] squash mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi2_0
+	mount -t ubifs /dev/ubi2_0 /mnt/mtd;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] && [ "$EMBMEM" != "EMBMEM_NONE" ]; then
+	echo "[app overlay] ramdisk mount app"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi1_0
+	mount -t ubifs /dev/ubi1_0 /mnt/mtd;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] && [ "$EMBMEM" == "EMBMEM_NONE" ]; then
+	echo "[app overlay] no hdal partition"
+else
+	echo "[app overlay] jffs2 mount app"
+	mount -t jffs2 /dev/mtdblock$num /mnt/mtd
+fi
+
+
+read -t 2 -p "   Press q -> ENTER to exit boot procedure? " exit_boot
+if [ "$exit_boot" != "q" ] ; then
+	sh /mnt/mtd/vg_boot.sh
+fi
+

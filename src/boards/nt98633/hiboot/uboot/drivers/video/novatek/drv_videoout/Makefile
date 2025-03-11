@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: GPL-2.0+
+#
+# Copyright (c) 2021 Novateck, Inc
+#
+obj-$(CONFIG_TARGET_NA51055) += nvt-na51055/ide/ide2.o nvt-na51055/ide/ide2_int.o nvt-na51055/ide/ide2_osd.o nvt-na51055/ide/ide2_video.o nvt-na51055/ide/idec_cmd.o nvt-na51055/ide/idec.o nvt-na51055/ide/ide_platform.o nvt-na51055/dsi/dsi.o nvt-na51055/dsi/dsi_int.o nvt-na51055/dsi/dsi_platform.o display_obj/disp1.o display_obj/display.o display_obj/display_obj_platform.o display_obj/kdrv_vdoout.o
+obj-$(CONFIG_TARGET_NA51090_A64) += nvt-na51090/lcd310/lcd310.o nvt-na51090/lcd210/lcd210.o nvt-na51090/hdmi/dispdev_hdmi_if.o nvt-na51090/hdmi/hdmitx.o  nvt-na51090/hdmi/hdmitx_cec.o nvt-na51090/hdmi/hdmitx_ddc.o nvt-na51090/hdmi/hdmitx_edid.o nvt-na51090/hdmi/hdmitx_port.o
+obj-$(CONFIG_TARGET_NA51089) += nvt-na51089/ide/ide2.o nvt-na51089/ide/ide2_int.o nvt-na51089/ide/ide2_osd.o nvt-na51089/ide/ide2_video.o nvt-na51089/ide/idec_cmd.o nvt-na51089/ide/idec.o nvt-na51089/ide/ide_platform.o nvt-na51089/dsi/dsi.o nvt-na51089/dsi/dsi_int.o nvt-na51089/dsi/dsi_platform.o display_obj/disp1.o display_obj/display.o display_obj/display_obj_platform.o display_obj/kdrv_vdoout.o
+obj-$(CONFIG_TARGET_NA51103) += nvt-na51103/lcd310/lcd310.o nvt-na51103/lcd210/lcd210.o nvt-na51103/hdmi/dispdev_hdmi_if.o nvt-na51103/hdmi/hdmitx.o  nvt-na51103/hdmi/hdmitx_cec.o nvt-na51103/hdmi/hdmitx_ddc.o nvt-na51103/hdmi/hdmitx_edid.o nvt-na51103/hdmi/hdmitx_port.o
+obj-$(CONFIG_TARGET_NA51103_A64) += nvt-na51103/lcd310/lcd310.o nvt-na51103/lcd210/lcd210.o nvt-na51103/hdmi/dispdev_hdmi_if.o nvt-na51103/hdmi/hdmitx.o  nvt-na51103/hdmi/hdmitx_cec.o nvt-na51103/hdmi/hdmitx_ddc.o nvt-na51103/hdmi/hdmitx_edid.o nvt-na51103/hdmi/hdmitx_port.o
+obj-$(CONFIG_TARGET_NA51102) += nvt-na51102/ide/ide2.o nvt-na51102/ide/ide2_int.o nvt-na51102/ide/ide2_osd.o nvt-na51102/ide/ide2_video.o nvt-na51102/ide/idec_cmd.o nvt-na51102/ide/idec.o nvt-na51102/ide/ide_platform.o nvt-na51102/dsi/dsi.o nvt-na51102/dsi/dsi_int.o nvt-na51102/dsi/dsi_platform.o display_obj/disp1.o display_obj/disp2.o display_obj/display.o display_obj/display_obj_platform.o display_obj/kdrv_vdoout.o nvt-na51102/dsi/dsi_int.o
+obj-$(CONFIG_TARGET_NA51102_A64) += nvt-na51102/ide/ide2.o nvt-na51102/ide/ide2_int.o nvt-na51102/ide/ide2_osd.o nvt-na51102/ide/ide2_video.o nvt-na51102/ide/idec_cmd.o nvt-na51102/ide/idec.o nvt-na51102/ide/ide_platform.o nvt-na51102/dsi/dsi.o nvt-na51102/dsi/dsi_int.o nvt-na51102/dsi/dsi_platform.o display_obj/disp1.o display_obj/disp2.o display_obj/display.o display_obj/display_obj_platform.o display_obj/kdrv_vdoout.o 
+
+obj-$(CONFIG_DISP_VIDEO_HDMITX_IDE) += nvt-na51102/hdmi/hdmitx.o nvt-na51102/hdmi/dispdev_hdmi.o nvt-na51102/hdmi/hdmitx_edid.o nvt-na51102/hdmi/hdmitx_port.o

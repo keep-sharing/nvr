@@ -1,0 +1,25 @@
+/*
+ * Novatek Ltd. NA51090 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+&emmc {	
+	nvtpack {
+		ver = "NVTPACK_FW_INI_16072017"; /* Fixed */
+		method = <1>; /* Fixed */
+		index {
+			id0 { partition_name = "loader";      source_file = ""; }; /* Fixed */
+			id1 { partition_name = "fdt";         source_file = "nvt-evb.dtb"; }; /* Fixed */
+			id3 { partition_name = "atf";	      source_file = "atf.bin";	}; /* Fixed */
+			id4 { partition_name = "uboot";	      source_file = "u-boot.bin"; };
+			id5 { partition_name = "uenv";	      source_file = ""; };
+			id6 { partition_name = "logo";        source_file = ""; };
+			id7 { partition_name = "ker1";        source_file = ""; };
+			id8 { partition_name = "ker2";        source_file = ""; };
+			id9 { partition_name = "fs1";         source_file = ""; };
+			id10 { partition_name = "fs2";        source_file = ""; };
+		};
+	};
+};

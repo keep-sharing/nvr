@@ -1,0 +1,7 @@
+alter table camera add column physical_port INTEGER not null default 0;
+alter table camera add column mac TEXT;
+alter table camera add column poe_channel INTEGER not null default 0;
+insert into params values('raidmode', '0');
+insert into params_oem values('raidmode', '0');
+insert into params values('poepsd', '1');
+insert into params_oem values('poepsd', '1');

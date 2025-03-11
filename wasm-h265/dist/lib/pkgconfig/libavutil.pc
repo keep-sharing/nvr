@@ -1,0 +1,14 @@
+prefix=/usr/hrz/aswm/demo/webfile/js/ffmpeg-wasm/dist
+exec_prefix=${prefix}
+libdir=/usr/hrz/aswm/demo/webfile/js/ffmpeg-wasm/dist/lib
+includedir=/usr/hrz/aswm/demo/webfile/js/ffmpeg-wasm/dist/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 56.70.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil -lm
+Libs.private: 
+Cflags: -I${includedir}

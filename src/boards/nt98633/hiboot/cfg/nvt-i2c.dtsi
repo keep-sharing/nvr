@@ -1,0 +1,10 @@
+/*
+ * Novatek Ltd. BSP part of dts
+ */
+
+/ {
+	i2c0: i2c@2,f01c0000 {  compatible = "nvt,nvt_i2c"; reg = <0x2 0xf01c0000 0x0 0x1000>; interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; id = <0>; gsr = <5>; tsr = <80>; auto_rst = <1>; auto_busclear = <1>;};
+	i2c1: i2c2@2,f01d0000 { compatible = "nvt,nvt_i2c"; reg = <0x2 0xf01d0000 0x0 0x1000>; interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; id = <1>; gsr = <5>; tsr = <80>; auto_rst = <1>; auto_busclear = <1>;};
+	i2c2: i2c3@2,f01e0000 { compatible = "nvt,nvt_i2c"; reg = <0x2 0xf01e0000 0x0 0x1000>; interrupts = <GIC_SPI 60 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; id = <2>; gsr = <5>; tsr = <80>; auto_rst = <1>; auto_busclear = <1>;};
+	i2c3: i2c4@2,f01f0000 { compatible = "nvt,nvt_i2c"; reg = <0x2 0xf01f0000 0x0 0x1000>; interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; id = <3>; gsr = <5>; tsr = <80>; auto_rst = <1>; auto_busclear = <1>;};
+};

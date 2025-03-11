@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/boot_adaptation/common/ddrtrn_common_ctl.c

@@ -1,0 +1,22 @@
+/*
+ * Novatek Ltd. BSP part of dts
+ */
+&i2c0 {
+	#address-cells = <2>;
+	#size-cells = <2>;
+};
+
+&i2c1 {
+	#address-cells = <2>;
+	#size-cells = <2>;
+};
+
+&i2c2 {
+	#address-cells = <2>;
+	#size-cells = <2>;
+};
+
+&i2c3 {
+	#address-cells = <2>;
+	#size-cells = <2>;
+};

@@ -1,0 +1,21 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+/dts-v1/;
+#include <dt-bindings/gpio/nvt-gpio.h>
+#include "nvt-na51068-peri.dtsi"    /* engine register definition */
+#include "nvt-na51068-top.dtsi"     /* pinmux, made from tool */
+#include "nvt-na51068-i2c.dtsi"     /* i2c */
+#include "nvt-na51068-gpio.dtsi"    /* gpio, made from tool */
+#include "nvt-na51068-peri-dev.dtsi"/* peripheral device dts config */
+#include "nvt-na51068-audio.dtsi"   /* peripheral: audio */
+#include "nvt-na51068-display.dtsi" /* peripheral: display */
+#include "nvt-na51068-media.dtsi"   /* ko files relation */
+#include "nvt-na51068-mem-512M-tbl.dtsi" /* memory partition */
+#include "nvt-na51068-storage-partition.dtsi" /* flash partition */
+#include "nvt-na51068-info.dtsi"    /* used for turnkey information */
+#include "nvt-na51068-nvtpack.dtsi" /* used for turnkey to make all-in-one bin */

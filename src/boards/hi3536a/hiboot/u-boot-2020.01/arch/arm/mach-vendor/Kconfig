@@ -1,0 +1,22 @@
+if ARCH_VENDOR
+
+config VENDOR_COMMON
+    bool "VENDOR common options"
+    select DM
+
+config SYS_VENDOR
+    default "vendor"
+
+endif
+
+config DISABLE_INTERRUPTS
+    bool "disable interrupts"
+    default n
+
+config LOW_DELAY_INITIALIZATION
+    bool "low delay initialization"
+    default n
+
+config INIT_TIMER_EARLY
+    bool "init timer early"
+    default n

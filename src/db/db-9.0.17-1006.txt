@@ -1,0 +1,2 @@
+# hotspare主机增加maxcamera
+alter table failover_list add column maxcamera INTEGER default 0;

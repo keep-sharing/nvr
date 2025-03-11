@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CheckableLineEdit</class>
+ <widget class="QWidget" name="CheckableLineEdit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>497</width>
+    <height>43</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widgetContainer" native="true">
+     <property name="styleSheet">
+      <string notr="true">QCheckBox
+{
+    outline: 0px;
+    min-height: 0px;
+    background: transparent;
+    padding: 0px;
+    border: 0px;
+}
+QCheckBox:disabled
+{
+    background: transparent;
+}
+QCheckBox::indicator
+{
+    width: 16px;
+    height: 16px;
+}
+QCheckBox::indicator:unchecked
+{
+    border-image: url(:/common/common/checkbox-unchecked.png);
+}
+QCheckBox::indicator:unchecked:hover
+{
+    border-image: url(:/common/common/checkbox-unchecked-hover.png);
+}
+QCheckBox::indicator:unchecked:disabled
+{
+    border-image: url(:/common/common/checkbox-unchecked-disable.png);
+}
+QCheckBox::indicator:checked
+{
+    border-image: url(:/common/common/checkbox-checked.png);
+}
+QCheckBox::indicator:checked:disabled
+{
+    border-image: url(:/common/common/checkbox-checked-disable.png);
+}
+QCheckBox::indicator:indeterminate
+{
+    border-image: url(:/common/common/checkbox-partiallychecked-hover.png);
+}
+QCheckBox::indicator:indeterminate:disabled
+{
+    border-image: url(:/common/common/checkbox-partiallychecked-disable.png);
+}
+QLineEdit
+{
+    min-height: 0px;
+    padding-left: 0px;
+	background: transparent;
+	border: 0px;
+}
+QLineEdit:disabled
+{
+    background: transparent;
+}
+</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>1</number>
+      </property>
+      <property name="rightMargin">
+       <number>1</number>
+      </property>
+      <property name="bottomMargin">
+       <number>1</number>
+      </property>
+      <item>
+       <widget class="MyCheckBox" name="checkBox">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>MyCheckBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

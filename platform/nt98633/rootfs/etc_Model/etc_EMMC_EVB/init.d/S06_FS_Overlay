@@ -1,0 +1,27 @@
+#!/bin/sh
+RW_PARTITION="/dev/mmcblk1p2"
+
+wait_dev_or_exit()
+{
+	x=0
+	timeout=5
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .1
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[app mount] $1 not found"
+		exit -1
+	fi
+}
+
+if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] || [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_SQUASH" ]; then
+	echo "[fs overlay] ramdisk mount rootfs1"
+	wait_dev_or_exit $RW_PARTITION
+	mount -t ext4 $RW_PARTITION /lib/modules;
+	mount /lib/modules/usr/bin/ /usr/bin/;
+	mount /lib/modules/usr/lib/ /usr/lib/;
+fi
+
+modprobe ehci-hcd
+modprobe xhci-plat-hcd

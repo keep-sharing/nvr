@@ -1,0 +1,54 @@
+kernel/crypto/echainiv.ko:
+kernel/drivers/usb/host/ehci-hcd.ko:
+kernel/drivers/mmc/card/mmc_test.ko:
+hdal/kflow_ai/kflow_ai.ko: hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko hdal/kdrv_ai/kdrv_ai.ko vos/kwrap/kwrap.ko
+hdal/kdrv_gfx2d/gm2d.ko: vos/kwrap/kwrap.ko
+hdal/comm/busmon/nvt_busmon.ko:
+hdal/kflow_videoenc/kflow_videoenc.ko: hdal/kflow_common/em/em.ko hdal/kdrv_videojpeg/kdrv_jpg.ko hdal/kdrv_videoenc/h26xenc.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/tp28xx/tp28xx_kdrv.ko:
+hdal/dsp/nvt_dsp.ko: hdal/kflow_rpc/nvt_ipc.ko hdal/kdrv_rpc/kdrv_rpc.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoosg/kdrv_osg.ko: hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoprocess/vpe321/vpe321_drv.ko: vos/kwrap/kwrap.ko
+hdal/kdrv_videoout/lcd210/flcd200-common.ko: hdal/kdrv_videoout/tve100/nvt_tve100.ko hdal/kdrv_videoout/lcd_codec/lcd_codec.ko vos/kwrap/kwrap.ko
+hdal/comm/nvtmem/nvtmem.ko: vos/kwrap/kwrap.ko
+hdal/kflow_common/vpd/vpd.ko: hdal/kflow_common/gs/gs.ko hdal/kflow_common/usr/usr_proc.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_common/ms/ms.ko: hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_common/usr/usr_proc.ko: hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoout/lcd310/flcd300-pip.ko: hdal/kdrv_videoout/lcd310/flcd300-common.ko hdal/kdrv_videoout/tve100/nvt_tve100.ko hdal/kdrv_videoout/lcd_codec/lcd_codec.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoout/tve100/nvt_tve100.ko: hdal/kdrv_videoout/lcd_codec/lcd_codec.ko vos/kwrap/kwrap.ko
+hdal/kdrv_ai/kdrv_ai.ko: vos/kwrap/kwrap.ko
+hdal/kdrv_videoenc/h26xenc.ko: hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+extra/crypto/cryptodev-linux/cryptodev.ko:
+vos/kwrap/kwrap.ko:
+hdal/comm/drvdump/drvdump.ko:
+hdal/comm/ddr_arb/ddr_arb.ko: vos/kwrap/kwrap.ko
+hdal/comm/util/log.ko: hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_videocapture/vcap316/vcap316_common.ko: hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videodec/h26xdec.ko: hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoout/lcd210/flcd200-pip.ko: hdal/kdrv_videoout/lcd210/flcd200-common.ko hdal/kdrv_videoout/tve100/nvt_tve100.ko hdal/kdrv_videoout/lcd_codec/lcd_codec.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_audioio/nvt_audio.ko: vos/kwrap/kwrap.ko
+hdal/kflow_videodec/kflow_videodec.ko: hdal/kdrv_videodec/h26xdec.ko hdal/kflow_common/em/em.ko hdal/kdrv_videojpeg/kdrv_jpg.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/comm/irdet/kdrv_irdet.ko: vos/kwrap/kwrap.ko
+extra/sample/fake/fake.ko:
+hdal/comm/nvt_dmasys/nvt_dmasys.ko: vos/kwrap/kwrap.ko
+hdal/kdrv_videojpeg/kdrv_jpg.ko: hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/nvp6134/nvp6134_kdrv.ko:
+hdal/kdrv_videoout/hdmi/nvt_hdmi20.ko: hdal/kdrv_videoout/lcd_codec/lcd_codec.ko vos/kwrap/kwrap.ko
+hdal/kflow_common/gs/gs.ko: hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_videocapture/vcap316/vcap316_host0.ko: hdal/kflow_videocapture/vcap316/vcap316_common.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_audioio/kflow_audio.ko: hdal/kdrv_audioio/nvt_audio.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_videoprocess/vpe/kflow_vpe.ko: hdal/kdrv_videoprocess/vpe321/vpe321_drv.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_rpc/nvt_ipc.ko: hdal/kdrv_rpc/kdrv_rpc.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoprocess/dei321/dei321_drv.ko: vos/kwrap/kwrap.ko
+hdal/comm/dummy/drvdummy.ko:
+hdal/kdrv_rpc/kdrv_rpc.ko: vos/kwrap/kwrap.ko
+hdal/comm/tse/nvt_tse.ko: hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/nvt_vencrc/nvt_vencrc.ko: hdal/kdrv_videoenc/h26xenc.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoout/lcd310/flcd300-common.ko: hdal/kdrv_videoout/tve100/nvt_tve100.ko hdal/kdrv_videoout/lcd_codec/lcd_codec.ko vos/kwrap/kwrap.ko
+hdal/kflow_videoosg/kflow_osg.ko: hdal/kdrv_videoosg/kdrv_osg.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/nvp6158/nvp6158_kdrv.ko:
+hdal/net_flow_sample/netflowsample.ko: hdal/kdrv_ai/kdrv_ai.ko vos/kwrap/kwrap.ko
+hdal/kdrv_videoout/lcd_codec/lcd_codec.ko: vos/kwrap/kwrap.ko
+hdal/comm/fdt/kdrv_fdt.ko:
+hdal/kflow_common/em/em.ko: hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko
+hdal/kflow_videoprocess/di/kflow_di.ko: hdal/kdrv_videoprocess/dei321/dei321_drv.ko hdal/kflow_common/em/em.ko hdal/kflow_common/ms/ms.ko hdal/comm/util/log.ko hdal/comm/nvt_dmasys/nvt_dmasys.ko hdal/comm/nvtmem/nvtmem.ko vos/kwrap/kwrap.ko

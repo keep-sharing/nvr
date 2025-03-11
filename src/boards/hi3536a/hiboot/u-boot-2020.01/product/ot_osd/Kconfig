@@ -1,0 +1,2 @@
+config OSD_ENABLE
+	bool "enable osd"

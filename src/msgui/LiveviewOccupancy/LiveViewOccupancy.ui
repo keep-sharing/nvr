@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LiveViewOccupancy</class>
+ <widget class="QWidget" name="LiveViewOccupancy">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widgetBackground" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget#widgetBackground
+{
+	border-image: url(:/liveview_occupancy/liveview_occupancy/BG.jpg);
+}</string>
+     </property>
+     <widget class="QWidget" name="rcWidgetLogo" native="true">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>40</y>
+        <width>184</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resource/resource.qrc">:/liveview_occupancy/liveview_occupancy/LOGO.png</pixmap>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="rcWidgetData" native="true">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>340</y>
+        <width>901</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QWidget" name="widgetAvailable" native="true">
+         <property name="styleSheet">
+          <string notr="true">QLabel {color: #FFFFFF; font-size: 75pt; font-weight: bold;}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="bottomMargin">
+           <number>40</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="labelAvailable">
+            <property name="text">
+             <string>Available:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelAvailableValue">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widgetStay" native="true">
+         <property name="styleSheet">
+          <string notr="true">QLabel {color: #FFFFFF; font-size: 48pt;}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayoutStay">
+          <property name="leftMargin">
+           <number>100</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="labelIconStay">
+            <property name="styleSheet">
+             <string notr="true">padding-right: 30px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../resource/resource.qrc">:/liveview_occupancy/liveview_occupancy/Stays_1.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelStay">
+            <property name="text">
+             <string>Stay:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelStayValue">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widgetIn" native="true">
+         <property name="styleSheet">
+          <string notr="true">QLabel {color: #FFFFFF; font-size: 48pt;}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayoutIn">
+          <property name="leftMargin">
+           <number>100</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="labelIconIn">
+            <property name="styleSheet">
+             <string notr="true">padding-right: 30px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../resource/resource.qrc">:/liveview_occupancy/liveview_occupancy/In_1.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelIn">
+            <property name="text">
+             <string>In:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelInValue">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widgetOut" native="true">
+         <property name="styleSheet">
+          <string notr="true">QLabel {color: #FFFFFF; font-size: 48pt;}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayoutOut">
+          <property name="leftMargin">
+           <number>100</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="labelIconOut">
+            <property name="styleSheet">
+             <string notr="true">padding-right: 30px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../resource/resource.qrc">:/liveview_occupancy/liveview_occupancy/Out_1.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelOut">
+            <property name="text">
+             <string>Out:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelOutValue">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="rcWidgetGroup" native="true">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>110</y>
+        <width>231</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="MyLabel" name="labelGroup">
+         <property name="styleSheet">
+          <string notr="true">QLabel
+{
+	color: #FFFFFF;
+	font: 40pt;
+}</string>
+         </property>
+         <property name="text">
+          <string>Group 1</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="rcWidgetRefresh" native="true">
+      <property name="geometry">
+       <rect>
+        <x>1670</x>
+        <y>830</y>
+        <width>89</width>
+        <height>52</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="MyToolButton" name="toolButtonReset">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/liveview_occupancy/liveview_occupancy/Refresh_1.png);
+	background-color: transparent;
+}
+QToolButton:hover
+{
+	border-image: url(:/liveview_occupancy/liveview_occupancy/Refresh-highlight_1.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/liveview_occupancy/liveview_occupancy/Refresh_1.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="rcWidgetQuit" native="true">
+      <property name="geometry">
+       <rect>
+        <x>1700</x>
+        <y>127</y>
+        <width>52</width>
+        <height>48</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="MyToolButton" name="toolButtonQuit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/liveview_occupancy/liveview_occupancy/shut_1.png);
+	background-color: transparent;
+}
+QToolButton:hover
+{
+	border-image: url(:/liveview_occupancy/liveview_occupancy/shut-highlight_1.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/liveview_occupancy/liveview_occupancy/shut_1.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="rcWidgetSetting" native="true">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>130</y>
+        <width>46</width>
+        <height>47</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="MyToolButton" name="toolButtonSetting">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/liveview_occupancy/liveview_occupancy/Setup_1.png);
+	background-color: transparent;
+}
+QToolButton:hover
+{
+	border-image: url(:/liveview_occupancy/liveview_occupancy/Setup-highlight_1.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/liveview_occupancy/liveview_occupancy/Setup_1.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="rcWidgetIcon" native="true">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>280</y>
+        <width>400</width>
+        <height>570</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="labelGreen">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resource/resource.qrc">:/liveview_occupancy/liveview_occupancy/green_1.png</pixmap>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelRed">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resource/resource.qrc">:/liveview_occupancy/liveview_occupancy/gray_1.png</pixmap>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="labelMessage">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>830</y>
+        <width>1471</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+	color: #FFFFFF;
+	font: 35pt;
+}</string>
+      </property>
+      <property name="text">
+       <string>Welcome to Milesight!!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>labelMessage</zorder>
+     <zorder>rcWidgetLogo</zorder>
+     <zorder>rcWidgetData</zorder>
+     <zorder>rcWidgetGroup</zorder>
+     <zorder>rcWidgetRefresh</zorder>
+     <zorder>rcWidgetQuit</zorder>
+     <zorder>rcWidgetSetting</zorder>
+     <zorder>rcWidgetIcon</zorder>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyToolButton</class>
+   <extends>QToolButton</extends>
+   <header>mytoolbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>mylabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resource/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

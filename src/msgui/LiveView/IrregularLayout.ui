@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IrregularLayout</class>
+ <widget class="QWidget" name="IrregularLayout">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>273</width>
+    <height>381</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="widgetRight" native="true">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>200</y>
+     <width>154</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QListWidget" name="listWidgetCustom">
+      <property name="styleSheet">
+       <string notr="true">QListWidget
+{
+outline: none;
+border: 1px solid #a7a7a7;
+background-color: rgba(46, 46, 46, 80%);
+}
+QListWidget::item
+{
+border: 0px;
+height: 30px;
+padding-left: 10px;
+background-color: transparent;
+color: #ffffff;
+}
+QListWidget::item:hover
+{
+background-color: rgba(44, 122, 158, 220);
+}
+QListWidget::item:selected
+{
+color: #0AA9E3;
+}</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Custom Layout 1</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="widgetLeft" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>7</y>
+     <width>74</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#widgetLeft
+{
+border: 1px solid #a7a7a7;
+background-color: rgba(46, 46, 46, 80%);
+}</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="MyIconToolButton" name="toolButton_layout8_1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource/resource.qrc">
+        <normaloff>:/bottombar/bottombar/layout_1+7.png</normaloff>:/bottombar/bottombar/layout_1+7.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="MyIconToolButton" name="toolButton_layout8">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource/resource.qrc">
+        <normaloff>:/bottombar/bottombar/layout_4+4.png</normaloff>:/bottombar/bottombar/layout_4+4.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="MyIconToolButton" name="toolButton_layout14">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource/resource.qrc">
+        <normaloff>:/bottombar/bottombar/layout_2+12.png</normaloff>:/bottombar/bottombar/layout_2+12.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="MyIconToolButton" name="toolButton_layout12_1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource/resource.qrc">
+        <normaloff>:/bottombar/bottombar/layout_1+11.png</normaloff>:/bottombar/bottombar/layout_1+11.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="MyIconToolButton" name="toolButton_layout32_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource/resource.qrc">
+        <normaloff>:/bottombar/bottombar/layout_1+3+28.png</normaloff>:/bottombar/bottombar/layout_1+3+28.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CustomLayoutButton" name="toolButtonCustomLayout">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource/resource.qrc">
+        <normaloff>:/layout/layout/custom_layout_white.png</normaloff>:/layout/layout/custom_layout_white.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CustomLayoutButton</class>
+   <extends>QToolButton</extends>
+   <header>CustomLayoutButton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyIconToolButton</class>
+   <extends>QToolButton</extends>
+   <header>myicontoolbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>toolButton_layout8_1</tabstop>
+  <tabstop>toolButton_layout8</tabstop>
+  <tabstop>toolButton_layout14</tabstop>
+  <tabstop>toolButton_layout12_1</tabstop>
+  <tabstop>toolButton_layout32_2</tabstop>
+  <tabstop>toolButtonCustomLayout</tabstop>
+  <tabstop>listWidgetCustom</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resource/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,1 @@
+update params set value='1015' where name='plugin_version';

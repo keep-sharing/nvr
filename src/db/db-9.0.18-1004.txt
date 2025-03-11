@@ -1,0 +1,2 @@
+# app报警推送增加服务器API地区字段
+alter table token add column region TEXT not null default 'GB';

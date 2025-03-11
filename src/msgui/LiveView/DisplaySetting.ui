@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DisplaySetting</class>
+ <widget class="QWidget" name="DisplaySetting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>466</width>
+    <height>383</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget_background" native="true">
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_pageInfo">
+        <property name="text">
+         <string>Page Info</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_channelName">
+        <property name="text">
+         <string>Channel Name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_timeInfo">
+        <property name="text">
+         <string>Time Info</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_playMode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Play Mode</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_borderLine">
+        <property name="text">
+         <string>Border Line</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="ComboBox" name="comboBoxEventDetectionRegion"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_color">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Color</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="ComboBox" name="comboBox_page"/>
+      </item>
+      <item row="2" column="1">
+       <widget class="ComboBox" name="comboBox_info"/>
+      </item>
+      <item row="7" column="1">
+       <widget class="ComboBox" name="comboBox_timeInfo"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="ComboBox" name="comboBox_color">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="ComboBox" name="comboBox_name"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_streamInfo">
+        <property name="text">
+         <string>Stream Info</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="MyLabel" name="labelEventDetectionRegion">
+        <property name="text">
+         <string>Event Detection Region</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="ComboBox" name="comboBox_border"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="ComboBox" name="comboBox_playMode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="labelChannelNameFontSize">
+        <property name="text">
+         <string>Channel Name Font Size</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="ComboBox" name="comboBoxChannelNameFontSize"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header>mylabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>widget_background</tabstop>
+  <tabstop>comboBox_playMode</tabstop>
+  <tabstop>comboBox_color</tabstop>
+  <tabstop>comboBox_info</tabstop>
+  <tabstop>comboBox_name</tabstop>
+  <tabstop>comboBox_border</tabstop>
+  <tabstop>comboBox_page</tabstop>
+  <tabstop>comboBox_timeInfo</tabstop>
+  <tabstop>comboBoxEventDetectionRegion</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

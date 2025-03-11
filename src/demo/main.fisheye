@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <signal.h>
+#include "demo.h"
+#include <errno.h>
+#include"fisheye_player.h"
+
+#define WIN_SIZE_W (1920) 
+#define WIN_SIZE_H (1080)
+
+
+static int g_exit = 0;
+static void signal_handler(int signal)
+{   
+    g_exit = 1;
+}
+
+static void set_test_signal()
+{
+    signal(SIGINT,  signal_handler);
+    signal(SIGTERM, signal_handler);
+    signal(SIGKILL, signal_handler);
+}
+
+void send_frame_to_opengl()
+{
+    return;
+}
+
+void 
+select_usleep(int us)
+{
+    struct timeval tv;
+    
+    tv.tv_sec= us / 1000000;
+    tv.tv_usec= us % 1000000;
+    int err;
+
+    do{
+        err = select(0,NULL,NULL,NULL,&tv);
+    }while(err < 0 && errno == EINTR);
+}
+
+int main(int argc, char** argv)
+{
+    int Inwidth, Inheight;
+    int Outwidth, Outheight;
+    int res;
+    void *pVirAddr;
+    int phyAddr;
+    SCREEN_E enScreen = SCREEN_MAIN;
+    int VoChn = 0;
+    FisheyeTSdata stIn;
+    FisheyeTSdata stOut;
+	FisheyePlayer* player;
+	set_test_signal();
+	int cnt = 50;
+    test_start();
+
+    while(!g_exit)
+    {
+        cnt = 50;
+        vapi_fish_src_wh(enScreen, VoChn, &Inwidth, &Inheight, &Outwidth, &Outheight);
+        player = FisheyePlayer_New(Inwidth, Inheight, Outwidth, Outheight);
+        
+        FisheyePlayer_TransformGetBuf(player, &pVirAddr, &phyAddr); 
+        FisheyePlayer_SetDisplayMode(player, "1O1R1W2P1P");
+        
+        while(cnt--)
+        {
+            res = vapi_grab_yuv(enScreen, VoChn, pVirAddr, phyAddr);
+            if (res != 0)
+                continue;
+            stIn.pVirAddr = pVirAddr;
+            stIn.phyAddr = phyAddr;
+            FisheyePlayer_Transforming(player, &stIn, &stOut);
+            vapi_fish_vo(enScreen, VoChn, stOut.pVirAddr, stOut.phyAddr);
+        }
+        FisheyePlayer_Delete(player);
+    }
+
+    test_stop();
+    
+	return 0; 
+}
+

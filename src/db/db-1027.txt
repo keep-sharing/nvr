@@ -1,0 +1,3 @@
+update params set value='1029' where name='plugin_version';
+update params set value='1029' where name='mplugin_version';
+insert into params values('transport_protocol', '0');

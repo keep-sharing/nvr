@@ -1,0 +1,2 @@
+#target preview settings 默认显示人脸
+update params set value=value+4 where name='target_preview_diaplay';

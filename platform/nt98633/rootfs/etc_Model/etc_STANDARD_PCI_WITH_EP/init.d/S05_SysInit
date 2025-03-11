@@ -1,0 +1,54 @@
+#!/bin/sh
+
+wait_dev_or_exit()
+{
+	x=0
+	timeout=5
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .1
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[timeout] $1 not found"
+		exit -1
+	fi
+}
+
+# Setup mdev
+echo "fs" > /proc/nvt_info/bootts
+echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+mdev -s
+
+# Scan for without insert card
+#if [ ! -f /tmp/.nvt_mounts ]; then
+#	/etc/mdev-script/autosd.sh
+#	rm -rf /tmp/.nvt_mounts;
+#fi
+
+KERVER=`cat /proc/version | awk -F'version ' '{print $2}' | awk -F' ' '{print $1}'`
+modprobe nvt_pcie_rescan bar_size=0x20000000 bar2_enable=1
+
+# Init PCIe basic modules
+modprobe nvt_pcie_ep_device_driver 
+
+wait_dev_or_exit /dev/nvt_pcie_ep_drv-0
+modprobe nvt-pcie-lib
+modprobe irq-novatek-msix-v1
+
+# Init RC drivers (before EP booting)
+modprobe nvt_logfile
+
+# Boot EP 0, 1, ...
+nvt_pcie_ep_device_driver_test.sh 0
+
+# Init EP drivers at RC (after EP booting)
+modprobe pinctrl-nvt-ep
+modprobe gpio-nvt-na51090-ep
+modprobe na51090-clk-ep-common
+
+# Init RC drivers
+modprobe nvme
+modprobe ehci-hcd
+modprobe xhci-plat-hcd
+modprobe ahci-nvt-ivot
+echo "fs" > /proc/nvt_info/bootts

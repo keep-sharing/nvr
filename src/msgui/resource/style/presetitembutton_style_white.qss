@@ -1,0 +1,69 @@
+QToolButton
+{
+padding: 0px;
+border: 0px;
+color: rgb(255, 255, 255);
+background-color: transparent;
+}
+QToolButton:hover
+{
+background-color: transparent;
+}
+QToolButton:pressed
+{
+background-color: transparent;
+}
+
+QToolButton#toolButton_play
+{
+border: 0px;
+border-image: url(:/ptz/ptz/play.png);
+}
+QToolButton#toolButton_play:hover
+{
+border-image: url(:/ptz/ptz/play_hover.png);
+}
+QToolButton#toolButton_play:pressed
+{
+border-image: url(:/ptz/ptz/play.png);
+}
+QToolButton#toolButton_play:disabled
+{
+border-image: none;
+}
+
+QToolButton#toolButton_save
+{
+border: 0px;
+border-image: url(:/ptz/ptz/save.png);
+}
+QToolButton#toolButton_save:hover
+{
+border-image: url(:/ptz/ptz/save_hover.png);
+}
+QToolButton#toolButton_save:pressed
+{
+border-image: url(:/ptz/ptz/save.png);
+}
+QToolButton#toolButton_save:disabled
+{
+border-image: none;
+}
+
+QToolButton#toolButton_delete
+{
+border: 0px;
+border-image: url(:/ptz/ptz/delete.png);
+}
+QToolButton#toolButton_delete:hover
+{
+border-image: url(:/ptz/ptz/delete_hover.png);
+}
+QToolButton#toolButton_delete:pressed
+{
+border-image: url(:/ptz/ptz/delete.png);
+}
+QToolButton#toolButton_delete:disabled
+{
+border-image: none;
+}

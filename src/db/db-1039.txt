@@ -1,0 +1,5 @@
+alter table email add column enable INTEGER default -1;
+alter table display add column time_info INTEGER default 0;
+update params set value='1039' where name='plugin_version';
+alter table camera add column minorid INTEGER default 0;
+alter table token add column name TEXT default 'NVR';

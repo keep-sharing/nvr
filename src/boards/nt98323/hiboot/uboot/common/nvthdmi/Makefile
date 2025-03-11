@@ -1,0 +1,1 @@
+obj-y += dispdev_hdmi_if.o hdmitx.o  hdmitx_cec.o hdmitx_ddc.o hdmitx_edid.o hdmitx_port.o

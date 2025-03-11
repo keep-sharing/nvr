@@ -1,0 +1,14 @@
+#insmod /hitoe/stmmac.ko hitoe=1
+
+
+echo 0 > /proc/sys/net/ipv4/tcp_sack
+echo 1 > /proc/sys/net/ipv4/tcp_low_latency 
+echo 1 > /proc/sys/net/ipv4/conf/all/arp_filter
+echo reno > /proc/sys/net/ipv4/tcp_congestion_control
+echo 1 > /proc/sys/net/ipv4/tcp_thin_linear_timeouts
+
+#MULTI_INTR
+echo 2 > /proc/irq/55/smp_affinity
+echo 4 > /proc/irq/56/smp_affinity
+echo 2 > /proc/irq/57/smp_affinity
+echo 2 > /proc/irq/58/smp_affinity

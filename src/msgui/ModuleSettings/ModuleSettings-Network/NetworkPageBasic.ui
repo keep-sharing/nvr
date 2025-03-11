@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NetworkPageBasic</class>
+ <widget class="QWidget" name="NetworkPageBasic">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>857</width>
+    <height>787</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="1">
+      <widget class="ComboBox" name="comboBox_workingMode">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>5</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>Multi-address</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Load Balance</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Net Fault-tolerance</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_workingMode">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string> Working Mode</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelDefaultRoute">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Default Route</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="ComboBox" name="comboBoxDefaultRoute">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>5</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_eth0Enable">
+     <property name="title">
+      <string>LAN1 Enable</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="8" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth0MACShow">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_eth0AlterDns">
+        <property name="text">
+         <string> Alternate DNS Server</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="MyLineEdit" name="lineEdit_eth0IPv6Addr"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="ComboBox" name="comboBox_primaryLan">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>LAN0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>LAN1</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_eth0MAC">
+        <property name="text">
+         <string> MAC</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth0Netmask"/>
+      </item>
+      <item row="1" column="3">
+       <widget class="ComboBox" name="comboBox_eth0IPv6Mode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Manual</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Router Advertisement</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>DHCPv6</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="ComboBox" name="comboBox_bond0Eth0Type">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Disable</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Enable</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_primaryLan">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Primary</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_mtu0">
+        <property name="text">
+         <string> MTU(byte)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_eho0Netmask">
+        <property name="text">
+         <string>IPv4 Subnet Mask</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="label_eth0IPv6GateWay">
+        <property name="text">
+         <string>IPv6 Gateway</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth0Gateway"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_eth0Gateway">
+        <property name="text">
+         <string>IPv4 Gateway</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_eth0IPvPreLen">
+        <property name="text">
+         <string>IPv6 Prefix Length</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="MyLineEdit" name="lineEdit_eth0IPv6GateWay"/>
+      </item>
+      <item row="5" column="2">
+       <widget class="QLabel" name="label_eth0IPv6Rounter">
+        <property name="text">
+         <string>Router Advertisement</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_eth0IP">
+        <property name="text">
+         <string> IPv4 Address</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="MyLineEdit" name="lineEdit_eth0IPvPreLen"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_eth0IPv6Mode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>IPv6 Mode</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_bond0Eth0Type">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>IPv4 DHCP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth0IP"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_eth0PreDns">
+        <property name="text">
+         <string> Preferred DNS Server</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3">
+       <widget class="QWidget" name="widget_router" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_eth0details">
+           <property name="text">
+            <string>Details</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>158</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth0PreDns"/>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="label_eth0IPv6Addr">
+        <property name="text">
+         <string>IPv6 Address</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth0AlterDns"/>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="label_poeIPaddr">
+        <property name="text">
+         <string> Internal NIC IPv4 Address</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="MyLineEdit" name="lineEdit_poeIPaddr"/>
+      </item>
+      <item row="7" column="1">
+       <widget class="MyLineEdit" name="lineEdit_mtu0">
+        <property name="text">
+         <string>1200</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_eth1Enable">
+     <property name="title">
+      <string>LAN2 Enable</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_eth1IPv6Mode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>IPv6 Mode</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_eth1Type">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>IPv4 DHCP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth1PreDns"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_eth1AlterDns">
+        <property name="text">
+         <string> Alternate DNS Server</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth1Netmask"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_eth1Netmask">
+        <property name="text">
+         <string>IPv4 Subnet Mask</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_eth1IPv6Addr">
+        <property name="text">
+         <string>IPv6 Address</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth1Gateway"/>
+      </item>
+      <item row="1" column="3">
+       <widget class="MyLineEdit" name="lineEdit_eth1IPv6Addr"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_eth1PreDns">
+        <property name="text">
+         <string> Preferred DNS Server</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_eth1IP">
+        <property name="text">
+         <string> IPv4 Address</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth1IP"/>
+      </item>
+      <item row="5" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth1AlterDns"/>
+      </item>
+      <item row="0" column="3">
+       <widget class="ComboBox" name="comboBox_eth1IPv6Mode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Manual</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Router Advertisement</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>DHCPv6</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="ComboBox" name="comboBox_eth1Type">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>2</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Disable</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Enable</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_mtu1">
+        <property name="text">
+         <string> MTU(byte)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_eth1Gateway">
+        <property name="text">
+         <string>IPv4 Gateway</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_eth1MAC">
+        <property name="text">
+         <string> MAC</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="MyLineEdit" name="lineEdit_eth1MACShow">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="label_eth1IPvPreLen">
+        <property name="text">
+         <string>IPv6 Prefix Length</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_eth1IPv6GateWay">
+        <property name="text">
+         <string>IPv6 Gateway</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="MyLineEdit" name="lineEdit_eth1IPvPreLen"/>
+      </item>
+      <item row="3" column="3">
+       <widget class="MyLineEdit" name="lineEdit_eth1IPv6GateWay"/>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="label_eth1IPv6Rounter">
+        <property name="text">
+         <string>Router Advertisement</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QWidget" name="widget_router_2" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_eth1details">
+           <property name="text">
+            <string>Details</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>158</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="MyLineEdit" name="lineEdit_mtu1">
+        <property name="text">
+         <string>1200</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="MyPushButton" name="pushButton_apply">
+       <property name="text">
+        <string>Apply</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_back">
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyPushButton</class>
+   <extends>QPushButton</extends>
+   <header>mypushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>mylineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,4 @@
+update storage set recycle_mode=1 where id='13';
+update storage set recycle_mode=1 where id='14';
+update storage set recycle_mode=1 where id='15';
+update storage set recycle_mode=1 where id='16';

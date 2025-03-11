@@ -1,0 +1,18 @@
+#
+# Create By Czy
+#
+
+#KERNEL=="sd*", SUBSYSTEM=="block", RUN+="/etc/udev/disk-hotplug.sh"
+#KERNEL=="usbdev*", SUBSYSTEM=="usb_device", RUN+="/etc/udev/usbdev-hotplug.sh"
+#KERNEL=="sd*", SUBSYSTEM=="block", RUN+="/etc/udev/disk-hotplug.sh"
+#KERNEL=="usbdev*", SUBSYSTEM=="usb_device", RUN+="/etc/udev/usbdev-hotplug.sh"
+# Hi3798 only one HUB
+#KERNEL=="sd?", KERNELS=="0:0:0:0", SUBSYSTEMS=="scsi", SYMLINK="MF_local_1_%k"
+##KERNEL=="sd?", KERNELS=="0:2:0:0", SUBSYSTEMS=="scsi", SYMLINK="MF_local_1_%k"
+##KERNEL=="sd?", KERNELS=="0:3:0:0", SUBSYSTEMS=="scsi", SYMLINK="MF_local_2_%k"
+#KERNEL=="sd?", KERNELS=="2:0:0:0", SUBSYSTEMS=="scsi", SYMLINK="MF_local_2_%k"
+#KERNEL=="sd?", KERNELS=="3:0:0:0", SUBSYSTEMS=="scsi", SYMLINK="MF_local_3_%k"
+#KERNEL=="sd*[a-z]", KERNELS=="1-1", SUBSYSTEMS=="usb", DRIVERS=="usb", SYMLINK="MF_usb_34_%k"
+#KERNEL=="sd*[a-z]", KERNELS=="3-1", SUBSYSTEMS=="usb", DRIVERS=="usb", SYMLINK="MF_usb_35_%k"
+#KERNEL=="sd*[a-z]", KERNELS=="4-1", SUBSYSTEMS=="usb", DRIVERS=="usb", SYMLINK="MF_usb_36_%k"
+#KERNEL=="sd*[a-z]", KERNELS=="5-1", SUBSYSTEMS=="usb", DRIVERS=="usb", SYMLINK="MF_usb_37_%k"

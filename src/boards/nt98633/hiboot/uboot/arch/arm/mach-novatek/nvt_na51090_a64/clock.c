@@ -1,0 +1,599 @@
+/**
+    Clock info
+
+    @file       clock.c
+    @ingroup
+    @note
+    Copyright   Novatek Microelectronics Corp. 2019.  All rights reserved.
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License version 2 as
+    published by the Free Software Foundation.
+*/
+
+#include <common.h>
+#include <asm/io.h>
+#include <asm/arch/clock.h>
+#include <asm/arch/IOAddress.h>
+#include <asm/arch/hardware.h>
+#include <asm/arch/efuse_protected.h>
+#include <asm/nvt-common/nvt_types.h>
+#include <asm/nvt-common/nvt_common.h>
+#include <asm/nvt-common/rcw_macro.h>
+
+#define SYSTEM_CLOCK_RATE_OFS           0x10
+#define CPU_CLOCK_RATE_RATIO0_OFS       0x4820
+#define CPU_CLOCK_RATE_RATIO1_OFS       0x4824
+#define CPU_CLOCK_RATE_RATIO2_OFS       0x4828
+#define DMA_CLOCK_RATE_RATIO0_OFS       (0x4000 + 0x4C0 + 0x20)
+#define DMA_CLOCK_RATE_RATIO1_OFS       (0x4000 + 0x4C0 + 0x24)
+#define DMA_CLOCK_RATE_RATIO2_OFS       (0x4000 + 0x4C0 + 0x28)
+
+#define PLL_CLKSEL_CPU					0
+#define PLL_CLKSEL_CPU_80         		(0x00 << PLL_CLKSEL_CPU)      	//< Select CPU clock 80MHz
+#define PLL_CLKSEL_CPU_ARMPLL      		(0x01 << PLL_CLKSEL_CPU)      	//< Select CPU clock ARMPLL (for CPU)
+#define PLL_CLKSEL_CPU_480        		(0x02 << PLL_CLKSEL_CPU)      	//< Select CPU clock 480MHz
+#define PLL_CLKSEL_CPUMASK				0x3
+
+#define CPU_NORMAL_MAX_CLOCK_RATE		1200
+#define CPU_OV_CLK_MAX_CLOCK_RATE		1350
+#define CPU_ULTRA_OV_CLK_MAX_CLOCK_RATE	1450
+
+inline void apll_set_data(u8 offset, u8 value)
+{
+#if 0
+	writel(value, (APLL_BASE_ADDR + (offset * 4)));
+#endif
+}
+
+inline u32 apll_get_data(u8 offset)
+{
+	return 0;
+}
+
+#if 0
+inline void apll_enable(pll_page_t page)
+{
+	if (PLL_PAGE_0 == page) {
+		writel(APLL_PAGE_0_EN, (APLL_PAGE_EN_ADDR));
+	} else if (PLL_PAGE_B == page) {
+		writel(APLL_PAGE_B_EN, (APLL_PAGE_EN_ADDR));
+	} else {
+		/* ignore */
+	}
+}
+#endif
+
+inline void mpll_set_data(u8 offset, u8 value)
+{
+#if 0
+	writel(value, (MPLL_BASE_ADDR + (offset * 4)));
+#endif
+}
+
+inline u32 mpll_get_data(u8 offset)
+{
+	return 0;
+#if 0
+	return readl((MPLL_BASE_ADDR + (offset * 4)));
+#endif
+}
+
+#if 0
+inline void mpll_enable(pll_page_t page)
+{
+	if (PLL_PAGE_0 == page) {
+		writel(MPLL_PAGE_0_EN, (MPLL_PAGE_EN_ADDR));
+	} else if (PLL_PAGE_B == page) {
+		writel(MPLL_PAGE_B_EN, (MPLL_PAGE_EN_ADDR));
+	} else {
+		/* ignore */
+	}
+}
+#endif
+
+void set_sys_mpll(unsigned long off, unsigned long val)
+{
+#if 0
+	val <<= 17;
+	val  /= 12;
+
+	mpll_enable(PLL_PAGE_B);
+
+	mpll_set_data((off + 0), ((val >> 0) & 0xff));
+	mpll_set_data((off + 1), ((val >> 8) & 0xff));
+	mpll_set_data((off + 2), ((val >> 16) & 0xff));
+#endif
+}
+
+unsigned long get_sys_mpll(unsigned long off)
+{
+#if 0
+	unsigned long val;
+
+	mpll_enable(PLL_PAGE_B);
+
+	val  = mpll_get_data(off);
+	val |= (mpll_get_data((off + 1)) << 8);
+	val |= (mpll_get_data((off + 2)) << 16);
+
+	val *= 12;
+	val += ((1UL << 17) - 1);
+	val >>= 17;
+
+	return val;
+#endif
+	return 0;
+}
+
+void set_cpu_clk(unsigned long freq)
+{
+	/* no implement */
+}
+
+unsigned long get_cpu_clk(void)
+{
+	unsigned int cpu_clk_sel = 0;
+#ifndef CONFIG_NVT_FPGA_EMULATION
+	unsigned int cpu_freq_ratio;
+	unsigned int cpu_freq_ratio0, cpu_freq_ratio1, cpu_freq_ratio2;
+#endif
+	cpu_clk_sel = readl(IOADDR_CG_REG_BASE + SYSTEM_CLOCK_RATE_OFS) & 0x3;
+
+	if (cpu_clk_sel == 1) {
+#ifdef CONFIG_NVT_FPGA_EMULATION
+		return 24000;
+#else
+		cpu_freq_ratio0 = readl(IOADDR_CG_REG_BASE + \
+								CPU_CLOCK_RATE_RATIO0_OFS);
+		cpu_freq_ratio1 = readl(IOADDR_CG_REG_BASE + \
+								CPU_CLOCK_RATE_RATIO1_OFS);
+		cpu_freq_ratio2 = readl(IOADDR_CG_REG_BASE + \
+								CPU_CLOCK_RATE_RATIO2_OFS);
+		cpu_freq_ratio = cpu_freq_ratio0 | (cpu_freq_ratio1 << 8) | \
+						 (cpu_freq_ratio2 << 16);
+
+		cpu_freq_ratio = (cpu_freq_ratio << 3);
+
+		return (12 * cpu_freq_ratio / 131072) * 1000;
+#endif
+	} else if (cpu_clk_sel == 2) {
+		return 480000;
+	} else {
+		return 80000;
+	}
+}
+
+#ifdef CONFIG_NVT_FPGA_EMULATION
+#define CALCULATE_CPU_FREQ_UNIT_US      100000
+#define timer_gettick() readl(IOADDR_TIMER_REG_BASE + 0x108) * (10)
+#else
+#define CALCULATE_CPU_FREQ_UNIT_US      100000
+#define timer_gettick() readl(IOADDR_TIMER_REG_BASE + 0x108)
+#endif
+#define PERF_DEF_OPTS           (1 | 16)
+#define PERF_OPT_RESET_CYCLES   (2 | 4)
+#define PERF_OPT_DIV64          (8)
+#define ARMV8_PMCR_MASK         0x3f
+#define ARMV8_PMCR_E            (1 << 0) /* Enable all counters */
+#define ARMV8_PMCR_P            (1 << 1) /* Reset all counters */
+#define ARMV8_PMCR_C            (1 << 2) /* Cycle counter reset */
+#define ARMV8_PMCR_D            (1 << 3) /* CCNT counts every 64th cpu cycle */
+#define ARMV8_PMCR_X            (1 << 4) /* Export to ETM */
+#define ARMV8_PMCR_DP           (1 << 5) /* Disable CCNT if non-invasive debug*/
+#define ARMV8_PMCR_LC           (1 << 6) /* Cycle Counter 64bit overflow*/
+#define ARMV8_PMCR_N_SHIFT      11       /* Number of counters supported */
+#define ARMV8_PMCR_N_MASK       0x1f
+
+#define ARMV8_PMUSERENR_EN_EL0  (1 << 0) /* EL0 access enable */
+#define ARMV8_PMUSERENR_CR      (1 << 2) /* Cycle counter read enable */
+#define ARMV8_PMUSERENR_ER      (1 << 3) /* Event counter read enable */
+
+static inline u32 armv8pmu_pmcr_read(void)
+{
+	u64 val = 0;
+	asm volatile("mrs %0, pmcr_el0" : "=r"(val));
+	return (u32)val;
+}
+static inline void armv8pmu_pmcr_write(u32 val)
+{
+	val &= ARMV8_PMCR_MASK;
+	isb();
+	asm volatile("msr pmcr_el0, %0" : : "r"((u64)val));
+}
+static inline  long long armv8_read_CNTPCT_EL0(void)
+{
+	long long val;
+	asm volatile("mrs %0, CNTVCT_EL0" : "=r"(val));
+	return val;
+}
+
+static void enable_cpu_counters(void)
+{
+	u64 val;
+	/* Disable cycle counter overflow interrupt */
+	asm volatile("msr pmintenset_el1, %0" : : "r"((u64)(0 << 31)));
+	/* Enable cycle counter */
+	asm volatile("msr pmcntenset_el0, %0" :: "r" BIT(31));
+	/* Enable user-mode access to cycle counters. */
+	asm volatile("msr pmuserenr_el0, %0" : : "r"(BIT(0) | BIT(2)));
+	/* Clear cycle counter and start */
+	asm volatile("mrs %0, pmcr_el0" : "=r"(val));
+	val |= (BIT(0) | BIT(2));
+	isb();
+	asm volatile("msr pmcr_el0, %0" : : "r"(val));
+	val = BIT(27);
+	asm volatile("msr pmccfiltr_el0, %0" : : "r"(val));
+}
+
+static void disable_cpu_counters(void)
+{
+	/* Disable cycle counter */
+	asm volatile("msr pmcntenset_el0, %0" :: "r"(0 << 31));
+	/* Disable user-mode access to counters. */
+	asm volatile("msr pmuserenr_el0, %0" : : "r"((u64)0));
+}
+
+static inline u64 arch_counter_get_cntpct(void)
+{
+	long long val;
+	asm volatile("mrs %0, CNTVCT_EL0" : "=r"(val));
+	return val;
+}
+//static BOOL cpu_count_open = FALSE;
+void timer2_delay(u32 us)
+{
+	u32 start, end;
+	start = timer_gettick();
+	/*check timer count to target level*/
+	while (1) {
+		end = timer_gettick();
+		if ((end - start) > us) {
+			break;
+		}
+	}
+}
+
+void ca53_cycle_count_start(BOOL do_reset, BOOL enable_divider)
+{
+	enable_cpu_counters();
+	return;
+}
+
+/**
+    CA53 get CPU clock cycle count
+
+    get CPU clock cycle count
+
+    @param[out] type
+    @return success or not
+        - @b UINT64:   clock cycle of CPU
+*/
+u64 ca53_get_cycle_count(void)
+{
+	u64 cval;
+	isb();
+	asm volatile("mrs %0, PMCCNTR_EL0" : "=r"(cval));
+	return cval;
+}
+
+void ca53_cycle_count_stop(void)
+{
+	disable_cpu_counters();
+	return;
+}
+
+int do_nvt_cpu_get_freq(cmd_tbl_t *cmdtp, int flag, int argc, char *const argv[])
+{
+	u64 time_1, time_2, temp, time_interval;
+	u32 freq;
+
+	ca53_cycle_count_start(TRUE, FALSE);
+	time_1 = ca53_get_cycle_count();
+	timer2_delay(CALCULATE_CPU_FREQ_UNIT_US);
+	time_2 = ca53_get_cycle_count();
+
+	if (time_2 > time_1) {
+		time_interval = (time_2 - time_1);
+	} else {
+		temp = 0xFFFFFFFF - time_1;
+		time_interval = temp + time_2;
+	}
+
+	freq = (time_interval) / (CALCULATE_CPU_FREQ_UNIT_US);
+	ca53_cycle_count_stop();
+	printf("CPU Freq %d MHz\n", freq);
+
+	return 0;
+}
+
+
+U_BOOT_CMD(
+	nvt_get_cpu_freq, 2,    1,  do_nvt_cpu_get_freq,
+	"get cpu freq",
+	"[MHz]\n"
+);
+
+
+int do_nvt_cpu_freq(cmd_tbl_t *cmdtp, int flag, int argc, char *const argv[])
+{
+	u32 value = simple_strtoul(argv[1], NULL, 10);
+	u32 uiReg;
+
+	//CPU is ultra
+	if(is_c_ultra_over_clk()) {
+		if (value > CPU_ULTRA_OV_CLK_MAX_CLOCK_RATE) {
+			value = CPU_ULTRA_OV_CLK_MAX_CLOCK_RATE;
+			printf("[UO]force CPU clk @%dMHz\n", value);
+		}
+
+	} else {
+		if(is_c_n_ovr_clk()) {
+			if (value > CPU_NORMAL_MAX_CLOCK_RATE) {
+				value = CPU_NORMAL_MAX_CLOCK_RATE;
+				printf("[NM]force CPU clk @%dMHz\n", value);
+			}
+		} else {
+			if (value > CPU_OV_CLK_MAX_CLOCK_RATE) {
+				value = CPU_OV_CLK_MAX_CLOCK_RATE;
+				printf("[OV]force CPU clk @%dMHz\n", value);
+			}
+		}
+	}
+	switch (argc) {
+	case 2:
+		switch (value) {
+		case 480:
+    		uiReg = readl(IOADDR_CG_REG_BASE + SYSTEM_CLOCK_RATE_OFS);
+    		if((uiReg & PLL_CLKSEL_CPUMASK) == PLL_CLKSEL_CPU_480) {
+				printf("Already 480MHz\n");
+				break;
+    		} else {
+    			uiReg = readl(IOADDR_CG_REG_BASE + SYSTEM_CLOCK_RATE_OFS);
+                uiReg &= ~PLL_CLKSEL_CPUMASK;
+                uiReg |= PLL_CLKSEL_CPU_480;
+                writel(uiReg, (IOADDR_CG_REG_BASE + SYSTEM_CLOCK_RATE_OFS));
+                writel(0x34, (IOADDR_CG_REG_BASE + 0xB0));
+                while (!(readl(IOADDR_CG_REG_BASE + 0xB0) & (1 << 3)));
+                writel(0x28, (IOADDR_CG_REG_BASE + 0xB0));
+                printf("Set CPU clk 480MHz\n");
+            }
+			break;
+#ifdef CONFIG_NVT_FPGA_EMULATION
+		case 1000:
+		case 1200:
+		case 1400:
+		default:
+		uiReg = readl(IOADDR_CG_REG_BASE + SYSTEM_CLOCK_RATE_OFS);
+		if((uiReg & PLL_CLKSEL_CPUMASK) == PLL_CLKSEL_CPU_ARMPLL) {
+			printf("Already ARMPLL\n");
+		} else {
+			uiReg = readl(IOADDR_CG_REG_BASE + SYSTEM_CLOCK_RATE_OFS);
+            uiReg &= ~PLL_CLKSEL_CPUMASK;
+            uiReg |= PLL_CLKSEL_CPU_ARMPLL;
+            writel(uiReg, (IOADDR_CG_REG_BASE + SYSTEM_CLOCK_RATE_OFS));
+            writel(0x34, (IOADDR_CG_REG_BASE + 0xB0));
+            while (!(readl(IOADDR_CG_REG_BASE + 0xB0) & (1 << 3)));
+            writel(0x28, (IOADDR_CG_REG_BASE + 0xB0));
+            printf("Set CPU clk APLLMHz\n");
+		}
+
+		break;
+#else
+		case 1000:
+			//CPU 1000 MHz -> CPU-MPLL-125Mhz = 0x14D555
+			writel(0x55, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0xD5, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x14, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1000MHz\n");
+			break;
+
+		case 1100:
+			//CPU 1100 MHz -> CPU-MPLL-137.5Mhz = 0x16EAAA
+			writel(0xAA, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0xEA, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x16, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1100MHz\n");
+			break;
+
+		case 1200:
+			//CPU 1200 MHz -> CPU-MPLL-150Mhz = 0x190000
+			writel(0x00, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0x00, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x19, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1200MHz\n");
+			break;
+
+		case 1300:
+			//CPU 1300 MHz -> CPU-MPLL-162.5Mhz = 0x1B1555
+			writel(0x55, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0x15, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x1B, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1300MHz\n");
+			break;
+
+		case 1350:
+			//CPU 1350 MHz -> CPU-MPLL-168.75Mhz = 0x1C2000
+			writel(0x00, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0x20, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x1C, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1350MHz\n");
+			break;
+
+		case 1400:
+			//CPU 1400 MHz -> CPU-MPLL-168.75Mhz = 0x1D2AAA
+			writel(0xAA, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0x2A, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x1D, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1400MHz\n");
+			break;
+
+		case 1450:
+			//CPU 1450 MHz -> CPU-MPLL-168.75Mhz = 0x1E3555
+			writel(0x55, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0x35, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x1E, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1450MHz\n");
+			break;
+
+		case 1500:
+			//CPU 1500 MHz -> CPU-MPLL-168.75Mhz = 0x1F4000
+			writel(0x00, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0x40, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x1F, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1500MHz\n");
+			break;
+
+		default:
+			printf("Not define this CPU Freq %d, use defualt value 1200!\n", value);
+			printf("Support CPU freq=(1000,1100,1200,1300,1350)MHz\n");
+			//CPU 1200 MHz -> CPU-MPLL-150Mhz = 0x190000
+			writel(0x00, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO0_OFS); // B0
+			writel(0x00, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO1_OFS); // B1
+			writel(0x19, IOADDR_CG_REG_BASE + CPU_CLOCK_RATE_RATIO2_OFS); // B2
+			printf("Set CPU clk 1200MHz\n");
+			break;
+#endif
+		}
+		break;
+	default:
+		printf("CPU:%d => type nvt_cpu_freq <freq>\n", (int)get_cpu_clk());
+		return CMD_RET_USAGE;
+	}
+	return 0;
+}
+
+
+U_BOOT_CMD(
+	nvt_cpu_freq, 2,    1,  do_nvt_cpu_freq,
+	"change cpu freq",
+	"[MHz]\n"
+	"nvt_cpu_freq 480\n"
+#ifdef CONFIG_NVT_FPGA_EMULATION
+	"nvt_cpu_freq !=480(change to ARMPLL@FPGA)\n"
+#else
+	"nvt_cpu_freq 1000\n"
+	"nvt_cpu_freq 1100\n"
+	"nvt_cpu_freq 1200\n"
+	"nvt_cpu_freq 1300\n"
+	"nvt_cpu_freq 1350\n"
+	"nvt_cpu_freq 1400\n"
+	"nvt_cpu_freq 1450\n"
+	"nvt_cpu_freq 1500\n"
+#endif
+);
+
+
+int do_nvt_ddr_freq(cmd_tbl_t *cmdtp, int flag, int argc, char *const argv[])
+{
+	unsigned int freq_ratio;
+	unsigned int freq_ratio0, freq_ratio1, freq_ratio2;
+
+	//0xF0020000 + (0x4000 + 0x400 + 0x20) = 0xF0024400 + 0x20
+	freq_ratio0 = readl(IOADDR_CG_REG_BASE + \
+						DMA_CLOCK_RATE_RATIO0_OFS);
+
+	//0xF0020000 + (0x4000 + 0x400 + 0x20) = 0xF0024400 + 0x24
+	freq_ratio1 = readl(IOADDR_CG_REG_BASE + \
+						DMA_CLOCK_RATE_RATIO1_OFS);
+
+	//0xF0020000 + (0x4000 + 0x400 + 0x20) = 0xF0024400 + 0x28
+	freq_ratio2 = readl(IOADDR_CG_REG_BASE + \
+						DMA_CLOCK_RATE_RATIO2_OFS);
+	freq_ratio = freq_ratio0 | (freq_ratio1 << 8) | \
+				 (freq_ratio2 << 16);
+
+	freq_ratio = (freq_ratio << 3);
+	printf("DMA clock rate = %d => [%d]MHz\r\n", (12 * freq_ratio / 131072), ((12 * freq_ratio / 131072) >> 1));
+	return 0;
+}
+
+U_BOOT_CMD(
+	nvt_get_ddr_freq, 2,      1,     do_nvt_ddr_freq,
+	"get ddr freq/type\n",
+	"\n"
+);
+
+int prepare_power_trim(int mode)
+{
+    BOOL      is_found;
+    int       code;
+    unsigned int    power_trim, remap_data;
+    char cmd[50];
+
+    code = otp_key_manager(7);
+
+    if(code == -33) {
+        printf("Read power trim error\r\n");
+        return -1;
+    } else {
+        power_trim = 0;
+        is_found = extract_trim_valid(code, (u32 *)&power_trim);
+
+		power_trim = ((power_trim >> 8)&0xF);
+
+        if(is_found) {
+            printf("Read power trim = 0x%08x\r\n", power_trim);
+        } else {
+            printf("Read power trim = 0x%08x(NULL)\r\n", power_trim);
+        }
+
+        remap_data = extract_trim_to_pwm_duty(PWM0_CORE_POWER, power_trim);
+        printf("remap_data %d\n", remap_data);
+        sprintf(cmd, "power_ctl %d", remap_data);
+
+        run_command(cmd, 0);
+    }
+    return 0;
+}
+
+
+int do_nvt_pwr_ctrl(cmd_tbl_t *cmdtp, int flag, int argc, char *const argv[])
+{
+	u32 value = simple_strtoul(argv[1], NULL, 10);
+	//u32 uiReg;
+	unsigned int    remap_data;
+	char cmd[50];
+
+	switch (argc) {
+	case 2:
+		switch (value) {
+		case LEAKAGE_0:
+		case LEAKAGE_1:
+		case LEAKAGE_2:
+		case LEAKAGE_3:
+		case LEAKAGE_4:
+		case LEAKAGE_5:
+		case LEAKAGE_6:
+		case LEAKAGE_7:
+		case LEAKAGE_8:
+		case LEAKAGE_9:
+		case LEAKAGE_10:
+		case LEAKAGE_11:
+		case LEAKAGE_12:
+		case LEAKAGE_13:
+		case LEAKAGE_14:
+		case LEAKAGE_15:
+    		remap_data = extract_trim_to_pwm_duty(PWM0_CORE_POWER, value);
+			printf("tr<%d> <----> du<%d>\n", value, remap_data);
+			sprintf(cmd, "power_ctl %d", remap_data);
+        	run_command(cmd, 0);
+			break;
+
+		default:
+			printf("Please input 0~15\n");
+			break;
+		}
+		break;
+	default:
+		printf("type nvt_pwr_ctrl_test <0>~<15>\n");
+		return CMD_RET_USAGE;
+	}
+	return 0;
+}
+U_BOOT_CMD(
+	nvt_pwr_ctrl_test, 2,    1,  do_nvt_pwr_ctrl,
+	"Config PWM pwr ctrl(test only)",
+	"nvt_pwr_ctrl_test 0~15\n"
+);
+

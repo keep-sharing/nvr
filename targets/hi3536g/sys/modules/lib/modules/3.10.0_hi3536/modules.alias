@@ -1,0 +1,15 @@
+# Aliases extracted from modules themselves.
+alias nls_tis-620 nls_cp874
+alias nls_sjis nls_cp932
+alias nls_euc-kr nls_cp949
+alias nls_big5 nls_cp950
+alias nls_iso8859-8 nls_cp1255
+alias fs-autofs autofs4
+alias devname:autofs autofs4
+alias char-major-10-235 autofs4
+alias rtnl-link-bond bonding
+alias xfrm-mode-10-0 xfrm6_mode_transport
+alias xfrm-mode-10-1 xfrm6_mode_tunnel
+alias xfrm-mode-10-4 xfrm6_mode_beet
+alias netdev-sit0 sit
+alias char-major-10-130 wdt

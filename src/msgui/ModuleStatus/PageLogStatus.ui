@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LogStatus</class>
+ <widget class="QWidget" name="LogStatus">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>997</width>
+    <height>627</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="MyDateEdit" name="dateEdit_startDate">
+       <property name="displayFormat">
+        <string>yyyy-MM-dd</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+       <property name="style" stdset="0">
+        <string>white</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_subType">
+       <property name="text">
+        <string>Sub Type</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_endTime">
+       <property name="text">
+        <string>End Time</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_mainType">
+       <property name="text">
+        <string>Main Type</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="ComboBox" name="comboBox_maintype"/>
+     </item>
+     <item row="4" column="1" colspan="2">
+      <widget class="CheckComboBox" name="comboBox_subType"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="MyDateEdit" name="dateEdit_endDate">
+       <property name="displayFormat">
+        <string>yyyy-MM-dd</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+       <property name="style" stdset="0">
+        <string>white</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="MyTimeEdit" name="timeEdit_startTime">
+       <property name="displayFormat">
+        <string>HH:mm:ss</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_startTime">
+       <property name="text">
+        <string>Start Time</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="MyTimeEdit" name="timeEdit_endTime">
+       <property name="displayFormat">
+        <string>HH:mm:ss</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelChannel">
+       <property name="text">
+        <string>Channel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="2">
+      <widget class="CheckComboBox" name="comboBoxChannel"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="TableView" name="tableView"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QLabel" name="label_count">
+       <property name="text">
+        <string>Total 0 Items</string>
+       </property>
+       <property name="style" stdset="0">
+        <string>transparent</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_page">
+       <property name="text">
+        <string>Total: Page:</string>
+       </property>
+       <property name="style" stdset="0">
+        <string>transparent</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_firstPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/startpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/startpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/startpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_previousPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/prevpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/prevpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/prevpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="MyLineEditPage" name="lineEdit_page">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_nextPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/nextpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/nextpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/nextpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_lastPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/endpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/endpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/endpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButtonPage" name="pushButton_go">
+       <property name="text">
+        <string>Go</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="MyPushButton" name="pushButton_export">
+       <property name="text">
+        <string>Export</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="MyPushButton" name="pushButton_search">
+       <property name="text">
+        <string>Search</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="MyPushButton" name="pushButton_back">
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyPushButton</class>
+   <extends>QPushButton</extends>
+   <header>mypushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>mydateedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyTimeEdit</class>
+   <extends>QTimeEdit</extends>
+   <header>mytimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLineEditPage</class>
+   <extends>QLineEdit</extends>
+   <header>mylineeditpage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>TableView</class>
+   <extends>QTableView</extends>
+   <header>tableview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PushButtonPage</class>
+   <extends>QPushButton</extends>
+   <header>PushButtonPage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CheckComboBox</class>
+   <extends>QComboBox</extends>
+   <header>checkcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

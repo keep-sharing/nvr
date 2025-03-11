@@ -1,0 +1,30 @@
+nginx交叉编译
+
+(1)configure
+【3798】
+./configure --prefix=/opt/app/nginx --with-zlib=/home/share/nginx/zlib-1.2.11 --with-cc=arm-histbv310-linux-gcc --user=root --group=root --without-http_rewrite_module --without-http_fastcgi_module --conf-path=/opt/app/nginx/conf/nginx.conf --error-log-path=/opt/app/nginx/logs/logs --without-http_charset_module --without-http_ssi_module --without-http_userid_module --without-http_auth_basic_module --without-http_geo_module --without-http_map_module --without-http_split_clients_module --without-http_referer_module --without-http_uwsgi_module --without-http_scgi_module --without-http_memcached_module --without-http_memcached_module --without-http_limit_conn_module --without-http_limit_req_module --without-http_empty_gif_module --without-http_browser_module --without-mail_pop3_module --without-mail_imap_module --without-mail_smtp_module --with-ipv6
+ 
+【3536】															
+./configure --prefix=/opt/app/nginx --with-zlib=/home/share/nginx/zlib-1.2.11 --with-cc=arm-hisiv300-linux-gcc --user=root --group=root --without-http_rewrite_module --without-http_fastcgi_module --conf-path=/opt/app/nginx/conf/nginx.conf --error-log-path=/opt/app/nginx/logs/logs --without-http_charset_module --without-http_ssi_module --without-http_userid_module --without-http_auth_basic_module --without-http_geo_module --without-http_map_module --without-http_split_clients_module --without-http_referer_module  --without-http_uwsgi_module --without-http_scgi_module --without-http_memcached_module --without-http_memcached_module --without-http_limit_conn_module --without-http_limit_req_module --without-http_empty_gif_module --without-http_browser_module --without-mail_pop3_module --without-mail_imap_module --without-mail_smtp_module  --with-ipv6
+
+
+(2)make install
+在配置的路径下面生成/sbin/nginx可执行文件，对可执行文件进行压缩
+【3536】
+arm-hisiv300-linux-strip /opt/app/nginx/sbin/nginx
+【3798】
+arm-histbv310-linux-strip /opt/app/nginx/sbin/nginx
+生成新nginx可执行文件
+
+二、在NVR上执行
+1、将/opt/app/nginx/路径下的conf，html，logs目录以及目录下的文件拷贝到对应路径下/opt/app/nginx/
+2、拷贝可执行文件/opt/app/nginx/sbin/nginx到对应路径/opt/app/bin/
+3、配置/opt/app/nginx/conf/下的nginx.conf文件（参考./nginx.conf)
+4、执行可执行文件
+运行：nginx
+杀死：killall -9 nginx
+
+三、检查
+netstat -an
+检查是否有nginx监听的接口
+

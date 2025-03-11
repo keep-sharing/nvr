@@ -1,0 +1,76 @@
+#!/bin/sh
+overlay_files()
+{
+	if [ ! -f /mnt/overlay_rw0/rootfs/.fileexisted ]; then
+		mkdir /mnt/overlay_rw0/rootfs
+		cp -arf /etc /mnt/overlay_rw0/rootfs
+		cp -arf /var /mnt/overlay_rw0/rootfs
+		sync
+		mkdir /mnt/overlay_rw0/rootfs/lib
+		cp -arf /lib/modules /mnt/overlay_rw0/rootfs/lib/modules
+		sync;
+		touch /mnt/overlay_rw0/rootfs/.fileexisted
+		sync;
+	fi
+	mount /mnt/overlay_rw0/rootfs/etc /etc
+	mount /mnt/overlay_rw0/rootfs/var /var
+	mount /mnt/overlay_rw0/rootfs/lib/modules /lib/modules
+}
+
+wait_dev_or_exit()
+{
+	x=0
+	timeout=5
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .1
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[app mount] $1 not found"
+		exit -1
+	fi
+}
+
+echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+mdev -s
+
+# if /proc/mtd not exist, exit
+if [ ! -f /proc/mtd ]; then
+	echo "[fs overlay] /proc/mtd not ready"
+	exit -1
+fi
+
+# if the partition not found, exit
+num=`cat /proc/mtd | grep \"rootfs1\" | awk -F' ' '{print $1}' | tr -d 'mtd' | tr -d ':'`;
+if [ -z "$num" ]; then
+	echo "[fs overlay] no rootfs1 partition"
+	exit 0
+fi
+
+if [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_UBI" ]; then
+	echo "[fs overlay] ubi mount rootfs1"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi1_0
+	mount -t ubifs /dev/ubi1_0 /mnt/overlay_rw0;
+	overlay_files;
+	sync
+	echo 1 > /proc/sys/vm/drop_caches
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_NAND_SQUASH" ]; then
+	echo "[fs overlay] squash mount rootfs1"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi1_0
+	mount -t ubifs /dev/ubi1_0 /lib/modules;
+	mount /lib/modules/usr/bin/ /usr/bin/;
+	mount /lib/modules/usr/lib/ /usr/lib/;
+elif [ "$NVT_ROOTFS_TYPE" == "NVT_ROOTFS_TYPE_RAMDISK" ] && [ "$EMBMEM" != "EMBMEM_NONE" ]; then
+	echo "[fs overlay] ramdisk mount rootfs1"
+	ubiattach /dev/ubi_ctrl -m $num
+	wait_dev_or_exit /dev/ubi0_0
+	mount -t ubifs /dev/ubi0_0 /lib/modules;
+	mount /lib/modules/usr/bin/ /usr/bin/;
+	mount /lib/modules/usr/lib/ /usr/lib/;
+else
+	echo "[fs overlay] jffs2 mount rootfs1"
+	mount -t jffs2 /dev/mtdblock$num /mnt/overlay_rw0
+	overlay_files;
+fi

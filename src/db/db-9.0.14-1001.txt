@@ -1,0 +1,2 @@
+#升级到14版本后用户权限有修改，这个参数用于界面提示
+insert into params (name, value) values ('permission_update', 0);

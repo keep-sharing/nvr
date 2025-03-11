@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PicturePlay</class>
+ <widget class="QWidget" name="PicturePlay">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1074</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget_pixmap" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_bar" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget#widget_bar
+{
+	background-color: #5F5F5F;
+}</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_previousPlay">
+        <property name="styleSheet">
+         <string notr="true">QToolButton[pause=false]
+{
+	min-width: 30px;
+	min-height: 20px;
+	border: 0px;
+	border-radius: 0px;
+	border-image: url(:/playback/playback/pb_rewind.png);
+	background-color: #FFFFFF;
+}
+QToolButton[pause=true]
+{
+	min-width: 30px;
+	min-height: 20px;
+	border: 0px;
+	border-radius: 0px;
+	border-image: url(:/playback/playback/pb_pause.png);
+	background-color: #FFFFFF;
+}
+QToolButton:hover
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:pressed
+{
+	background-color: #2E2E2E;
+}
+QToolButton:checked
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:disabled
+{
+	background-color: rgb(150,150,150);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pause" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_postPlay">
+        <property name="styleSheet">
+         <string notr="true">QToolButton[pause=false]
+{
+	min-width: 30px;
+	min-height: 20px;
+	border: 0px;
+	border-radius: 0px;
+	border-image: url(:/playback/playback/pb_play.png);
+	background-color: #FFFFFF;
+}
+QToolButton[pause=true]
+{
+	min-width: 30px;
+	min-height: 20px;
+	border: 0px;
+	border-radius: 0px;
+	border-image: url(:/playback/playback/pb_pause.png);
+	background-color: #FFFFFF;
+}
+QToolButton:hover
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:pressed
+{
+	background-color: #2E2E2E;
+}
+QToolButton:checked
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:disabled
+{
+	background-color: rgb(150,150,150);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pause" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_previous">
+        <property name="styleSheet">
+         <string notr="true">QToolButton
+{
+	min-width: 30px;
+	min-height: 20px;
+	border: 0px;
+	border-radius: 0px;
+	border-image: url(:/playback/playback/pre.png);
+	background-color: #FFFFFF;
+}
+QToolButton:hover
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:pressed
+{
+	background-color: #2E2E2E;
+}
+QToolButton:checked
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:disabled
+{
+	background-color: rgb(150,150,150);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="toolButton_next">
+        <property name="styleSheet">
+         <string notr="true">QToolButton
+{
+	min-width: 30px;
+	min-height: 20px;
+	border: 0px;
+	border-radius: 0px;
+	border-image: url(:/playback/playback/next.png);
+	background-color: #FFFFFF;
+}
+QToolButton:hover
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:pressed
+{
+	background-color: #2E2E2E;
+}
+QToolButton:checked
+{
+	background-color: rgb(10,168,227);
+}
+QToolButton:disabled
+{
+	background-color: rgb(150,150,150);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_size">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+        <property name="text">
+         <string>Resolution: 1920x1080    Size: 234KB</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

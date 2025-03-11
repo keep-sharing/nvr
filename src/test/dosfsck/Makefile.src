@@ -1,0 +1,36 @@
+
+
+PREFIX 		= /usr/local
+SBINDIR 	= $(PREFIX)/sbin
+
+CC 			?= arm-none-linux-gnueabi-gcc
+CPP 		= $(CC) -E
+OPTFLAGS 	= -O2 -fomit-frame-pointer -D_GNU_SOURCE $(shell getconf LFS_CFLAGS)
+WARNFLAGS 	= -Wall -Wextra -Wno-sign-compare -Wno-missing-field-initializers -Wmissing-prototypes -Wstrict-prototypes
+DEBUGFLAGS 	= -g
+CFLAGS 		= $(OPTFLAGS) $(WARNFLAGS) $(DEBUGFLAGS)
+LDFLAGS 	=
+
+OBJECTS = boot.o check.o common.o fat.o file.o io.o lfn.o charconv.o fsck.fat.o
+
+all: fsck.fat
+
+fsck.fat: $(OBJECTS)
+	$(CC) -o $@ $(LDFLAGS) $^
+
+.c.o:
+	$(CC) -c $(CFLAGS) $*.c
+
+install: fsck.fat
+	mkdir -p $(SBINDIR)
+	install -m 755 fsck.fat $(SBINDIR)
+
+
+clean:
+	rm -f *.o
+
+distclean: clean
+	rm -f fatlabel fsck.fat mkfs.fat
+
+
+

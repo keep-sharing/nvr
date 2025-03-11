@@ -1,0 +1,5 @@
+# 新增disk_health表
+CREATE TABLE disk_health("disk_health_enable" INTEGER NOT NULL default 0);
+insert into disk_health (disk_health_enable) values(0);
+# 更新9.0.19-r3插件版本
+update params set value='1053' where name='plugin_version';

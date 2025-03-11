@@ -1,0 +1,2 @@
+#补充protocol表的msddns协议
+insert into protocol(pro_id,pro_name,function,enable,display_model) values(7,'MSDDNS',2,1,1);

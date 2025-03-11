@@ -1,0 +1,24 @@
+#
+# Panel drivers configuration
+#
+#
+choice
+	prompt "Novatek Panel2 Selection menu"
+	default DISP_IF8B_LCD2_PW35P00_HX8238D
+	depends on VIDEO_LOGO && (TARGET_NA51102 || TARGET_NA51102_A64) 
+	help
+	  select panel for device object.
+
+config DISP_IF8B_LCD2_PW35P00_HX8238D
+	bool "To support PW35P00 serial panel"
+	depends on VIDEO_LOGO && (TARGET_NA51102 || TARGET_NA51102_A64) 
+	help
+	  Novatek Serial IF 8bit Panel2 PW35P00 support.
+
+config DISP_IFNONE
+        bool "To support NULL panel"
+        depends on VIDEO_LOGO && (TARGET_NA51102 || TARGET_NA51102_A64) 
+        help
+          Novatek NULL panel support.
+
+endchoice

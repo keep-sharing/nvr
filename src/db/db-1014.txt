@@ -1,0 +1,46 @@
+update params set value='1022' where name='mplugin_version';
+update params set value='1022' where name='plugin_version';
+update params set value='2.3.02' where name='sdkversion';
+insert into params values('power_key', '0');
+alter table display add column start_screen INTEGER not null default 0;
+alter table display add column page_info INTEGER not null default 0;
+alter table display add column eventPop_screen INTEGER not null default 0;
+alter table display add column eventPop_time INTEGER not null default 11;
+CREATE TABLE motion_popup_schedule ("chn_id" INTEGER NOT NULL,"week_id" INTEGER,"plan_id" INTEGER,"start_time" TEXT,"end_time" TEXT,"action_type" INTEGER);
+
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(32,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(33,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(34,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(35,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(36,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(37,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(38,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(39,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(40,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(41,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(42,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(43,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(44,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(45,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(46,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(47,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(48,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(49,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(50,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(51,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(52,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(53,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(54,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(55,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(56,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(57,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(58,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(59,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(60,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(61,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(62,4,4,4,4,0);
+insert into ptz_speed(id,pan,tilt,zoom,focus,timeout) values(63,4,4,4,4,0);
+
+
+CREATE TABLE upnp ("enable" INTEGER ,"type" INTEGER,"name" TEXT,"extern_ip" TEXT,"http_port" INTEGER,"http_status" INTEGER,"rtsp_port" INTEGER,"rtsp_status" INTEGER);
+insert into upnp (enable,type,name,extern_ip,http_port,http_status,rtsp_port,rtsp_status) values(0,0,'UPnP','',21202,0,23202,0);

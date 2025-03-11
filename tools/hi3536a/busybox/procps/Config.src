@@ -1,0 +1,26 @@
+#
+# For a description of the syntax of this configuration file,
+# see docs/Kconfig-language.txt.
+#
+
+menu "Process Utilities"
+
+INSERT
+
+config FEATURE_SHOW_THREADS
+	bool "Support thread display in ps/pstree/top"
+	default y
+	depends on PS || TOP || PSTREE
+	help
+	Enables the ps -T option, showing of threads in pstree,
+	and 'h' command in top.
+
+config RTOS_FIX_CPUTIME_OVERFLOW
+        bool "fix kernel cputime overflow in 32-bit system"
+        default n
+        depends on PS || TOP
+        help
+        When the utime and stime in the /proc/$pid/stat interface
+        of the 32-bit system defined as 64-bit, enable this option.
+
+endmenu

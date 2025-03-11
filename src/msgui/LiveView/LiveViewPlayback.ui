@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LiveViewPlayback</class>
+ <widget class="QWidget" name="LiveViewPlayback">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>784</width>
+    <height>562</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton
+{
+	border: 0px;
+	padding: 0px;
+	min-width: 32px;
+	min-height: 32px;
+	background-color: transparent;
+}
+QPushButton:hover
+{
+	background-color: transparent;
+}
+QPushButton:pressed
+{
+	background-color: transparent;
+}</string>
+  </property>
+  <widget class="ShadowWidget" name="widget_shadow" native="true">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>230</y>
+     <width>531</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_time">
+      <property name="text">
+       <string>2018-12-21 08:09:10</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="TimeSlider" name="slider_time">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_play">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-image: url(:/retrieve/retrieve/playbutton.png);
+}
+QPushButton:hover
+{
+	border-image: url(:/retrieve/retrieve/playbutton_hover.png);
+}
+QPushButton:pressed
+{
+	border-image: url(:/retrieve/retrieve/playbutton.png);
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_pause">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-image: url(:/retrieve/retrieve/pause.png);
+}
+QPushButton:hover
+{
+	border-image: url(:/retrieve/retrieve/pause_hover.png);
+}
+QPushButton:pressed
+{
+	border-image: url(:/retrieve/retrieve/pause.png);
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_close">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-image: url(:/retrieve/retrieve/close.png);
+}
+QPushButton:hover
+{
+	border-image: url(:/retrieve/retrieve/close_hover.png);
+}
+QPushButton:pressed
+{
+	border-image: url(:/retrieve/retrieve/close.png);
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_noResource">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>100</y>
+     <width>241</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #FFFFFF;
+font-size: 30pt;</string>
+   </property>
+   <property name="text">
+    <string>No Resource</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TimeSlider</class>
+   <extends>QSlider</extends>
+   <header>timeslider.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ShadowWidget</class>
+   <extends>QWidget</extends>
+   <header>shadowwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

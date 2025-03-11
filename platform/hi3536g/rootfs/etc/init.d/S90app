@@ -1,0 +1,42 @@
+#!/bin/sh
+
+
+#cfg_mem()
+#{
+#	var0=`cat /proc/cmdline | grep 'mem=256M'`
+#	if [ "$var0" != "" ]; then
+#		echo "cmdline: mem=256M, total mem is 512M"
+#		load3516a -i -allmem 512 -osmem 256 -offline
+#	else
+#		echo "cmdline: mem=128M, total mem is 256M"
+#		load3516a -i -allmem 256 -osmem 128 -offline
+#	fi	
+#}
+
+cur_dir=$(pwd)
+
+cd /usr/local/bin/
+
+sh /usr/local/bin/load3536 -i
+
+cd $cur_dir
+
+echo "Began to unpack /opt/app ..."
+tar -jxf /home/app.tar.bz2 -C /opt
+echo "unpack Done"
+
+source /etc/profile
+
+mount -t yaffs2 /dev/mtdblock7 /mnt/nand
+mount -t yaffs2 /dev/mtdblock8 /mnt/nand2
+mount -t yaffs2 /dev/mtdblock9 /mnt/nand3
+/etc/udev/disk-hotplug.sh #fix disk loading error! by zbing
+#source /etc/profile
+
+#cfg_mem
+
+daemon & 
+
+#msserver &
+
+/opt/app/start_app.sh &

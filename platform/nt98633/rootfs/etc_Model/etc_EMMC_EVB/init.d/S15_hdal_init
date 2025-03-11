@@ -1,0 +1,20 @@
+#!/bin/sh
+wait_dev_or_exit()
+{
+	x=0
+	timeout=5
+	while [ "$x" -lt "$timeout" -a ! -e $1 ]; do
+		x=$((x+1))
+		sleep .1
+	done
+	if [ "$x" -ge "$timeout" ]; then
+		echo "[app overlay] $1 not found"
+		exit -1
+	fi
+}
+
+#read -t 2 -p "   Press q -> ENTER to exit boot procedure? " exit_boot
+#if [ "$exit_boot" != "q" ] ; then
+#	sh /mnt/mtd/vg_boot.sh
+#fi
+

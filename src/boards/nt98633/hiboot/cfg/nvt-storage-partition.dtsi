@@ -1,0 +1,24 @@
+/*
+ * Novatek Ltd. NA51090 BSP part of dts
+ *
+ * Cortex-A9
+ * HS-EM-SBS2S2B32G total size 29824MB
+ */
+
+&emmc {
+	partition_loader {	label = "loader";	          reg = <0x0 0x00000000 0x0 0x00040000>; };  /* Fixed */
+	partition_fdt {	        label = "fdt";	                  reg = <0x0 0x00040000 0x0 0x00040000>; };  /* Fixed */
+        partition_atf {         label = "atf";       		  reg = <0x0 0x00080000 0x0 0x00040000>; };
+	partition_uboot {       label = "uboot";                  reg = <0x0 0x000c0000 0x0 0x00140000>; };
+	partition_uenv {        label = "uenv";                   reg = <0x0 0x00200000 0x0 0x00080000>; };
+	partition_logo {        label = "logo";                   reg = <0x0 0x00280000 0x0 0x00800000>; };
+	partition_ker1 {        label = "ker1";                   reg = <0x0 0x00a80000 0x0 0x00d00000>; };
+	partition_ker2 {        label = "ker2";                   reg = <0x0 0x01780000 0x0 0x00d00000>; };
+	partition_fs1 {         label = "fs1";  active="true";    reg = <0x0 0x02480000 0x0 0x10000000>; };
+	partition_fs2 {         label = "fs2";  active="true";    reg = <0x0 0x12480000 0x0 0x10000000>; };
+	partition_cfg {        	label = "cfg";                    reg = <0x0 0x22480000 0x0 0x04000000>; };
+	partition_oem {         label = "oem";                    reg = <0x0 0x26480000 0x0 0x04000000>; };
+	partition_data1 {       label = "data1";                  reg = <0x0 0x2a480000 0x0 0x04000000>; };
+	partition_share {       label = "share";                  reg = <0x0 0x2e480000 0x0 0x10000000>; };
+        //partition_all {     	label = "all";                    reg = <0x0 0x00000000 0x0 0xEC000000>; };  /* reserved for user e.g: rescue disk 704MB*/
+};

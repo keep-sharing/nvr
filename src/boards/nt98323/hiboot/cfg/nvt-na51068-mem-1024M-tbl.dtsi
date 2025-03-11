@@ -1,0 +1,78 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+/ {
+	/* Uboot/loader memory layout */
+	nvt_memory_cfg {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		dram {	        reg = <0x00000000 0x40000000>;	};
+		core2entry1 {   reg = <0x00000000 0x00080000>;  };
+		fdt {	        reg = <0x00080000 0x00080000>;	};
+		loader {	reg = <0x00100000 0x00900000>;	};
+		shmem{	        reg = <0x00A00000 0x00100000>;	};
+		linuxtmp{	reg = <0x00B00000 0x1D500000>;	};
+		uboot{	        reg = <0x2C000000 0x01F80000>;	};
+		core2entry2 {   reg = <0x2DF80000 0x00080000>;  };
+	};
+	/* Linux system memory region*/
+	memory { device_type = "memory"; reg = <0x00000000 0x2c000000>; };
+
+	/* Linux setup reserved memory */
+	reserved-memory {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		/* Enable Linux CMA if need
+		cma0: cma0@0x03000000 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x03000000 0x01800000>;
+			alignment = <0x400000>;
+			status = "okay";
+		};
+		*/
+	
+		/* Enable DSP CMA if need
+		dsp_cma: dsp_cma@0x02000000 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x02000000 0x01000000>;
+			alignment = <0x400000>;
+			status = "okay";
+		};
+		*/
+	};
+
+	/* Enable Linux CMA if need
+	nvt_cma {
+		compatible = "nvt,nvt_cma";
+		memory-region = <&cma0>;
+		id = <0>;
+	};
+	*/
+
+	/* Enable DSP CMA if need
+	nvt_dsp_cma {
+		compatible = "nvt,nvt_cma";
+		memory-region = <&dsp_cma>;
+		id = <1>;
+	};
+	*/
+	
+	hdal-memory {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		media { reg = <0x2C000000 0x14000000>; };
+	};
+
+	/* To config the dram mapping */
+	ddr_chip_mapping {
+		mapping = <0 0  0x00000000 0x40000000 /* ddrid-0, chipid-0, physical start, size */
+			   >;
+	};
+};

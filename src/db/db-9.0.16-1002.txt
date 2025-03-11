@@ -1,0 +1,2 @@
+# display 新增font_size
+alter table display add column font_size INTEGER not null default 1;

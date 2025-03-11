@@ -1,0 +1,13 @@
+"E:\SoftWare\IAR Systems\Embedded Workbench 8.3\arm\bin\armproc.dll" 
+
+"E:\SoftWare\IAR Systems\Embedded Workbench 8.3\arm\bin\armsim2.dll" 
+
+"Y:\branches\nvr\hi3536a\mshn\tools\NVRMCU\GD32F303\Debug\Exe\nvrmcu.out" 
+
+--plugin="E:\SoftWare\IAR Systems\Embedded Workbench 8.3\arm\bin\armbat.dll" 
+
+--device_macro="E:\SoftWare\IAR Systems\Embedded Workbench 8.3\arm\config\debugger\GD\GD32F30x.dmac" 
+
+
+
+

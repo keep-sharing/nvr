@@ -1,0 +1,13 @@
+#!/bin/sh
+# Setup mdev
+echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+mdev -s
+
+# Scan for without insert card
+if [ ! -f /tmp/.nvt_mounts ]; then
+	/etc/mdev-script/autosd.sh
+	rm -rf /tmp/.nvt_mounts;
+fi
+
+KERVER=`cat /proc/version | awk -F'version ' '{print $2}' | awk -F' ' '{print $1}'`
+modprobe ehci-hcd

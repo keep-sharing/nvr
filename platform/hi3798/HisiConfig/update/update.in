@@ -1,0 +1,52 @@
+##
+## update/update.in
+##
+## History:
+##    2014/08/16 - [eric.milesight] Create
+##
+## Copyright (C) 2014-2014, Milesight, Inc.
+##
+## All rights reserved. No Part of this file may be reproduced, stored
+## in a retrieval system, or transmitted, in any form, or by any means,
+## electronic, mechanical, photocopying, recording, or otherwise,
+## without the prior consent of Milesight, Inc.
+##
+
+
+menu "Update firmware configure"
+
+config BUILD_UPDATE_FIRMWARE
+	bool "Build update firmware"
+	default y
+	help
+		Enable build update firmware image.
+
+config CONFIG_UPFW_HIBOOT
+	bool "Build in hiboot bld image"
+	depends on BUILD_UPDATE_FIRMWARE
+	default y
+	help 
+		Select amboot image.
+	
+config CONFIG_UPFW_KERNEL
+	bool "Build in kernel image"
+	depends on BUILD_UPDATE_FIRMWARE
+	default n
+	help
+		Select kernel image.
+	
+config CONFIG_UPFW_FS
+	bool "Build in filesys image"
+	depends on BUILD_UPDATE_FIRMWARE
+	default y
+	help
+		Select filesys image.
+	
+config CONFIG_UPFW_CMD
+	bool "Build in update command"
+	depends on BUILD_UPDATE_FIRMWARE
+	default n
+	help
+		Select update command.					
+		
+endmenu

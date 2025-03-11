@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingListWidget</class>
+ <widget class="QWidget" name="SettingListWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>332</width>
+    <height>538</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#SettingListWidget
+{
+background-color: #2E2E2E;
+}
+
+SettingListItemMain
+{
+    outline: none;
+    border: 0px;
+    font: 16pt;
+    min-height: 80px;
+	text-align: left;
+    color: #FFFFFF;
+    background-color: #2E2E2E;
+    border-radius: 0px;
+    padding-right: 0px;
+    padding-left: 50px;
+}
+SettingListItemMain:hover
+{
+    background-color: rgba(9, 168, 226, 50%);
+}
+SettingListItemMain:checked
+{
+    background-color: #0AA9E3;
+}
+
+SettingListItemSub
+{
+    outline: none;
+    border: 0px;
+    font: 16pt;
+    min-height: 80px;
+	text-align: left;
+    color: #FFFFFF;
+    background-color: #555555;
+    border-radius: 0px;
+    padding-right: 0px;
+    padding-left: 80px;
+}
+SettingListItemSub:hover
+{
+    background-color: rgba(9, 168, 226, 50%);
+}
+SettingListItemSub:checked
+{
+    background-color: #0AA9E3;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>533</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

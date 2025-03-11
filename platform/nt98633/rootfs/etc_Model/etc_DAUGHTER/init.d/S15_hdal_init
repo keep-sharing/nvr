@@ -1,0 +1,6 @@
+#!/bin/sh
+read -t 2 -p "   Press q -> ENTER to exit boot procedure? " exit_boot
+if [ "$exit_boot" != "q" ] ; then
+	sh /mnt/mtd/vg_boot.sh
+fi
+

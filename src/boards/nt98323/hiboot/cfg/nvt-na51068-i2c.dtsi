@@ -1,0 +1,15 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+/ {
+	i2c0: i2c0@fe300000 { compatible = "nvt,ftiic010"; reg = <0xfe300000 0x100>; interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; };
+	i2c1: i2c1@fe320000 { compatible = "nvt,ftiic010"; reg = <0xfe320000 0x100>; interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; };
+	i2c2: i2c2@fe340000 { compatible = "nvt,ftiic010"; reg = <0xfe340000 0x100>; interrupts = <GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; };
+	i2c3: i2c3@fe360000 { compatible = "nvt,ftiic010"; reg = <0xfe360000 0x100>; interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; };
+	i2c4: i2c4@fe380000 { compatible = "nvt,ftiic010"; reg = <0xfe380000 0x100>; interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; };
+	i2c5: i2c5@fe3a0000 { compatible = "nvt,ftiic010"; reg = <0xfe3a0000 0x100>; interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>; clock-frequency = <100000>; };
+};

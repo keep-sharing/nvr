@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/training/ddrtrn_hw.c

@@ -1,0 +1,34 @@
+menu "Novatek DDR Scan Support"
+
+config NVT_DDR_SCAN
+	bool "To support DDR range scan utils"
+	default n
+	help
+	  This option is used to lunch range scan.
+
+choice
+	prompt "DDR scan UARTx selection"
+	default NVT_DDR_SCAN_OUTPUT_MESSAGE_TO_UART0
+	help
+	  select UART set for range scan
+config NVT_DDR_SCAN_OUTPUT_MESSAGE_TO_UART0
+	bool "To support DDR range scan utils output message to UART0"
+	depends on NVT_DDR_SCAN
+	help
+	  This option is used to lunch range scan.
+
+config NVT_DDR_SCAN_OUTPUT_MESSAGE_TO_UART1
+	bool "To support DDR range scan utils output message to UART1"
+	depends on NVT_DDR_SCAN
+	help
+	  This option is used to lunch range scan.
+
+config NVT_DDR_SCAN_OUTPUT_MESSAGE_TO_UART2
+	bool "To support DDR range scan utils output message to UART2"
+	depends on NVT_DDR_SCAN
+	help
+	  This option is used to lunch range scan.
+
+endchoice
+
+endmenu

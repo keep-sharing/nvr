@@ -1,0 +1,8 @@
+insert into params values('mplugin_version', '1014');
+insert into params_oem values('mplugin_version', '1014');
+update params set value='1020' where name='plugin_version';
+update params set value='1019' where name='mplugin_version';
+CREATE TABLE auto_reboot ("id" INTEGER NOT NULL,"enable" INTEGER,"wday" INTEGER,"hour" INTEGER,"login" INTEGER,"username" TEXT,"reboot" INTEGER);
+insert into auto_reboot values('0', '0', '7', '0', '0', '','0');
+alter table trigger_alarms add column disk_unformat INTEGER not null default 0;
+alter table trigger_alarms add column no_disk INTEGER not null default 0;

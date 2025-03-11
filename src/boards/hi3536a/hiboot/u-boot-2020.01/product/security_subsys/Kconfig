@@ -1,0 +1,8 @@
+config CIPHER_ENABLE
+	bool "cipher enable"
+
+config KLAD_ENABLE
+	bool "klad enable"
+config OTP_ENABLE
+	bool "otp enable"
+	depends on TARGET_SS928V100 || TARGET_SS626V100

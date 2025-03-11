@@ -1,0 +1,18 @@
+/*
+ * Novatek Ltd. BSP part of dts
+ */
+
+/dts-v1/;
+#include <dt-bindings/gpio/nvt-gpio.h>
+#include "nvt-peri.dtsi"    /* engine register definition */
+#include "nvt-top.dtsi"     /* pinmux, made from tool */
+#include "nvt-i2c.dtsi"     /* i2c */
+#include "nvt-gpio.dtsi"    /* gpio, made from tool */
+#include "nvt-peri-dev.dtsi"/* peripheral device dts config */
+#include "nvt-audio.dtsi"   /* peripheral: audio */
+#include "nvt-display.dtsi" /* peripheral: display */
+#include "nvt-media.dtsi"   /* ko files relation */
+#include "nvt-mem-tbl.dtsi" /* memory partition */
+#include "nvt-storage-partition.dtsi" /* flash partition */
+#include "nvt-info.dtsi"    /* used for turnkey information */
+#include "nvt-nvtpack.dtsi" /* used for turnkey to make all-in-one bin */

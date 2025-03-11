@@ -1,0 +1,26 @@
+menu "Hardware crypto devices"
+
+source drivers/crypto/fsl/Kconfig
+
+if TARGET_NA51055
+source drivers/crypto/nvt/na51055/Kconfig
+endif
+
+if TARGET_NA51089
+source drivers/crypto/nvt/na51089/Kconfig
+endif
+
+if TARGET_NA51090 || TARGET_NA51090_A64
+source drivers/crypto/nvt/na51090/Kconfig
+endif
+
+if TARGET_NA51103
+source drivers/crypto/nvt/na51103/Kconfig
+endif
+
+if TARGET_NA51102 || TARGET_NA51102_A64
+source drivers/crypto/nvt/na51102/Kconfig
+endif
+
+
+endmenu

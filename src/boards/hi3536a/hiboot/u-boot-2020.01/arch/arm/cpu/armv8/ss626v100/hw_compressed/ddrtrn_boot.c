@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/boot_adaptation/uboot/ddrtrn_boot.c

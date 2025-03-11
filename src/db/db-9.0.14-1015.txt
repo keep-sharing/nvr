@@ -1,0 +1,2 @@
+# 9.0.14-r1 pos单项，增加clearTime字段用以存储Forcom的屏幕清除时间
+alter table pos_setting add column clear_time INTEGER not null default 600;

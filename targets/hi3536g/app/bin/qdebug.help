@@ -1,0 +1,26 @@
+命令1：用来开启、关闭串口打印
+msqdebug <show | hide> <argument>
+例子：
+	msqdebug show qt_message
+	msqdebug hide qt_message
+	msqdebug hide qt_all
+参数：
+	qt_all	hide关闭所有打印，show无效
+	qt_dynamic_box	预览界面人车检测框
+	qt_message	接收、发送中心消息类型
+	qt_mouse_press_pos	鼠标点击时打印坐标
+
+命令2：用来显示、隐藏一些辅助调试界面
+msqdebug <open | close> <argument>
+参数：
+	auto_logout_tip	自动登出倒计时
+	setting_timeout_tip	设置界面关闭倒计时
+
+命令3：执行一些特殊的操作
+msqdebug set <argument>
+参数：
+	manual_close_wait	关闭界面转圈等待，慎用，可能会引发严重问题
+	manual_close_eventloop	关闭事件循环，慎用，可能会引发严重问题
+
+命令4：获取一些特殊状态
+msqdebug get <argument>

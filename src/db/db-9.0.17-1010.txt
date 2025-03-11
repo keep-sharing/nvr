@@ -1,0 +1,4 @@
+# 3536a区分报警输入输出控制方式，范围：0-1（目前是这样），默认值：0
+insert into params (name, value) values ('alarm_ctl_mode', 0);
+# 3536a是否支持MCU在线升级，范围：0-1，默认值：0
+insert into params (name, value) values ('mcu_online_update', 0);

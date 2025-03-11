@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserLogin</class>
+ <widget class="QWidget" name="UserLogin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>604</width>
+    <height>533</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*通用QComboBox*/
+QComboBox
+{
+    min-height: 28px;
+    border: 1px solid #B9B9B9;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgba(190, 190, 190, 40%);
+    color: #B9B9B9;
+}
+QComboBox:disabled
+{
+    background-color: rgba(190, 190, 190, 40%);
+    color: #B9B9B9;
+}
+QComboBox:hover
+{
+    border: 1px solid #D9D9D9;
+}
+QComboBox:drop-down
+{
+    border: 0px;
+}
+QComboBox::down-arrow
+{
+    image: url(:/common/common/drop-down-white.png);
+}
+QComboBox QAbstractItemView
+{
+    outline: none;
+    border: 1px solid #949494;
+    background-color: rgba(44, 44, 44, 90%);
+}
+QComboBox QAbstractItemView::item
+{
+    border: none;
+    padding-left: 5px;
+    height: 30px;
+    color: #FFFFFF;
+}
+QComboBox QAbstractItemView::item:hover
+{
+    background-color: rgba(190, 190, 190, 40%);
+    color: #FFFFFF;
+}
+QComboBox QAbstractItemView::item:selected
+{
+    background-color: rgba(190, 190, 190, 40%);
+    color: #FFFFFF;
+}
+
+/*通用QLabel*/
+QLabel
+{
+    background: transparent;
+    color: #FFFFFF;
+    padding-left: 0px;
+    padding-right: 0px;
+    min-height: 30px;
+}
+QLabel:disabled
+{
+    color: #B9B9B9;
+}
+QLabel#label_mainTitle
+{
+    color: rgb(87, 210, 254);
+    font-size: 32px;
+}
+QLabel#label_subTitle
+{
+    font-size: 18px;
+}
+QLabel#label_title
+{
+    background-color: #0AA9E3;
+    color: #FFFFFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 40px;
+    font: 20px;
+}
+
+/*通用QLineEdit*/
+QLineEdit
+{
+    min-height: 28px;
+    background: transparent;
+    color: #FFFFFF;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #b9b9b9;
+}
+QLineEdit:read-only
+{
+    background-color: rgba(190, 190, 190, 40%);
+    color: #B9B9B9;
+}
+QLineEdit:disabled
+{
+    background-color: rgba(190, 190, 190, 40%);
+    color: #B9B9B9;
+}
+QLineEdit:hover
+{
+    border: 1px solid #D9D9D9;
+}
+QLineEdit:focus
+{
+    border: 1px solid #D9D9D9;
+}
+
+/*通用QPushButton*/
+QPushButton
+{
+    outline: 0px;
+    border: 0px;
+    border-radius: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 80px;
+    min-height: 30px;
+    color: #FFFFFF;
+    background-color: #5F5F5F;
+}
+QPushButton:disabled
+{
+    background-color: rgb(190, 190, 190);
+    color: rgb(150, 150, 150);
+}
+QPushButton:hover
+{
+    background-color: #2B9CC6;
+}
+QPushButton:focus
+{
+    background-color: #2B9CC6;
+}
+QPushButton:pressed
+{
+    background-color: rgba(43, 156, 198, 80%);
+}
+
+/*QToolButton*/
+QToolButton
+{
+    border: 0px;
+}
+
+/*QWidget*/
+QWidget#wizard_content
+{
+    background: rgba(44, 44, 44, 90%);
+}
+
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QWidget" name="wizard_content" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>2</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="leftMargin">
+       <number>40</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>40</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_mainTitle">
+        <property name="text">
+         <string>User Login</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_subTitle">
+        <property name="text">
+         <string>Network Video Recorder</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widgetInput" native="true">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="leftMargin">
+          <number>50</number>
+         </property>
+         <property name="topMargin">
+          <number>30</number>
+         </property>
+         <property name="rightMargin">
+          <number>50</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item row="1" column="1">
+          <widget class="MyLineEdit" name="lineEdit_password">
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_name">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>User Name</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="ComboBox" name="comboBox_user">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>3</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_password">
+           <property name="text">
+            <string>Password</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widgetGustureLock" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="GustureLock" name="gustureLock" native="true"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_info">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(204, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_login">
+          <property name="text">
+           <string>Login</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_cancel">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="topMargin">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QToolButton" name="toolButtonLoginWay">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Login With Password</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QToolButton" name="toolButtonForgetPassword">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Forget Password?</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>mylineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GustureLock</class>
+   <extends>QWidget</extends>
+   <header>gusturelock.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

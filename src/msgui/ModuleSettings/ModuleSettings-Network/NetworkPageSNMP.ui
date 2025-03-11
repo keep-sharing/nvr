@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NetworkPageSNMP</class>
+ <widget class="QWidget" name="NetworkPageSNMP">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>879</width>
+    <height>678</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_snmpv1">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>SNMP V1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="ComboBox" name="comboBox_snmpv1Enable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_snmpv2c">
+       <property name="text">
+        <string>SNMP V2c</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="ComboBox" name="comboBox_snmpv2cEnable"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_readCommunity">
+       <property name="text">
+        <string>Read Community</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="MyLineEdit" name="lineEdit_readCommunity"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_writeCommunity">
+       <property name="text">
+        <string>Write Community</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="MyLineEdit" name="lineEdit_writeCommunity"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>10</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="4" column="1">
+      <widget class="MyLineEdit" name="lineEdit_rdAuthPsw"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_rdPrivKeyAlgo">
+       <property name="text">
+        <string>Private Key Algorithm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="MyLineEdit" name="lineEdit_rdPrivKeyPsw"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_rdSecurityName">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Read Security Name</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="MyLineEdit" name="lineEdit_wrAuthPsw"/>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_wrAuthAlgo">
+       <property name="text">
+        <string>Authentication Algorithm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="MyLineEdit" name="lineEdit_rdSecurityName"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_snmpv3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>SNMP V3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="ComboBox" name="comboBox_wrAuthAlgo"/>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_wrLevelOfsecurity">
+       <property name="text">
+        <string>Level of Security</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="ComboBox" name="comboBox_snmpv3Enable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_rdAuthPsw">
+       <property name="text">
+        <string>Authentication Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_rdPrivKeyPsw">
+       <property name="text">
+        <string>Private Key Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="ComboBox" name="comboBox_wrPrivKeyAlgo"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="ComboBox" name="comboBox_rdLevelOfSecurity"/>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="label_wrPrivKeyAlgo">
+       <property name="text">
+        <string>Private Key Algorithm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_rdAuthAlgo">
+       <property name="text">
+        <string>Authentication Algorithm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="ComboBox" name="comboBox_rdAuthAlgo"/>
+     </item>
+     <item row="8" column="1">
+      <widget class="ComboBox" name="comboBox_wrLevelOfsecurity"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="MyLineEdit" name="lineEdit_wrSecurityName"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_wrSecurityName">
+       <property name="text">
+        <string>Write Security Name</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_rdLevelOfSecurity">
+       <property name="text">
+        <string>Level of Security</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_wrAuthPsw">
+       <property name="text">
+        <string>Authentication Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0">
+      <widget class="QLabel" name="label_wrPrivKeyPsw">
+       <property name="text">
+        <string>Private Key Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="MyLineEdit" name="lineEdit_wrPrivKeyPsw"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="ComboBox" name="comboBox_rdPrivKeyAlgo"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>10</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_snmpPort">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>SNMP Port</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="MyLineEdit" name="lineEdit_snmpPort">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_apply">
+       <property name="text">
+        <string>Apply</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_back">
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ComboBox</class>
+   <extends>QComboBox</extends>
+   <header>combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>mylineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

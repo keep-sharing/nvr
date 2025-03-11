@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActionPageOthers</class>
+ <widget class="QWidget" name="ActionPageOthers">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>672</width>
+    <height>484</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="NormalLabel" name="labelTriggerChannelsRecord">
+     <property name="text">
+      <string>Trigger Channels Record</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="CheckBoxGroup" name="checkBoxGroupRecord" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="NormalLabel" name="labelTriggerChannelsSnapshot">
+     <property name="text">
+      <string>Trigger Channels Snapshot</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="CheckBoxGroup" name="checkBoxGroupSnapshot" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelNote">
+     <property name="text">
+      <string>Note: This page's configuration will not be copied into other channels.</string>
+     </property>
+     <property name="style" stdset="0">
+      <string>blue_text</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CheckBoxGroup</class>
+   <extends>QWidget</extends>
+   <header>checkboxgroup.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NormalLabel</class>
+   <extends>QLabel</extends>
+   <header>normallabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

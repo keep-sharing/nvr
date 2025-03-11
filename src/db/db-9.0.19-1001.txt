@@ -1,0 +1,9 @@
+#camera 表添加http port字段
+ALTER TABLE camera ADD COLUMN https_port INTEGER default 0;
+#记录网络键盘
+CREATE TABLE "main"."network_keyboard" ("ip_addr" TEXT NOT NULL, "password" TEXT NOT NULL);
+# 新增disarming表
+CREATE TABLE disarming("id" INTEGER NOT NULL default 0,"linkage_action" INTEGER  NOT NULL default 0,"disarming_action" INTEGER NOT NULL default 511,"status" INTEGER NOT NULL default 0);
+insert into disarming (id,linkage_action,disarming_action,status) values(0,0,511,0);
+# 更新9.0.19，插件版本
+update params set value='1052' where name='plugin_version';

@@ -1,0 +1,19 @@
+"--endian=little" 
+
+"--cpu=Cortex-M4" 
+
+"--fpu=None" 
+
+"-p" 
+
+"E:\SoftWare\IAR Systems\Embedded Workbench 8.3\arm\CONFIG\debugger\GD\GD32F303xB.ddf" 
+
+"--semihosting" 
+
+"--device=GD32F303xB" 
+
+"--multicore_nr_of_cores=1" 
+
+
+
+

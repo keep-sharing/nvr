@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "Configuring loopback interface"
+echo "net" > /proc/nvt_info/bootts
+ifconfig lo 127.0.0.1
+ifconfig eth0 hw ether 00:80:48:BA:D1:30
+ifconfig eth0 192.168.0.4
+ifconfig eth1 hw ether 00:80:48:BA:D1:31
+ifconfig eth1 192.168.1.5
+
+echo "net" > /proc/nvt_info/bootts
+telnetd

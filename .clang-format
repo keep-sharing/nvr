@@ -1,0 +1,64 @@
+BasedOnStyle: LLVM
+
+# The extra indent or outdent of access modifiers, e.g. public:.
+AccessModifierOffset: -4
+
+# The choices are: - None - Consecutive - AcrossEmptyLines - AcrossComments - AcrossEmptyLinesAndComments
+# 连续赋值时，对齐等号
+AlignConsecutiveAssignments: AcrossComments
+# 对齐连续宏定义
+AlignConsecutiveMacros: AcrossComments
+# 对齐连续位字段
+AlignConsecutiveBitFields: AcrossComments
+# 连续声明时，对齐所有声明的变量名
+AlignConsecutiveDeclarations: AcrossComments
+
+AlignTrailingComments: true
+AlignAfterOpenBracket: Align
+
+# 允许xxx放在同一行
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+
+# 
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterClass: true
+  AfterControlStatement: Never
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeElse: false
+  BeforeLambdaBody: false
+  BeforeWhile: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+
+# 构造函数初始化列表
+PackConstructorInitializers: Never
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+
+# 
+ColumnLimit: 180
+
+# 延续的行的缩进宽度
+ContinuationIndentWidth: 4
+
+# extern里面的内容不要缩进
+IndentExternBlock: NoIndent
+
+# 缩进宽度
+IndentWidth: 4
+
+PointerAlignment: Right
+
+TabWidth: 4

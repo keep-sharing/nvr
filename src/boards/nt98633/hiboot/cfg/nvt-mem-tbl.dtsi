@@ -1,0 +1,79 @@
+/*
+ * Novatek Ltd. BSP part of dts
+ */
+/ {
+	/* Uboot/loader memory layout */
+	nvt_memory_cfg {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		dram {	        reg = <0x00000000 0x80000000>;	};
+		core2entry1 {	reg = <0x00000000 0x00010000>;	};
+		core2entry2 {	reg = <0x00010000 0x00010000>;	};
+		fdt {	        reg = <0x00100000 0x00100000>;	};
+		loader {	reg = <0x00200000 0x00800000>;	};
+		shmem{	        reg = <0x00A00000 0x00100000>;	};
+		atf {           reg = <0x01F00000 0x00100000>;  };
+		linuxtmp {	reg = <0x02000000 0x3C000000>;	};
+		uboot{	        reg = <0x3E000000 0x02000000>;	};
+	};
+	/* Linux system memory region*/
+	memory { device_type = "memory"; reg = <0x0 0x00000000 0x0 0x58391000>; };
+	
+	/* Linux setup reserved memory */
+
+	reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		atf_reserved: atf@0x01F00000 {
+			reg = <0x0 0x01F00000 0x0 0x00100000>;
+			no-map;
+		};
+
+		cma0: cma0@0x05000000 {
+			compatible = "shared-dma-pool";
+			reusable;
+			reg = <0x0 0x05000000 0x0 0x00800000>;
+			alignment = <0x0 0x400000>;
+			status = "okay";
+		};
+	};
+
+	nvt_cma {
+		compatible = "nvt,nvt_cma";
+		memory-region = <&cma0>;
+		id = <0>;
+	};
+
+	nvt_os_mem {
+		compatible = "nvt,nvt_os_mem";
+	};
+
+	nvtfmem {
+		compatible = "nvt,nvt_fmem";
+	};
+
+	hdal-memory {
+		#address-cells = <4>;
+		#size-cells = <2>;
+		media {
+			/*
+			 * NOTE: ddr1 start address = 0x100000000
+			 *       Please do not change it!
+			 */
+			reg = <0x0 0x0 0x0 0x58391000 0x0 0x27C6F000 /* [DDRID-H] [DDRID-L] [ADDR-H] [ADDR-L] [SIZE-H] [SIZE-L] */
+				>;
+		};
+	};
+
+	/* To config the nvt chip mapping relationship */
+	nvt_chip_mapping {
+		#address-cells = <4>;
+		#size-cells = <2>;
+		dram_map {
+			reg = <0x0 0x0 0x0 0x00000000 0x0 0x80000000		/* [DDRID] [CHIPID] [ADDR-H] [ADDR-L] [SIZE-H] [SIZE-L] */
+				>;
+		};
+	};
+};

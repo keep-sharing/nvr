@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditUserLimitsDialog</class>
+ <widget class="QWidget" name="EditUserLimitsDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>1008</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">CheckBoxGroup QCheckBox
+{
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	min-height: 20px;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label_title">
+     <property name="text">
+      <string>Edit Limits</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_background" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="TabBar" name="tabBar" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="page_permission">
+         <property name="styleSheet">
+          <string notr="true">QCheckBox
+{
+    min-height: 25px;
+}
+QCheckBox:disabled
+{
+    background: #e1e1e1;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="widgetPermission" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <item>
+              <widget class="QWidget" name="widgetLocal" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="spacing">
+                 <number>5</number>
+                </property>
+                <property name="leftMargin">
+                 <number>6</number>
+                </property>
+                <property name="topMargin">
+                 <number>6</number>
+                </property>
+                <property name="rightMargin">
+                 <number>6</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="labelLocal">
+                  <property name="text">
+                   <string>Local</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxAllLocal">
+                  <property name="text">
+                   <string>All</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frameLIveViewLocal">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame {
+    outline: 0px;
+    min-height: 30px;
+    color: #4A4A4A;
+    background: #e1e1e1;
+    border: 1px solid #B9B9B9;
+}</string>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_11">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>9</number>
+                   </property>
+                   <item>
+                    <widget class="MyUserCheckBox" name="checkBoxLiveViewLocal">
+                     <property name="text">
+                      <string>Live View Settings</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="widgetLiveViewLocal" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_12">
+                      <property name="leftMargin">
+                       <number>25</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxRecordLocal">
+                        <property name="text">
+                         <string>Record</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxLiveViewSnapshotLocal">
+                        <property name="text">
+                         <string>Snapshot</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxLiveViewAudioLocal">
+                        <property name="text">
+                         <string>Audio</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxTwoWayAudioLocal">
+                        <property name="text">
+                         <string>Two-way Audio</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPTZControlLocal">
+                        <property name="text">
+                         <string>PTZ Control</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPTZSettingLocal">
+                        <property name="text">
+                         <string>PTZ Settings</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxImageConfigurationLocal">
+                        <property name="text">
+                         <string>Image Configuration</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxAlarmOutputLocal">
+                        <property name="text">
+                         <string>Camera Alarm Output</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPlayModeLocal">
+                        <property name="text">
+                         <string>Play Mode</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxTargetModeLocal">
+                        <property name="text">
+                         <string>Target Mode Operation</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="framePlaybackLocal">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame {
+    outline: 0px;
+    min-height: 30px;
+    color: #4A4A4A;
+    background: #e1e1e1;
+    border: 1px solid #B9B9B9;
+}</string>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="MyUserCheckBox" name="checkBoxPlaybackLocal">
+                     <property name="text">
+                      <string>Playback Operation</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="widgetPlaybackLocal" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_15">
+                      <property name="leftMargin">
+                       <number>25</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPlaybackSnapshotLocal">
+                        <property name="text">
+                         <string>Snapshot</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPlaybackAudioLocal">
+                        <property name="text">
+                         <string>Audio</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxTagLocal">
+                        <property name="text">
+                         <string>Tag</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxLockLocal">
+                        <property name="text">
+                         <string>Lock</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxFileExportLocal">
+                        <property name="text">
+                         <string>File Export</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxRetrieveLocal">
+                  <property name="text">
+                   <string>Retrieve</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxSmartAnalysisLocal">
+                  <property name="text">
+                   <string>Smart Analysis</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxCameraLocal">
+                  <property name="text">
+                   <string>Camera</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxStorageLocal">
+                  <property name="text">
+                   <string>Storage</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxEventLocal">
+                  <property name="text">
+                   <string>Event</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxSettingLocal">
+                  <property name="text">
+                   <string>Settings</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxStatusLocal">
+                  <property name="text">
+                   <string>Status &amp; Logs</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxShutdownLocal">
+                  <property name="text">
+                   <string>Shutdown/Reboot</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widgetRemote" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <property name="spacing">
+                 <number>5</number>
+                </property>
+                <property name="leftMargin">
+                 <number>6</number>
+                </property>
+                <property name="topMargin">
+                 <number>6</number>
+                </property>
+                <property name="rightMargin">
+                 <number>6</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="labelRemote">
+                  <property name="text">
+                   <string>Remote </string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxAllRemote">
+                  <property name="text">
+                   <string>All</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frameLIveViewRemote">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame {
+    outline: 0px;
+    min-height: 30px;
+    color: #4A4A4A;
+    background: #e1e1e1;
+    border: 1px solid #B9B9B9;
+}</string>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_18">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>9</number>
+                   </property>
+                   <item>
+                    <widget class="MyUserCheckBox" name="checkBoxLiveViewRemote">
+                     <property name="text">
+                      <string>Live View Settings</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="widgetLiveViewRemote" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_19">
+                      <property name="leftMargin">
+                       <number>25</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxRecordRemote">
+                        <property name="text">
+                         <string>Record</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxLiveViewSnapshotRemote">
+                        <property name="text">
+                         <string>Snapshot</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxLiveViewAudioRemote">
+                        <property name="text">
+                         <string>Audio</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxTwoWayAudioRemote">
+                        <property name="text">
+                         <string>Two-way Audio</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPTZControlRemote">
+                        <property name="text">
+                         <string>PTZ Control</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPTZSettingRemote">
+                        <property name="text">
+                         <string>PTZ Settings</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxImageConfigurationRemote">
+                        <property name="text">
+                         <string>Image Configuration</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxAlarmOutputRemote">
+                        <property name="text">
+                         <string>Camera Alarm Output</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPlayModeRemote">
+                        <property name="text">
+                         <string>Play Mode</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxTargetModeRemote">
+                        <property name="text">
+                         <string>Target Mode Operation</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="framePlaybackRemote">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame {
+    outline: 0px;
+    min-height: 30px;
+    color: #4A4A4A;
+    background: #e1e1e1;
+    border: 1px solid #B9B9B9;
+}</string>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_16">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="MyUserCheckBox" name="checkBoxPlaybackRemote">
+                     <property name="text">
+                      <string>Playback Operation</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="widgetPlaybackRemote" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_17">
+                      <property name="leftMargin">
+                       <number>25</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPlaybackSnapshotRemote">
+                        <property name="text">
+                         <string>Snapshot</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxPlaybackAudioRemote">
+                        <property name="text">
+                         <string>Audio</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxTagRemote">
+                        <property name="text">
+                         <string>Tag</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxLockRemote">
+                        <property name="text">
+                         <string>Lock</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="MyUserCheckBox" name="checkBoxFileExportRemote">
+                        <property name="text">
+                         <string>File Export</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxRetrieveRemote">
+                  <property name="text">
+                   <string>Retrieve</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxSmartAnalysisRemote">
+                  <property name="text">
+                   <string>Smart Analysis</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxCameraRemote">
+                  <property name="text">
+                   <string>Camera</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxStorageRemote">
+                  <property name="text">
+                   <string>Storage</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxEventRemote">
+                  <property name="text">
+                   <string>Event</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxSettingRemote">
+                  <property name="text">
+                   <string>Settings</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxStatusRemote">
+                  <property name="text">
+                   <string>Status</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkBoxShutdownRemote">
+                  <property name="text">
+                   <string>Shutdown/Reboot</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>74</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_camera">
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>122</width>
+               <height>82</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QWidget" name="widgetConfiguration" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QWidget" name="widgetChannelLocal" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_46">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>6</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="labelChannelLocal">
+                      <property name="text">
+                       <string>Local</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyUserCheckBoxGroup" name="checkBoxGroupLiveViewLocal" native="true"/>
+                    </item>
+                    <item>
+                     <widget class="MyUserCheckBoxGroup" name="checkBoxGroupPlayBackLocal" native="true"/>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_10">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widgetChannelRemote" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_51">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>1</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>6</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="labelChannelRemote">
+                      <property name="text">
+                       <string>Remote </string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyUserCheckBoxGroup" name="checkBoxGroupLiveViewRemote" native="true"/>
+                    </item>
+                    <item>
+                     <widget class="MyUserCheckBoxGroup" name="checkBoxGroupPlayBackRemote" native="true"/>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_11">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_ok">
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_cancel">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TabBar</class>
+   <extends>QWidget</extends>
+   <header>tabbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyUserCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>MyUserCheckBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyUserCheckBoxGroup</class>
+   <extends>QWidget</extends>
+   <header>MyUserCheckBoxGroup.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

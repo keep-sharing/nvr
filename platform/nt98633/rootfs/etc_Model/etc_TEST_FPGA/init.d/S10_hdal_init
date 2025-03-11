@@ -1,0 +1,38 @@
+#!/bin/sh
+# mount /mnt/mtd
+echo "Mounting user's MTD partion"
+if [ -f /proc/nvt_info/boot_source ] && [ -f /proc/nvt_info/hdal_part_num ]; then
+	flashtype=`cat /proc/nvt_info/boot_source`
+	hdal_mtd_num=`cat /proc/nvt_info/hdal_part_num`
+	echo "Got hdal partition type:$flashtype mtd:$hdal_mtd_num"
+	if [ ! -z "`echo $flashtype | grep "not support"`" ]; then
+		echo "exit user mount"
+		exit
+	fi
+	echo "check flashtype and hdal_mtd_num"
+	if [ ! -z "`echo $hdal_mtd_num | grep "not support"`" ] ||  [ ! -z "`echo $hdal_mtd_num | grep "error"`" ]; then
+		echo "Running default vg boot script!!!"
+		sh /etc/init.d/vg_boot.sh
+		exit 0;
+	fi
+
+	if [ "$flashtype" == "EMBMEM_SPI_NAND" ] ; then
+		echo "SPI_NAND, mount hdal partition"
+		ubiattach /dev/ubi_ctrl -m $hdal_mtd_num
+		mount -t ubifs ubi1:user1 /mnt/mtd
+	elif [ "$flashtype" == "EMBMEM_SPI_NOR" ] ; then
+		echo "SPI_NOR, mount hdal partition"
+		mount -t jffs2 /dev/mtdblock$hdal_mtd_num /mnt/mtd
+	else
+		echo "$flashtype, do not mount hdal partition"
+	fi
+
+	ret=$?
+
+	if [ $ret == 0 ]; then
+		read -t 2 -p "   Press q -> ENTER to exit boot procedure? " exit_boot
+		if [ "$exit_boot" != "q" ] ; then
+			sh /mnt/mtd/vg_boot.sh
+		fi
+	fi
+fi

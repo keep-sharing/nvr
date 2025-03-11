@@ -1,0 +1,69 @@
+/*
+ * Novatek Ltd. NA51068 BSP part of dts
+ *
+ * Cortex-A9
+ *
+ */
+
+
+#include <dt-bindings/gpio/nvt-gpio.h>
+
+&i2c0 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+/*	dummy_i2c_dev: dummy_i2c@1a {
+		compatible = "nvt,dummy_i2c_dev";
+		reg = <0x1a>;
+		status = "ok";
+	};
+*/
+};
+
+&i2c1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+
+&i2c2 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+
+&i2c3 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+
+&i2c4 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+
+&i2c5 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+/*
+&spi0 {
+	status = "okay";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	dummy_spi_dev: dummy_spi_dev@0 {
+		compatible = "dummy_spi_dev.0";
+		reg = <0>; // Chip select 0
+		spi-max-frequency = <1000000>;
+		spi-cpol;
+        };
+
+};
+
+&spi1 {
+	status = "okay";
+};
+
+&spi2 {
+	status = "okay";
+};
+*/

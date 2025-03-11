@@ -1,0 +1,6 @@
+#新增heat map
+insert into people_cnt_auto_backup values(3, 0, '0000000000000000000000000000000000000000000000000000000000000000', '0000000000000000', 0, 60, 0, '00:00:00', 0, 1, 0);
+#report auto backup 备份类型按照bit位修改
+update people_cnt_auto_backup set file_format=1;
+# peoplecnt 新增line_mask，默认全选(0001 1111)
+alter table people_cnt_auto_backup add column line_mask INTEGER not null default 31;

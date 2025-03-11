@@ -1,0 +1,12 @@
+#!/bin/sh
+
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+
+mkdir /dev/shm
+mount -t tmpfs tmpfs /dev/shm
+
+mkdir -p /dev/.udev
+udevd --daemon
+udevadm trigger
+

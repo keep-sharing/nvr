@@ -1,0 +1,2 @@
+# 更新disarming表disarming_action字段掩码默认值
+update disarming set disarming_action=disarming_action+512;

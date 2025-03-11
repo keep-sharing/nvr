@@ -1,0 +1,3 @@
+# pushmsg.db msg表 新增字段: object, hasSnapshot
+alter table msg add column object TEXT default '';
+alter table msg add column hasSnapshot INTEGER NOT NULL default 0;

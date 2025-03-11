@@ -1,0 +1,4 @@
+#face 报警推送
+update push_msg_event set push_type=push_type+32768;
+#face action_type修正
+update face_effective_schedule set action_type=16;

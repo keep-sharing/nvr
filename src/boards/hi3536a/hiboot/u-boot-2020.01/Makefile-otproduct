@@ -1,0 +1,9 @@
+ifeq ($(CONFIG_OSD_ENABLE),y)
+# FOR DEC of all chip
+libs-y += ./product/ot_osd/dec/
+
+# FOR VO,HDMI
+libs-y += ./product/ot_osd/vo/
+libs-y += ./product/ot_osd/hdmi/hdmi_2_0/drv/
+
+endif # end of ifeq ($(CONFIG_OSD_ENABLE),y)

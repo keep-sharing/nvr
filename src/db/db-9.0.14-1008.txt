@@ -1,0 +1,2 @@
+#插件版本
+update params set value='1043' where name='plugin_version';

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BackupThumb</class>
+ <widget class="QWidget" name="BackupThumb">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>482</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="widget_itemContent" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#widget_itemContent
+{
+border: 1px solid #B9B9B9;
+}
+
+QCheckBox
+{
+background-color: transparent;
+border: 0px;
+padding-left: 10px;
+padding-right: 0px;
+}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_list">
+        <property name="text">
+         <string>List</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_all">
+        <property name="text">
+         <string>All</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_item"/>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_10">
+     <item>
+      <widget class="NormalLabel" name="label_size">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Total Size:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="NormalLabel" name="label_page">
+       <property name="text">
+        <string>Total: Page:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_firstPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/startpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/startpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/startpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_previousPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/prevpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/prevpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/prevpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="MyLineEditPage" name="lineEdit_page">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_nextPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/nextpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/nextpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/nextpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton_lastPage">
+       <property name="styleSheet">
+        <string notr="true">QToolButton
+{
+	border: 0px;
+	border-image: url(:/playback/playback/endpage_g.png);
+}
+QToolButton:hover
+{
+	border-image: url(:/playback/playback/endpage_b.png);
+}
+QToolButton:pressed
+{
+	border-image: url(:/playback/playback/endpage_g.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PushButtonPage" name="pushButton_go">
+       <property name="text">
+        <string>Go</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NormalLabel</class>
+   <extends>QLabel</extends>
+   <header>normallabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyLineEditPage</class>
+   <extends>QLineEdit</extends>
+   <header>mylineeditpage.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PushButtonPage</class>
+   <extends>QPushButton</extends>
+   <header>PushButtonPage.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

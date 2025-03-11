@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserLimitWidget</class>
+ <widget class="QWidget" name="UserLimitWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>785</width>
+    <height>776</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="TabBar" name="tabBar" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_permission">
+      <property name="styleSheet">
+       <string notr="true">QCheckBox
+{
+    outline: 0px;
+    min-height: 26px;
+    color: #4A4A4A;
+    background: #e1e1e1;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 0px solid #B9B9B9;
+}
+QCheckBox:disabled
+{
+    background-color: rgb(190,190,190);
+    color: #4A4A4A;
+}
+QCheckBox::indicator
+{
+    width: 16px;
+    height: 16px;
+}
+QCheckBox::indicator:unchecked
+{
+    border-image: url(:/common/common/checkbox-unchecked.png);
+}
+QCheckBox::indicator:unchecked:hover
+{
+    border-image: url(:/common/common/checkbox-unchecked-hover.png);
+}
+QCheckBox::indicator:unchecked:disabled
+{
+    border-image: url(:/common/common/checkbox-unchecked-disable.png);
+}
+QCheckBox[nonsupport=&quot;true&quot;]::indicator:unchecked:disabled
+{
+    border-image: url(:/common/common/checkbox-unchecked-disable2.png);
+}
+QCheckBox::indicator:checked
+{
+    border-image: url(:/common/common/checkbox-checked.png);
+}
+QCheckBox::indicator:checked:disabled
+{
+    border-image: url(:/common/common/checkbox-checked-disable.png);
+}
+QCheckBox::indicator:indeterminate
+{
+    border-image: url(:/common/common/checkbox-partiallychecked-hover.png);
+}
+QCheckBox::indicator:indeterminate:disabled
+{
+    border-image: url(:/common/common/checkbox-partiallychecked-disable.png);
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <property name="leftMargin">
+        <number>9</number>
+       </property>
+       <property name="rightMargin">
+        <number>9</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>-181</y>
+            <width>751</width>
+            <height>883</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="widgetLocalPrivilege" native="true">
+             <layout class="QGridLayout" name="gridLayout">
+              <property name="leftMargin">
+               <number>1</number>
+              </property>
+              <property name="topMargin">
+               <number>6</number>
+              </property>
+              <property name="rightMargin">
+               <number>1</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>5</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>6</number>
+              </property>
+              <item row="9" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_9" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxSettingLocal">
+                   <property name="text">
+                    <string>Settings</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="PermissionContainer" name="permissionContainerSmartAnalysisLocal" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxSmartAnalysisLocal">
+                   <property name="text">
+                    <string>Smart Analysis</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_2" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxLiveViewLocal">
+                   <property name="text">
+                    <string>Live View Settings</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widgetLiveViewLocal" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <property name="leftMargin">
+                     <number>25</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxRecordLocal">
+                      <property name="text">
+                       <string>Record</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxLiveViewSnapshotLocal">
+                      <property name="text">
+                       <string>Snapshot</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxLiveViewAudioLocal">
+                      <property name="text">
+                       <string>Audio</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxTwoWayAudioLocal">
+                      <property name="text">
+                       <string>Two-way Audio</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPTZControlLocal">
+                      <property name="text">
+                       <string>PTZ Control</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPTZSettingLocal">
+                      <property name="text">
+                       <string>PTZ Settings</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxImageConfigurationLocal">
+                      <property name="text">
+                       <string>Image Configuration</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxAlarmOutputLocal">
+                      <property name="text">
+                       <string>Camera Alarm Output</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPlayModeLocal">
+                      <property name="text">
+                       <string>Play Mode</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxTargetModeLocal">
+                      <property name="text">
+                       <string>Target Mode Operation</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="PermissionContainer" name="permissionContainerCameraLocal" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_5">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxCameraLocal">
+                   <property name="text">
+                    <string>Camera</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_3" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxPlaybackLocal">
+                   <property name="text">
+                    <string>Playback Operation</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widgetPlaybackLocal" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <property name="leftMargin">
+                     <number>25</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPlaybackSnapshotLocal">
+                      <property name="text">
+                       <string>Snapshot</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPlaybackAudioLocal">
+                      <property name="text">
+                       <string>Audio</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxTagLocal">
+                      <property name="text">
+                       <string>Tag</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxLockLocal">
+                      <property name="text">
+                       <string>Lock</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxFileExportLocal">
+                      <property name="text">
+                       <string>File Export</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="PermissionContainer" name="permissionContainerStorageLocal" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxStorageLocal">
+                   <property name="text">
+                    <string>Storage</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="11" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_11" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_21">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxShutdownLocal">
+                   <property name="text">
+                    <string>Shutdown/Reboot</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="PermissionContainer" name="permissionContainerRetrieveLocal" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxRetrieveLocal">
+                   <property name="text">
+                    <string>Retrieve</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="PermissionContainer" name="permissionContainerEventLocal" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxEventLocal">
+                   <property name="text">
+                    <string>Event</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="PermissionContainer" name="permissionContainer" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxAllLocal">
+                   <property name="text">
+                    <string>All</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_10" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_20">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxStatusLocal">
+                   <property name="text">
+                    <string>Status</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="labelLocal">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Local</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widgetRemotePrivilege" native="true">
+             <layout class="QGridLayout" name="gridLayout_4">
+              <property name="leftMargin">
+               <number>1</number>
+              </property>
+              <property name="topMargin">
+               <number>6</number>
+              </property>
+              <property name="rightMargin">
+               <number>1</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>5</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>6</number>
+              </property>
+              <item row="5" column="0">
+               <widget class="PermissionContainer" name="permissionContainerSmartAnalysisRemote" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_24">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxSmartAnalysisRemote">
+                   <property name="text">
+                    <string>Smart Analysis</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="11" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_22" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_30">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxShutdownRemote">
+                   <property name="text">
+                    <string>Shutdown/Reboot</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="PermissionContainer" name="permissionContainerStorageRemote" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_26">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxStorageRemote">
+                   <property name="text">
+                    <string>Storage</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="labelRemote">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Remote </string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="PermissionContainer" name="permissionContainerRetrieveRemote" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_23">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxRetrieveRemote">
+                   <property name="text">
+                    <string>Retrieve</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="PermissionContainer" name="permissionContainerEventRemote" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_27">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxEventRemote">
+                   <property name="text">
+                    <string>Event</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_14" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxPlaybackRemote">
+                   <property name="text">
+                    <string>Playback Operation</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widgetPlaybackRemote" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_17">
+                    <property name="leftMargin">
+                     <number>25</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPlaybackSnapshotRemote">
+                      <property name="text">
+                       <string>Snapshot</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPlaybackAudioRemote">
+                      <property name="text">
+                       <string>Audio</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxTagRemote">
+                      <property name="text">
+                       <string>Tag</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxLockRemote">
+                      <property name="text">
+                       <string>Lock</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxFileExportRemote">
+                      <property name="text">
+                       <string>File Export</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="PermissionContainer" name="permissionContainerCameraRemote" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_25">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxCameraRemote">
+                   <property name="text">
+                    <string>Camera</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_13" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_18">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxLiveViewRemote">
+                   <property name="text">
+                    <string>Live View Settings</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widgetLiveViewRemote" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_19">
+                    <property name="leftMargin">
+                     <number>25</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxRecordRemote">
+                      <property name="text">
+                       <string>Record</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxLiveViewSnapshotRemote">
+                      <property name="text">
+                       <string>Snapshot</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxLiveViewAudioRemote">
+                      <property name="text">
+                       <string>Audio</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxTwoWayAudioRemote">
+                      <property name="text">
+                       <string>Two-way Audio</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPTZControlRemote">
+                      <property name="text">
+                       <string>PTZ Control</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPTZSettingRemote">
+                      <property name="text">
+                       <string>PTZ Settings</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxImageConfigurationRemote">
+                      <property name="text">
+                       <string>Image Configuration</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxAlarmOutputRemote">
+                      <property name="text">
+                       <string>Camera Alarm Output</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxPlayModeRemote">
+                      <property name="text">
+                       <string>Play Mode</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="MyCheckBox" name="checkBoxTargetModeRemote">
+                      <property name="text">
+                       <string>Target Mode Operation</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="9" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_20" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_28">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxSettingRemote">
+                   <property name="text">
+                    <string>Settings</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_21" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_29">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxStatusRemote">
+                   <property name="text">
+                    <string>Status</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="PermissionContainer" name="permissionContainer_12" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_22">
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="MyCheckBox" name="checkBoxAllRemote">
+                   <property name="text">
+                    <string>All</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_camera">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_14">
+       <property name="leftMargin">
+        <number>9</number>
+       </property>
+       <property name="rightMargin">
+        <number>9</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOn</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>104</width>
+            <height>73</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="widgetConfiguration" native="true">
+             <layout class="QGridLayout" name="gridLayout_2">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QWidget" name="widgetChannelLocal" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_46">
+                 <property name="spacing">
+                  <number>5</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>6</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="labelChannelLocal">
+                   <property name="text">
+                    <string>Local</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="MyUserCheckBoxGroup" name="checkBoxGroupLiveViewLocal" native="true"/>
+                 </item>
+                 <item>
+                  <widget class="MyUserCheckBoxGroup" name="checkBoxGroupPlayBackLocal" native="true"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_10">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QWidget" name="widgetChannelRemote" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_51">
+                 <property name="spacing">
+                  <number>5</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>6</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="labelChannelRemote">
+                   <property name="text">
+                    <string>Remote </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="MyUserCheckBoxGroup" name="checkBoxGroupLiveViewRemote" native="true"/>
+                 </item>
+                 <item>
+                  <widget class="MyUserCheckBoxGroup" name="checkBoxGroupPlayBackRemote" native="true"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_11">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TabBar</class>
+   <extends>QWidget</extends>
+   <header>tabbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyUserCheckBoxGroup</class>
+   <extends>QWidget</extends>
+   <header>MyUserCheckBoxGroup.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PermissionContainer</class>
+   <extends>QWidget</extends>
+   <header>PermissionContainer.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>MyCheckBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

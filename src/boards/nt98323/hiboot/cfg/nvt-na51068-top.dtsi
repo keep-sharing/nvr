@@ -1,0 +1,15 @@
+&top {
+        uart{pinmux = <0x1>;};
+        i2c{pinmux = <0x11011>;};
+        sdio{pinmux = <0x0>;};
+        spi{pinmux = <0x2>;};
+        extclk{pinmux = <0x0>;};
+        ssp{pinmux = <0x1001>;};
+        lcd{pinmux = <0x0>;};
+        remote{pinmux = <0x0>;};
+        vcap{pinmux = <0x0>;};
+        eth{pinmux = <0x3003>;};
+        misc{pinmux = <0x100046>;};
+        pwm{pinmux = <0x11>;};
+        vcapint{pinmux = <0x0>;};/*don't care internal used*/
+};

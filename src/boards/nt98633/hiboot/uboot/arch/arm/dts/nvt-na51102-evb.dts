@@ -1,0 +1,31 @@
+/*
+ * Novatek Ltd. NA51000 BSP part of dts
+ *
+ * Cortex-A53
+ *
+ */
+
+/dts-v1/;
+#include "skeleton.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		mmc0 = &mmc0;	/* Fixed to mmcblk0 for sdio1 */
+	};
+
+        mmc0: mmc@f0420000 {
+                compatible = "nvt,nvt_mmc";
+                reg = <0xf0420000 0x1000>;
+                interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
+                max-frequency = <48000000>;
+                voltage-switch = <0>;
+                max-voltage = <3300>;
+                bus-width = <4>;
+                driving = <10 10 10 15 15 15 25 25 25 25 25 25>;
+                cd_gpio = <D_GPIO(0) GPIO_FALLING_EDGE GPIO_POLLING>;
+                /*card_power_gpio = <P_GPIO(0) GPIO_LOW>;*/
+                /*ro_gpio = <D_GPIO(1) GPIO_RISING_EDGE GPIO_POLLING>;*/
+                /*power_en = <D_GPIO(2) GPIO_RISING_EDGE>;*/
+        };
+};

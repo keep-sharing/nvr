@@ -1,0 +1,290 @@
+#!/bin/sh
+# Useage: ./load3536c [ -r|-i|-a ] [ ad ]
+#         -r : rmmod all modules
+#         -i : insmod all modules
+#    default : rmmod all moules and then insmod them
+#
+
+####################Variables Definition##########################
+AD_TYPE=6134        # ad type
+
+mem_total=1024;		# 512M, total mem
+mem_start=0x80000000;	# phy mem start
+
+os_mem_size=256;		# 64M, os mem
+mmz_start=0x84000000;	# mmz start addr
+mmz_size=256M;		# 128M, mmz size
+board_mode="demo";      # demo or sck
+
+##################################################################
+b_arg_demb=1
+
+report_error()
+{
+	echo "******* Error: There's something wrong, please check! *****"
+	exit 1
+}
+
+calc_mmz_info()
+{
+    mmz_start=`echo "$mem_start $os_mem_size" | 
+    awk 'BEGIN { temp = 0; }
+    {
+        temp = $1/1024/1024 + $2;
+    } 
+    END { printf("0x%x00000\n", temp); }'`
+
+    mmz_size=`echo "$mem_total $os_mem_size" | 
+    awk 'BEGIN { temp = 0; }
+    {
+        temp = $1 - $2;
+    } 
+    END { printf("%dM\n", temp); }'`
+    echo "mmz_start: $mmz_start, mmz_size: $mmz_size"
+}
+
+cfg_mem()
+{
+# local  var0=`mschip_update | grep -o 'MS.*' | cut -b 5-7`
+#        if [ "$var0" = "032" -o "$var0" = "064" ]; then
+#                echo "cmdline: mem=1024M, total mem is 3071M"
+#               mem_total=3072
+        var0=`cat /proc/cmdline | sed -n '/^mem=/p' | cut -f1 -d' ' | tr -cd "[0-9]"`
+
+        if [ $var0 -gt 512 ]; then
+                echo "cmdline: mem=$var0 M, total mem=1024 M"
+                mem_total=1024
+                os_mem_size=$var0
+        else
+                echo "cmdline: mem=$var0 M, total mem=512 M"
+                mem_total=512
+                os_mem_size=$var0
+        fi
+	calc_mmz_info;
+}
+
+
+insert_audio()
+{
+	insmod hi3536c_aio.ko
+	insmod hi3536c_ai.ko
+	insmod hi3536c_ao.ko
+	insmod hi3536c_aenc.ko
+	insmod hi3536c_adec.ko
+	#insmod extdrv/tlv_320aic31.ko 
+}
+
+remove_audio()
+{
+	#rmmod tlv_320aic31.ko
+	rmmod hi3536c_adec
+	rmmod hi3536c_aenc
+	rmmod hi3536c_ao
+	rmmod hi3536c_ai
+	rmmod hi3536c_aio
+}
+
+
+insert_ko()
+{
+	cfg_mem;
+	# sys_config(drv/sys_config): pinmux and ddr priority configuration
+	insmod sys_config.ko mode=$board_mode 
+	#echo $board_mode;
+	# osal load (contains mmz.ko/hiuser.ko/media.ko)	
+	insmod hi_osal.ko mmz=anonymous,0,$mmz_start,$mmz_size anony=1 || report_error
+	insmod hi3536c_base.ko	
+	insmod hi3536c_sys.ko mem_total=$mem_total
+	if [[ $? -ne 0 ]]; then
+		exit;
+	fi
+
+	insmod hi3536c_vdec.ko VBSource=1 #use private buffer
+	insmod hi3536c_vfmw.ko 
+	insmod hi3536c_jpegd.ko
+	insmod hi3536c_tde.ko
+	insmod hi3536c_region.ko
+	insmod hi3536c_vgs.ko
+	
+	insmod hi3536c_vpss.ko
+	insmod hi3536c_vou.ko
+	insmod hifb.ko  video="hifb:vram0_size:48600,vram1_size:128,vram2_size:128,vram3_size:128,vram4_size:128" softcursor="off"
+	insmod hi3536c_hdmi.ko
+
+	insmod hi3536c_rc.ko
+	insmod hi3536c_venc.ko
+	insmod hi3536c_chnl.ko
+	insmod hi3536c_vedu.ko
+	insmod hi3536c_h264e.ko
+	insmod hi3536c_h265e.ko
+	insmod hi3536c_jpege.ko JpegeMiniBufMode=1
+	insmod hi3536c_vda.ko
+	insmod hi3536c_ive.ko
+	insert_audio
+	
+	insmod wdt.ko nodeamon=1
+	
+	#insmod hi_rtc.ko
+	#hwclock -us
+	
+	insmod gpio.ko
+	insmod fb_ctrl.ko
+	insmod drv_io.ko
+	insmod hi_switch.ko
+	insmod ip179h.ko
+	insmod nau88c10.ko
+	insmod rtl8309n_switch.ko
+}
+
+remove_ko()
+{
+	rmmod nau88c10
+	rmmod ip179h
+	rmmod hi_switch
+	rmmod drv_io
+	rmmod fb_ctrl
+	rmmod gpio
+	#rmmod hi_rtc
+	rmmod wtd
+	rmmod rtl8309n_switch
+	
+	remove_audio
+	rmmod hi3536c_ive
+	rmmod hi3536c_vda
+	
+	rmmod hi3536c_jpege
+	rmmod hi3536c_h264e
+	rmmod hi3536c_h265e
+	rmmod hi3536c_vedu.ko
+	rmmod hi3536c_chnl
+	rmmod hi3536c_venc
+	rmmod hi3536c_rc
+
+	rmmod hi3536c_hdmi
+	rmmod hifb
+	rmmod hi3536c_vou
+	rmmod hi3536c_vpss
+
+	rmmod hi3536c_vgs
+	rmmod hi3536c_region
+	rmmod hi3536c_tde
+
+	rmmod hi3536c_jpegd
+	rmmod hi3536c_vfmw
+	rmmod hi3536c_vdec
+	rmmod hi3536c_sys
+	rmmod hi3536c_base
+	rmmod hi_osal
+	rmmod sys_config
+
+}
+
+load_usage()
+{
+	echo "Usage:  ./load3536c [-option] [ad_name]"
+	echo "options:"
+	echo "    -i                       insert modules"
+	echo "    -r                       remove modules"
+	echo "    -a                       remove modules first, then insert modules"
+        echo "    -total mem_size          config total mem size [unit: M, default: 2048]"
+	echo "    -osmem os_mem_size       config os mem size [unit: M, default: 64]"
+	echo "    -mode demo               config board type [demo or sck, default: demo]"
+	echo "    -h                       help information"
+	echo -e "notes: osmem option can't be used when mmz zone partition is enable\n\n"
+	echo -e "for example: ./load3536c -a -total 1024 -osmem 64\n"
+}
+
+
+######################parse arg###################################
+b_arg_os_mem=0
+b_arg_total_mem=0
+b_arg_ad=0
+b_arg_insmod=0
+b_arg_remove=0
+b_arg_mode=0
+
+for arg in $@
+do
+	if [ $b_arg_total_mem -eq 1 ]; then
+		b_arg_total_mem=0;
+		mem_total=$arg;
+		
+		if [ -z $mem_total ]; then
+			echo "[error] mem_total is null"
+			exit;
+		fi
+	fi
+	
+	if [ $b_arg_mode -eq 1 ]; then
+		b_arg_mode=0;
+		board_mode=$arg;
+		
+		if [ -z $board_mode ]; then
+			echo "[error] board_mode is null"
+			exit;
+		fi
+	fi
+	
+	if [ $b_arg_os_mem -eq 1 ] ; then
+		b_arg_os_mem=0;
+		os_mem_size=$arg;
+
+		if [ -z $os_mem_size ]; then
+			echo "[error] os_mem_size is null"
+			exit;
+		fi
+	fi
+
+	if [ $b_arg_ad -eq 1 ] ; then
+		b_arg_ad=0
+		AD_TYPE=$arg;
+	fi
+
+	case $arg in
+		"-i")
+			b_arg_insmod=1;
+			;;
+
+		"-r")
+			b_arg_remove=1;
+			;;
+		"-a")			
+			b_arg_insmod=1;
+			b_arg_remove=1;
+			;;
+
+		"-h")
+			load_usage;
+			;;
+
+		"-ad")
+			b_arg_ad=1;
+			;;
+
+		"-osmem")
+			b_arg_os_mem=1;
+			;;
+		"-total")
+			b_arg_total_mem=1;
+			;;
+		"-mode")
+			b_arg_mode=1;
+			;;			
+	esac
+	
+
+	
+done
+
+
+if [ $# -lt 1 ]; then
+    load_usage;
+    exit 0;
+fi
+
+if [ $b_arg_remove -eq 1 ]; then
+	remove_ko;
+fi
+if [ $b_arg_insmod -eq 1 ]; then
+	insert_ko;
+fi

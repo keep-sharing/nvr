@@ -1,0 +1,26 @@
+# for audio
+ifeq ($(CONFIG_AUDIO_ENABLE),y)
+cflags-y += -I$(srctree)/product/audio/ao/$(AO_ARCH_NAME)
+cflags-y += -I$(srctree)/product/audio/acodec/$(ACODEC_NAME)
+ccflags-y += $(cflags-y)
+obj-y += cmd_ao.o
+endif
+
+# Osd command
+ifeq ($(CONFIG_OSD_ENABLE),y)
+# for dec
+obj-y += cmd_dec.o
+
+# for vo
+cflags-y     += -I$(srctree)/product/ot_osd/vo/include
+cflags-y     += -I$(srctree)/product/ot_osd/include
+cflags-y     += -I$(srctree)/product/ot_osd/hdmi/hdmi_2_0
+cflags-y     += -I$(srctree)/product/ot_osd/vo/arch/$(VO_ARCH_NAME)/include
+cflags-y     += -I$(srctree)/product/ot_osd/vo/arch/$(VO_ARCH_NAME)/include/$(VO_SUB_ARCH_NAME)
+ccflags-y    += -DCONFIG_OT_HDMI_SUPPORT
+ccflags-y    += -DHDMI_SUPPORT_DUAL_CHANNEL
+ccflags-y    += $(cflags-y)
+obj-y += cmd_vo.o
+ccflags-y += -DCHIP_SS626V100
+
+endif

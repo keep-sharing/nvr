@@ -1,0 +1,48 @@
+#!/bin/sh
+
+echo "bond reading network configure..."                                           
+. /mnt/nand/etc/network.conf
+
+restart() {
+	if [ $MODE = 0 ] || [ $MODE = 1 ]; then
+	  ifconfig $BONDIFNAME down
+	  ifconfig $IF0 down
+	  ifconfig $IF1 down
+	  rmmod /usr/local/bin/bonding.ko
+	  insmod /usr/local/bin/bonding.ko mode=$MODE miimon=$BONDIFMIIMON
+	# dhcp   
+	  if [ $BONDIFTYPE = 1 ];then
+	    ifconfig $BONDIFNAME up
+	    if [ $PRIMARY = 0 ];then                                                    
+	      ifenslave $BONDIFNAME $IF0 $IF1                                           
+	    else                                                                        
+	      ifenslave $BONDIFNAME $IF1 $IF0                                             
+	    fi  
+	    dhcpcd $BONDIFNAME -t 30
+	# static
+	  else
+	    ifconfig $BONDIFNAME $BONDIFADDR netmask $BONDIFMASK mtu $BONDIFMTU up
+	    if [ $PRIMARY = 0 ];then                                                    
+	      ifenslave $BONDIFNAME $IF0 $IF1                                           
+	    else                                                                        
+	      ifenslave $BONDIFNAME $IF1 $IF0                                             
+	    fi                                                                            
+	    route add default gw $BONDIFGATEWAY
+	  fi
+	fi 
+}
+
+case "$1" in
+  stop)
+  	rmmod /usr/local/bin/bonding.ko
+	;;  
+  restart)                                 
+     	restart
+	;;
+  *)
+	restart
+	;;
+esac
+
+exit $?                                                                       
+echo "bond networking configure success."

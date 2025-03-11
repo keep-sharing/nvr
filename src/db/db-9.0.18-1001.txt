@@ -1,0 +1,2 @@
+# exception增加ip冲突
+alter table trigger_alarms add column ip_conflict INTEGER not null default 0;

@@ -1,0 +1,9 @@
+insert into params values('deflang', '0');
+insert into params_oem values('deflang', '0');
+insert into params values('hdmihotplug', '1');
+insert into params_oem values('hdmihotplug', '1');
+insert into params values('max_rs485', '1');
+insert into params_oem values('max_rs485', '1');
+update params set value=65535 where name='lang';
+insert into protocol(pro_id,pro_name,function,enable,display_model) values(2,'MSSP',7,1,1);
+insert into model(mod_id,pro_id,mod_name,alarm_type,default_model) values(2,2,'MSSP',0,1);

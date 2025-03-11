@@ -1,0 +1,3 @@
+#camera 表添加ddns字段
+ALTER TABLE camera ADD COLUMN ddns TEXT DEFAULT '';
+insert into model(mod_id,pro_id,mod_name,alarm_type,default_model) values(7, 7, 'MSDDNS', 0, 1);

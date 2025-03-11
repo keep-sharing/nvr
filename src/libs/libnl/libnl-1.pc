@@ -1,0 +1,10 @@
+prefix=/home/user1/hong/smdd/for_test/branches-x.9.0.5-3536c/temp/hi3536/libs/libnl
+exec_prefix=/home/user1/hong/smdd/for_test/branches-x.9.0.5-3536c/temp/hi3536/libs/libnl
+libdir=${exec_prefix}/lib
+includedir=/home/user1/hong/smdd/for_test/branches-x.9.0.5-3536c/temp/hi3536/libs/libnl/include
+
+Name: libnl
+Description: Convenience library for netlink sockets
+Version: 1.1
+Libs: -L${libdir} -lnl
+Cflags:

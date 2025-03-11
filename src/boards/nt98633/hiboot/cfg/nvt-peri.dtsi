@@ -1,0 +1,487 @@
+/*
+ * Novatek Ltd. BSP part of dts
+ */
+
+
+#include <dt-bindings/gpio/nvt-gpio.h>
+#include "nvt-basic.dtsi"
+
+/ {
+	chosen {
+		bootargs = " ";
+		stdout-path = "serial0:115200n8";
+	};
+
+	aliases {
+		serial0 = &uart0;
+		serial1 = &uart1;
+		serial2 = &uart2;
+		serial3 = &uart3;
+		serial4 = &uart4;
+                mmc1 = &emmc;   /* Fixed to mmcblk1 for sdio2 */
+	};
+
+	uart0: uart@f0280000 {
+		compatible = "ns16550a";
+		reg = <0x2 0xf0280000 0x0 0x1000>;
+		interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+		baud = <115200>;
+		reg-shift = <2>;
+		reg-io-width = <4>;
+		no-loopback-test = <1>;
+		clock-frequency = <48000000>;
+		rx_trig_level = <3>;
+		hw_flowctrl = <0>;
+	};
+
+	uart1: uart@f0290000 {
+		compatible = "ns16550a";
+		reg = <0x2 0xf0290000 0x0 0x1000>;
+		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+		baud = <115200>;
+		reg-shift = <2>;
+		reg-io-width = <4>;
+		no-loopback-test = <1>;
+		clock-frequency = <48000000>;
+		rx_trig_level = <3>;
+		hw_flowctrl = <0>;
+	};
+
+	uart2: uart@f02a0000 {
+		compatible = "ns16550a";
+		reg = <0x2 0xf02a0000 0x0 0x1000>;
+		interrupts = <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
+		baud = <115200>;
+		reg-shift = <2>;
+		reg-io-width = <4>;
+		no-loopback-test = <1>;
+		clock-frequency = <48000000>;
+		rx_trig_level = <3>;
+	};
+
+	uart3: uart@f02b0000 {
+		compatible = "ns16550a";
+		reg = <0x2 0xf02b0000 0x0 0x1000>;
+		interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
+		baud = <115200>;
+		reg-shift = <2>;
+		reg-io-width = <4>;
+		no-loopback-test = <1>;
+		clock-frequency = <48000000>;
+		rx_trig_level = <3>;
+	};
+
+	uart4: uart@f02c0000 {
+		compatible = "ns16550a";
+		reg = <0x2 0xf02c0000 0x0 0x1000>;
+		interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
+		baud = <115200>;
+		reg-shift = <2>;
+		reg-io-width = <4>;
+		no-loopback-test = <1>;
+		clock-frequency = <48000000>;
+		rx_trig_level = <3>;
+	};
+/*
+	remote: remote@f0130000 {
+		compatible = "nvt,nvt_remote";
+		reg = <0x2 0xf0130000 0x0 0x1000>;
+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+*/		/*linux,rc-map-name = "rc-nvt-nec";*/
+/*	};*/
+
+	emmc: mmc@f01a0000 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		compatible = "nvt,nvt_mmc2";
+		reg = <0x2 0xf01a0000 0x0 0x1000>;
+		interrupts = <GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
+		max-frequency = <48000000>;
+		max-voltage = <18000>;
+		bus-width = <8>;
+		driving = <2 2 2 3 2 2 5 4 4 6 5 5>;
+		cd_gpio = <0 GPIO_FALLING_EDGE GPIO_INTERRUPT>;
+		no-sdio;
+		no-sd;
+		/*ro_gpio = <D_GPIO(3) GPIO_RISING_EDGE GPIO_POLLING>;*/
+		/*power_en = <D_GPIO(4) GPIO_RISING_EDGE>;*/
+
+		/* Enable below to turn on hs200; recommended frequency: 96000000, 160000000 */
+		/*
+		mmc-hs200-1_8v;
+		*/
+
+		/* Enable below to turn on hs400; recommended freqency: 160000000 */
+		/*
+		clk_parent = "pll6";
+		mmc-hs400-1_8v;
+		mmc-hs400-enhanced-strobe;
+		*/
+	};
+/*
+	nand: nand@f0180000 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		compatible = "nvt,nvt_spinand";
+		reg = <0x2 0xf0180000 0x0 0x1000>;
+		interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+		clock-frequency = <24000000>;
+		nvt-devname = "spi_nand.0";
+	};
+
+	nor: nor@f0180000 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		compatible = "nvt,nvt_spinor";
+		reg = <0x2 0xf0180000 0x0 0x1000>;
+		interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+		clock-frequency = <48000000>;
+		nvt-devname = "spi_nor.0";
+	};
+*/
+	usb3: u3hst@2,f0580000 {
+	        compatible = "nvt,nvt_usb3xhci";
+		reg = <0x2 0xf0580000 0x0 0x10000
+				0x2 0xf05f0000 0x0 0x4000>;
+		interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
+		power_gpio = <P_GPIO(33) 1>;
+	};
+
+	gpio: gpio@2,f0040000 {
+		compatible = "nvt,nvt_gpio";
+		reg = <0x2 0xf0040000 0x0 0x10000>;
+		interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH
+				GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH
+				GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH
+				GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		interrupt-parent = <&gic>;
+		#interrupt-cells = <3>;
+		#gpio-cells = <2>;
+	};
+
+	eth0@2,f0200000 {
+		compatible = "nvt,synopsys_eth";
+		reg = <0x2 0xf0200000 0x0 0x10000>;
+		interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+		sp-clk = <1>;
+		ref-clk-out = <0>;
+		mac-address = [00 00 00 00 00 00];
+	};
+
+	eth1@2,f0210000 {
+		compatible = "nvt,synopsys_eth";
+		reg = <0x2 0xf0210000 0x0 0x10000>;
+		interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
+		sp-clk = <1>;
+		ref-clk-out = <0>;
+		mac-address = [00 00 00 00 00 00];
+		fixed-link {
+			speed = <1000>;
+			full-duplex;
+		};
+	};
+
+	nvt_sata100_1: sata@2f0b8 {
+		compatible = "novatech,nvt_sata100";
+		reg =  <0x2 0xf0b80000 0x0 0x1000
+				0x2 0xf0bc0000 0x0 0x1000
+				0x2 0xf0be0000 0x0 0x8000>;
+		interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
+		device-id = <1>;
+		comm-rst = <0>;
+	};
+	
+
+	nvt_sata100_2: sata@2f0b9 {
+		compatible = "novatech,nvt_sata100";
+		reg =  <0x2 0xf0b90000 0x0 0x1000
+				0x2 0xf0bd0000 0x0 0x1000
+				0x2 0xf0bf0000 0x0 0x8000>;
+		interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
+		device-id = <2>;
+		comm-rst = <1>;
+	};
+
+/*
+	nvt_sata100_3: sata@2f048 {
+		compatible = "novatech,nvt_sata100";
+		reg =  <0x2 0xf0480000 0x0 0x1000
+				0x2 0xf04e0000 0x0 0x1000
+				0x2 0xf08b0000 0x0 0x8000>;
+		interrupts = <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
+		device-id = <3>;
+		comm-rst = <1>;
+	};
+*/
+        usb20host@2,f0380000 {
+                compatible = "nvt,ehci-nvtivot";
+                reg = <0x2 0xF0380000 0x0 0x1000
+                        0x2 0xF03E1000 0x0 0x1000
+                        0x2 0xF05F0000 0x0 0x4000
+                        0x2 0xF05F1000 0x0 0x4000>;
+                interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
+                channel = <0>;
+                power_gpio = <P_GPIO(34) 1>;
+                status = "okay";
+        };
+
+        usb20host@2,f0390000 {
+                compatible = "nvt,ehci-nvtivot";
+                reg = <0x2 0xF0390000 0x0 0x1000
+                        0x2 0xF03F1000 0x0 0x1000>;
+                interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
+                channel = <1>;
+                power_gpio = <J_GPIO(4) 1>;
+                status = "okay";
+        };
+/* sample for usb gadget case
+        usb20@2,f0380000 {
+                compatible = "nvt,fotg200_udc";
+                reg = <0x2 0xF0380000 0x0 0x1000
+                        0x2 0xF03E1000 0x0 0x1000
+                        0x2 0xF05F0000 0x0 0x4000
+                        0x2 0xF05F1000 0x0 0x4000>;
+                channel = <0>;
+                interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
+                status = "okay";
+        };
+
+        usb20@2,f0390000 {
+                compatible = "nvt,fotg200_udc";
+               reg = <0x2 0xf0390000 0x0 0x1000
+                       0x2 0xf03f1000 0x0 0x1000>;
+                channel = <1>;
+                interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
+                status = "okay";
+        };
+*/
+	top: top@f0010000 {
+		compatible = "nvt,nvt_top";
+		reg = <0x2 0xf0010000 0x0 0x2000
+			0x2 0xf0030000 0x0 0x2000
+			0x2 0xf0040000 0x0 0x10000>;
+	};
+
+	timer@2,f0100000 {
+                compatible = "nvt,nvt_timer";
+                reg = <0x2 0xf0100000 0x0 0x300>;
+                interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
+        };
+
+	nvt_hwtimer@2,f0100000 {
+		compatible = "nvt,nvt_hwtimer";
+		reg = <0x2 0xf0100000 0x0 0x300>;
+		interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+   	rtc: rtc@2,f0a50000 {
+    	compatible = "nvt,nvt_rtc";
+   		reg = <0x2 0xf0a50000 0x0 0x100>;
+   		interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		rtc_reset_date = <1>;
+    };
+
+	wdt@2,f0110000 {
+		compatible = "nvt,nvt_wdt";
+		reg = <0x2 0xf0110000 0x0 0x10000>;
+		interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	nvt_arb@2,f0080000 {
+		compatible = "nvt,nvt_arb";
+		reg = <0x2 0xF0080000 0x0 0xA000
+			   0x2 0xF0090000 0x0 0xA000
+			   0x2 0xF00a0000 0x0 0xa000>;
+		interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	hwcp@2,f0330000 {
+		compatible = "nvt,nvt_hwcopy";
+		reg = <0x2 0xF0330000 0x0 0x100>;
+		interrupts = <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	dei: dei@2,f0610000 {
+		compatible = "nvt,dei";
+		reg = <0x2 0xf0610000 0x0 0x204>;
+		interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
+		host-id = <0>;
+	};
+
+	dei2: dei2@2,f0620000 {
+		compatible = "nvt,dei2";
+		reg = <0x2 0xf0620000 0x0 0x204>;
+		interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
+		host-id = <0>;
+	};
+
+	vpe: vpe@2,f0410000 {
+		compatible = "nvt,vpe";
+		reg = <0x2 0xf0410000 0x0 0x1040>;
+		interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
+		host-id = <0>;
+	};
+
+	kdrv_rpc: cc@2,f0160000 {
+        compatible = "kdrv_rpc";
+        reg = <0x2 0xf0160000 0x0 0x200>;
+        interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 82 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
+        host-id = <0>;
+    };
+
+	vpel: vpel@2,f0420000 {
+		compatible = "nvt,vpel";
+		reg = <0x2 0xf0420000 0x0 0x1040>;
+		interrupts = <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
+		host-id = <0>;
+	};
+
+	ssca: ssca@2,f0310000 {
+		compatible = "nvt,ssca";
+		reg = <0x2 0xf0310000 0x0 0xd0>;
+		interrupts = <GIC_SPI 74 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	age: age@2,f03a0000 {
+		compatible = "nvt,age";
+		reg = <0x2 0xf03a0000 0x0 0x424>;
+		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	vcap: vcap@2,f0700000 {
+		compatible = "nvt,vcap316";
+		reg = <0x2 0xf0700000 0x0 0x1A000
+		       0x2 0xf0720000 0x0 0x1A000>;
+		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH
+		              GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
+		host-id = <0>;
+	};
+
+	thmal: thmal@2,f0510000 {
+		compatible = "nvt,thermal";
+		reg = <0x2 0xF0510000 0x0 0x100>;
+		default_trim = <231>;
+	};
+
+
+	nvt_otp@2,f0A90000 {
+                compatible = "nvt,nvt_otp";
+                reg = <0x2 0xF0A90000 0x0 0x70>;
+	};
+
+	crypt: crypt@2,f0950000 {
+		compatible = "nvt,nvt_crypto";
+		reg = <0x2 0xf0950000 0x0 0x100>;
+		interrupts = <0 79 IRQ_TYPE_LEVEL_HIGH>;
+		mclk = <0>;
+	};
+
+	hash: hash@2,f0960000 {
+		compatible = "nvt,nvt_hash";
+		reg = <0x2 0xf0960000 0x0 0x100>;
+		interrupts = <0 46 IRQ_TYPE_LEVEL_HIGH>;
+		mclk = <0>;
+	};
+
+	rsa: rsa@2,f0a80000 {
+		compatible = "nvt,nvt_rsa";
+		reg = <0x2 0xf0a80000 0x0 0x100>;
+		interrupts = <0 48 IRQ_TYPE_LEVEL_HIGH>;
+		mclk = <0>;
+	};
+
+	dai: dai@2,f0860000 {
+		compatible = "nvt,nvt_dai";
+		reg = <0x2 0xf0850000 0x0 0x500
+		       0x2 0xf0860000 0x0 0x500
+		       0x2 0xf0220000 0x0 0x500
+		       0x2 0xf0230000 0x0 0x500
+		       0x2 0xf0870000 0x0 0x500>;
+		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	csi@f0780000 {
+		compatible = "nvt,nvt_csi";
+		reg = < 0x2 0xF0780000 0x0 0x100
+				0x2 0xF0790000 0x0 0x100
+				0x2 0xF07A0000 0x0 0x100
+				0x2 0xF07B0000 0x0 0x100
+				0x2 0xF07C0000 0x0 0x100
+				0x2 0xF07D0000 0x0 0x100
+				0x2 0xF07E0000 0x0 0x100
+				0x2 0xF07F0000 0x0 0x100>;
+		interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	ssenif@f0xx0000 {
+		compatible = "nvt,nvt_ssenif";
+		reg = < 0x2 0xF0780000 0x0 0x100>;
+		interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	senphy@f08c0000 {
+		compatible = "nvt,nvt_senphy";
+		reg = < 0x2 0xF08C0000 0x0 0x100
+				0x2 0xF08D0000 0x0 0x100
+				0x2 0xF08E0000 0x0 0x100
+				0x2 0xF08F0000 0x0 0x100>;
+	};
+
+	ai: ai@2,f0920000 {
+		compatible = "nvt,kdrv_ai";
+		reg = <0x2 0xf0920000 0x0 0x290
+			   0x2 0xf0930000 0x0 0x168
+			   0x2 0xf0400000 0x0 0x260
+			   0x2 0xf0900000 0x0 0x260
+			   0x2 0xf0910000 0x0 0x260>;
+		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 75 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH
+					  GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
+		clock-frequency = <600000000 600000000 600000000 600000000 600000000>;
+	};
+	
+	ive: ive@2,f0940000 {
+		compatible = "nvt,kdrv_ive";
+		reg = <0x2 0xf0940000 0x0 0x130>;
+		interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
+		clock-frequency = <480000000>;
+	};
+	extclk_src {/*0: extclk; 1: extclk2; 2: extclk3; 3: extclk4*/
+		extclk_from = <0>;
+		extclk2_from = <1>;
+		extclk3_from = <2>;
+		extclk4_from = <3>;
+	};
+
+	pwm: pwm@2,f0120000 {
+		compatible = "nvt,nvt_pwm";
+		reg = <0x2 0xf0120000 0x0 0x2000>;
+		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	pwr: pwr@0x0 {
+		compatible = "nvt,nvt_pwr";
+	};
+
+	pll_preset@0 {
+		pll6{pll_config = <6 320000000 0>;};  /* dedicated to sdio running at 160MHz */
+	};
+};

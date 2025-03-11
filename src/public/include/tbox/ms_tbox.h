@@ -1,0 +1,10 @@
+#ifndef MS_TBOX_H
+#define MS_TBOX_H
+
+/* //////////////////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+#include "../../../libs/tbox/include/tbox/tbox.h"
+#endif
+
+

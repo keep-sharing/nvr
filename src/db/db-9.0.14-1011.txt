@@ -1,0 +1,2 @@
+#pos新增port端口
+alter table pos_setting add column port INTEGER not null default 0;

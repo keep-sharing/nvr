@@ -1,0 +1,3 @@
+&top {
+GPIO_0_30{gpio_config = <GPIO_0(30) 1>;};
+};

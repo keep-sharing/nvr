@@ -1,0 +1,132 @@
+/*
+ * Novatek Ltd. BSP part of dts
+ */
+ 
+/ {
+	nvt_info {						/* Get from ModelConfig.txt */
+		BIN_NAME = "FW98633A";
+		BIN_NAME_T = "FW98633T";
+		/* EMBMEM_BLK_SIZE, Normally, 2KPageNand=0x20000, 512PageNand=0x4000, SPI=0x10000 */
+		EMBMEM_BLK_SIZE = "0x200";
+
+		/*
+		 * [EMBMEM]
+		 * EMBMEM_NONE
+		 * EMBMEM_NAND
+		 * EMBMEM_SPI_NOR
+		 * EMBMEM_SPI_NAND
+		 * EMBMEM_EMMC
+		 */
+		EMBMEM = "EMBMEM_EMMC";
+		/*
+		 * ======= Linux common =========
+		 * application/external
+		 */
+		NVT_CFG_APP_EXTERNAL = "dhd_priv memtester iperf-3 e2fsprogs smartmontools";
+		/* application include list */
+		NVT_CFG_APP = "mem";
+		/* rootfs etc folder */
+		NVT_ROOTFS_ETC = "EMMC_EVB";
+		/* strip executable binary and library files: yes/no */
+		NVT_BINARY_FILE_STRIP = "yes";
+		/* Using customized kernel config */
+		NVT_CFG_KERNEL_CFG = "na51090_a64_evb_defconfig_emmc_debug";
+		/* Using customized uboot config */
+		NVT_CFG_UBOOT_CFG = "nvt-na51090_a64_emmc_defconfig";
+		/* support rHDAL: yes/no */
+		NVT_CFG_RHDAL_CFG = "no";
+
+		/*
+		 * ======= Linux for different code setting =========
+		 * [NVT_LINUX_SMP]
+		 * NVT_LINUX_SMP_ON
+		 * NVT_LINUX_SMP_OFF
+		 */
+		NVT_LINUX_SMP = "NVT_LINUX_SMP_ON";
+
+		/*
+		 * [NVT_DEFAULT_NETWORK_BOOT_PROTOCOL]
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_SERVER
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_CLIENT
+		 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP
+		 */
+		NVT_DEFAULT_NETWORK_BOOT_PROTOCOL = "NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP";
+
+		/*
+		 * [NVT_ROOTFS_TYPE]
+		 * NVT_ROOTFS_TYPE_NAND_UBI
+		 * NVT_ROOTFS_TYPE_NAND_SQUASH
+		 * NVT_ROOTFS_TYPE_NAND_JFFS2
+		 * NVT_ROOTFS_TYPE_NOR_SQUASH
+		 * NVT_ROOTFS_TYPE_NOR_JFFS2
+		 * NVT_ROOTFS_TYPE_RAMDISK
+		 * NVT_ROOTFS_TYPE_EXT4
+		 */
+		NVT_ROOTFS_TYPE = "NVT_ROOTFS_TYPE_EXT4";
+
+		/*
+		 * [NVT_ETHERNET]
+		 * NVT_ETHERNET_NONE
+		 * NVT_ETHERNET_EQOS
+		 */
+		NVT_ETHERNET = "NVT_ETHERNET_EQOS";
+
+		/*
+		 * [NVT_SDIO_WIFI]: Remember to update root-fs/rootfs/etc/init.d/S05_Net
+		 * NVT_SDIO_WIFI_NONE
+		 * NVT_SDIO_WIFI_RTK
+		 * NVT_SDIO_WIFI_BRCM
+		 * NVT_SDIO_WIFI_NVT
+		 */
+		NVT_SDIO_WIFI = "NVT_SDIO_WIFI_NONE";
+
+		/*
+		 * [NVT_USB_WIFI]
+		 * NVT_USB_WIFI_NONE
+		 */
+		NVT_USB_WIFI = "NVT_USB_WIFI_NONE";
+
+		/*
+		 * [NVT_USB_4G]
+		 * NVT_USB_4G_NONE
+		 */
+		NVT_USB_4G = "NVT_USB_4G_NONE";
+
+		/*
+		 * [WIFI_RTK_MDL]  : sub item for NVT_SDIO_WIFI_RTK
+		 * WIFI_RTK_MDL_NONE
+		 * WIFI_RTK_MDL_8189
+		 */
+		WIFI_RTK_MDL = "WIFI_RTK_MDL_NONE";
+
+		/*
+		 * [WIFI_BRCM_MDL]  : sub item for NVT_SDIO_WIFI_BRCM
+		 * WIFI_BRCM_MDL_43438a1_ampk6212axtal26
+		 * WIFI_BRCM_MDL_43455c0_ampk6255c0
+		 */
+		WIFI_BRCM_MDL = "WIFI_BRCM_MDL_43438a1_ampk6212axtal26";
+
+		/*
+		 * [WIFI_NVT_MDL]  : sub item for NVT_SDIO_WIFI_NVT
+		 * WIFI_NVT_MDL_18202
+		 * WIFI_NVT_MDL_18211
+		 */
+		WIFI_NVT_MDL = "WIFI_NVT_MDL_18211";
+
+		/*
+		 * [NVT_CURL_SSL]
+		 * NVT_CURL_SSL_OPENSSL
+		 * NVT_CURL_SSL_WOLFSSL
+		 */
+		NVT_CURL_SSL = "NVT_CURL_SSL_OPENSSL";
+
+		/*
+		 * [NVT_UBOOT_ENV_IN_STORG_SUPPORT]
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NAND
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NOR
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_MMC
+		 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF
+		 */
+		NVT_UBOOT_ENV_IN_STORG_SUPPORT = "NVT_UBOOT_ENV_IN_STORG_SUPPORT_MMC";
+	};
+};

@@ -1,0 +1,3 @@
+[submodule "src/libs/tbox"]
+	path = src/libs/tbox
+	url = git@gitlab.milesight.com:cctv/devops/3rdparty/tbox.git

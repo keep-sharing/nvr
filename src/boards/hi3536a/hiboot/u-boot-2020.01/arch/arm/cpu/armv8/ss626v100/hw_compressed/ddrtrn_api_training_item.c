@@ -1,0 +1,1 @@
+../../../../../../drivers/ddr/vendor/api/ddrtrn_api_training_item.c

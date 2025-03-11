@@ -1,0 +1,29 @@
+######################################################################
+## Filename:      mscore.mk
+## Author:        hugo
+## Created at:    2015-10-20
+##                
+## Description:   编译中心程序mscore
+## Copyright (C)  milesight
+##                
+######################################################################
+#源码目录
+MSCORE_SRC_DIR    	:= $(SRC_DIR)/mscore
+#输出目录
+MSCORE_TARGET_DIR 	:= $(TEMP_TARGET_DIR)/mscore
+#目标名称
+MSCORE_TARGET_NAME	:= mscore
+
+MSCORE_COMPILE_OPT	:= $(MS_MAKE_JOBS) -C $(MSCORE_SRC_DIR) CC=$(TARGET_CC) AR=$(TARGET_AR) TARGET_DIR=$(MSCORE_TARGET_DIR) TARGET_NAME=$(MSCORE_TARGET_NAME) INSTALL_DIR=$(PUBLIC_APP_DIR)
+
+mscore:
+	$(MS_MAKEFILE_V)$(MAKE) $(MSCORE_COMPILE_OPT) all
+	
+mscore-clean:
+	$(MS_MAKEFILE_V)$(MAKE) $(MSCORE_COMPILE_OPT) clean
+
+#添加至全局LIBS/CLEANS
+APPS   += mscore
+CLEANS += mscore-clean
+
+

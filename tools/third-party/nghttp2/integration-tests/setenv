@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+libdir="/home/will/share0/Pro/mshn/branches/branches-x.9.0.7/tools/third-party/nghttp2/lib"
+if [ -d "$libdir/.libs" ]; then
+    libdir="$libdir/.libs"
+fi
+
+export CGO_CFLAGS="-I/home/will/share0/Pro/mshn/branches/branches-x.9.0.7/tools/third-party/nghttp2/lib/includes -I/home/will/share0/Pro/mshn/branches/branches-x.9.0.7/tools/third-party/nghttp2/lib/includes"
+export CGO_LDFLAGS="-L$libdir"
+export LD_LIBRARY_PATH="$libdir"
+export GODEBUG=cgocheck=0
+"$@"

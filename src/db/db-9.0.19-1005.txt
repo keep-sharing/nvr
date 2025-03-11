@@ -1,0 +1,5 @@
+# exception增加disk_heat disk_microtherm disk_connection_exception disk_strike
+alter table trigger_alarms add column disk_heat INTEGER not null default 0;
+alter table trigger_alarms add column disk_microtherm INTEGER not null default 0;
+alter table trigger_alarms add column disk_connection_exception INTEGER not null default 0;
+alter table trigger_alarms add column disk_strike INTEGER not null default 0;

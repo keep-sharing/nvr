@@ -1,0 +1,87 @@
+##
+## AmbaConfig
+##
+## History:
+##    2014/05/30 - [eric@milesight.cn] Create
+##    2015/05/26 - [zbing@milesight.cn] modify
+## Copyright (C) 2013-2014, milesight, Inc.
+##
+## All rights reserved. No Part of this file may be reproduced, stored
+## in a retrieval system, or transmitted, in any form, or by any means,
+## electronic, mechanical, photocopying, recording, or otherwise,
+## without the prior consent of Ambarella, Inc.
+##
+
+mainmenu "MS Hisilicon Projects Settings"
+
+choice
+	prompt "CPU Type"
+	default CONFIG_CPU_HI3536
+	help
+		Select the target arch.
+		
+config CONFIG_CPU_HI3536
+	bool "HI3536"
+	
+config CONFIG_CPU_HI3535
+	bool "HI3535"
+
+endchoice
+
+choice
+	prompt "Memory Size"
+	default CONFIG_DDR3_MEM_4096M
+	help
+		Select the memory size of the target.
+	
+config CONFIG_DDR3_MEM_4096M
+	bool "ddr3 4096M"
+
+config CONFIG_DDR3_MEM_2048M
+	bool "ddr3 2048M"
+
+config CONFIG_DDR2_MEM_1024M
+	bool "ddr3 1024M"
+
+endchoice
+
+config Flash_Type_NAND
+	bool
+	default n
+	
+config Flash_Type_SPI
+	bool
+	default n	
+	
+choice
+	prompt "Flash Type"
+	default CONFIG_NAND_SIZE_256MB
+	help
+		Select the flash type of the target.
+	
+config CONFIG_NAND_SIZE_128MB
+	bool "nand flash 128MB"
+	select Flash_Type_NAND
+		
+config CONFIG_NAND_SIZE_256MB
+	bool "nand flash 256MB"
+	select Flash_Type_NAND
+		
+config CONFIG_NAND_SIZE_512MB
+	bool "nand flash 512MB"
+	select Flash_Type_NAND
+	
+config CONFIG_SPI_SIZE_128MB
+	bool "spi flash 512MB"
+	select Flash_Type_SPI
+		
+config CONFIG_SPI_SIZE_256MB
+	bool "spi flash 256MB"
+	select Flash_Type_SPI
+		
+config CONFIG_SPI_SIZE_512MB
+	bool "spi flash 512MB"
+	select Flash_Type_SPI
+endchoice
+
+source update/update.in

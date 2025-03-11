@@ -1,0 +1,6 @@
+# 自动备份增加设备类型字段device,(-1=select, 0=esata, 1=USB, 2=NAS) 默认-1, 增加端口号字段port，默认0)
+alter table esata_auto_backup add column device INTEGER default -1;
+alter table esata_auto_backup add column port INTEGER default 0;
+
+# 兼容原有8000平台开启自动备份功能
+insert into params values('autobackup_dbup', '1');

@@ -1,0 +1,214 @@
+debug.lo: debug.c \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/stdc-predef.h \
+ config.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/stdio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/features.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/cdefs.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/wordsize.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/gnu/stubs.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/gnu/stubs-soft.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stddef.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/typesizes.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/libio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/_G_config.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/wchar.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdarg.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdio_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sys_errlist.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/stdlib.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/waitflags.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/waitstatus.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/endian.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/endian.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/byteswap.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/byteswap-16.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/xlocale.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/time.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/select.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/select.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigset.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/time.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/sysmacros.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/pthreadtypes.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/alloca.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdlib-bsearch.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdlib-float.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/string.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/string.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/string2.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/syslog.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/syslog.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/syslog-path.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/unistd.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/posix_opt.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/environments.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/confname.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/getopt.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/param.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/limits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/syslimits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/limits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/posix1_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/local_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/linux/limits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/posix2_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/xopen_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/signal.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/signum.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/siginfo.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigaction.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigcontext.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/asm/sigcontext.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigstack.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/ucontext.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigthread.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/param.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/linux/param.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/asm/param.h \
+ /opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/asm-generic/param.h \
+ debug.h
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/stdc-predef.h:
+
+config.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/stdio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/features.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/cdefs.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/wordsize.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/gnu/stubs.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/gnu/stubs-soft.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stddef.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/typesizes.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/libio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/_G_config.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/wchar.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdarg.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdio_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sys_errlist.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/stdlib.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/waitflags.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/waitstatus.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/endian.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/endian.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/byteswap.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/byteswap-16.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/xlocale.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/time.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/select.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/select.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigset.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/time.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/sysmacros.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/pthreadtypes.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/alloca.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdlib-bsearch.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/stdlib-float.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/string.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/string.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/string2.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/syslog.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/syslog.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/syslog-path.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/unistd.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/posix_opt.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/environments.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/confname.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/getopt.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/param.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/limits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/syslimits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/limits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/posix1_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/local_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/linux/limits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/posix2_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/xopen_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/signal.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/signum.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/siginfo.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigaction.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigcontext.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/asm/sigcontext.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigstack.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/sys/ucontext.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/sigthread.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/bits/param.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/linux/param.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/asm/param.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv310-linux/target/usr/include/asm-generic/param.h:
+
+debug.h:

@@ -1,0 +1,2 @@
+insert into params values('video_push_stream', '0');
+update camera set record_stream=2;
